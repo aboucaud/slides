@@ -2,11 +2,13 @@ class: middle
 background-image: url(img/brain.png)
 
 # Hands on .red[deep learning]
+<img src="img/logosimpleCC.jpg" width='150' style="float: left">
 
-.footnote[Alexandre Boucaud  -  [@alxbcd][twitter]]
+.footnote[ Alexandre Boucaud  -  [@alxbcd][twitter]]
 
 [twitter]: https://twitter.com/alxbcd
 ---
+exclude: true
 class: middle
 background-image: url(img/brain.png)
 .hidden[aa]
@@ -16,22 +18,23 @@ background-image: url(img/brain.png)
 
 
 ---
-# Alexandre Boucaud <img src="https://aboucaud.github.io/img/profile.png" class="circle-image" alt="Alexandre Boucaud" style="float: right">
+## Alexandre Boucaud <img src="https://aboucaud.github.io/img/profile.png" class="circle-image" alt="Alexandre Boucaud" style="float: right">
 
 Scientific software engineer at APC
 
-[aboucaud@apc.in2p3.fr](mailto:aboucaud@lal.in2p3.fr)  
-[@alxbcd][twitter] on twitter
+<!-- [aboucaud @ apc.in2p3.fr][mail]   -->
+<!-- [@alxbcd][twitter] on twitter -->
 
 </br>
-Interests:
+.medium[Interests:]
 - cosmological survey data processing (LSST, Euclid, LISA)
 - ML applications in astrophysics (galaxy morphology, deblending)
 - development of the open source Python scientific ecosystem
 
+Disclaimer: I am .red[not] a machine learning researcher  
 <img src="http://www.apc.univ-paris7.fr/APC_CS/sites/default/files/logo-apc.png" height="120px" alt="Astroparticule et Cosmologie" style="float: right">
 
-
+[mail]: mailto:aboucaud@apc.in2p3.fr
 [twitter]: https://twitter.com/alxbcd
 
 ---
@@ -641,7 +644,7 @@ One neuron, one activation function.
 
 .center[<img src="img/artificial_neuron.svg" width="600px" />]
 
-$$ x \overset{neuron}\longrightarrow z(x) = wx + b\overset{activation}\longrightarrow a(x) = g(z(x)) = y$$
+$$x \overset{neuron}\longrightarrow z(x) = wx + b\overset{activation}\longrightarrow a(x) = g(z(x)) = y$$
 
 
 ---
@@ -1186,11 +1189,33 @@ model.fit(X_train, y_train,
   ```
 - EarlyStopping saves the planet.
 
+
+---
+class: center, middle
+name: architecture
+
+# Common .red[architectures]
+
+---
+## Zoo of neural networks #1
+.singleimg[![](img/nnzoo1.png)]
+
+.footnote[[Neural network zoo][nnzoo] - Fjodor van Veen (2016)]
+
+---
+## Zoo of neural networks #2
+
+.singleimg[![](img/nnzoo2.png)]
+
+.footnote[[Neural network zoo][nnzoo] - Fjodor van Veen (2016)]
+
+[nnzoo]: http://www.asimovinstitute.org/neural-network-zoo/
+
 ---
 class: center, middle
 name: practice
 
-# In practice
+# In .red[practice]
 
 ---
 ## The right architecture
@@ -1203,8 +1228,12 @@ that will solve your particular problem.
   # `¯\_(ツ)_/¯`
 ]
 
-But here are some advice for non-specialists to guide you in the right direction and/or 
-get you out of trouble.
+But here are some advice to guide you in the right direction and/or get you out of trouble.
+
+---
+## A community effort
+
+.center.medium[The Machine Learning community has long been </br>a fervent advocate of </br></br>.big.red[open source]</br></br>which has fostered the spread of very recent developements even from big companies like Google. </br></br> Both .green[code and papers] are generally available </br>and can be found .green[within a few clicks].]
 
 ---
 ## Start with existing (working) models
@@ -1402,12 +1431,12 @@ Here are some leads (random order) to explore if your model do not converge:
 ---
 class: center
 .hidden[a]
-# Next ?
+## Next ?
 
 ### ML developments are happening at a high pace <br/>.red[stay tuned] !
 
 .hidden[a]
-# References
+## References
 
 .middle[### A curated list of inspirations for this presentation can be found [here][refs].]
 
@@ -1428,3 +1457,15 @@ class: center, middle
 <img src="img/friendship_algorithm.PNG" />
 
 .medium[but keep in mind that .red[not everything] is differentiable..]
+
+---
+class: center, middle
+
+## Thank you
+
+.medium[Contact info:]  
+[aboucaud.github.io][website]  
+@aboucaud on GitHub, GitLab  
+[@alxbcd][twitter] on Twitter
+
+[website]: https://aboucaud.github.io
