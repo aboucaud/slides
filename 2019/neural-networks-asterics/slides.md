@@ -2,7 +2,9 @@ class: middle
 background-image: url(img/brain.png)
 
 # Hands on .red[neural networks]
-<img src="img/logosimpleCC.jpg" width='150' style="float: left">
+#### ASTERICS-OBELICS School - Apr 2019
+
+.bottomlogo[<img src="img/asterics_log.png" width='250px'>]
 
 .footnote[ Alexandre Boucaud  -  [@alxbcd][twitter]]
 
@@ -20,17 +22,18 @@ background-image: url(img/brain.png)
 ---
 ## Alexandre Boucaud <img src="https://aboucaud.github.io/img/profile.png" class="circle-image" alt="Alexandre Boucaud" style="float: right">
 
-Scientific software engineer at APC
+Scientific software engineer at APC, CNRS
 
 <!-- [aboucaud @ apc.in2p3.fr][mail]   -->
 <!-- [@alxbcd][twitter] on twitter -->
 
 </br>
 .medium[Interests:]
-- cosmological survey data processing (LSST, Euclid, LISA)
-- ML applications in astrophysics (galaxy morphology, deblending)
+- ‘cosmological’ survey data processing (LSST, Euclid, LISA)
+- “ML applications” in astrophysics (galaxy morphology, deblending)
 - development of the open source Python scientific ecosystem
 
+</br>
 Disclaimer: I am .red[not] a machine learning researcher  
 <img src="http://www.apc.univ-paris7.fr/APC_CS/sites/default/files/logo-apc.png" height="120px" alt="Astroparticule et Cosmologie" style="float: right">
 
@@ -38,17 +41,21 @@ Disclaimer: I am .red[not] a machine learning researcher
 [twitter]: https://twitter.com/alxbcd
 
 ---
+## Outline
 
-# Outline
-
-.medium[[Neural nets](#nns)]
-
-> hidden layers
-> activation 
-> backpropagation
-> optimization
-> hands on tutorial
-
+.medium[
+* [neurons](#nns)
+  
+* [hidden layers](#layer)
+  
+* [activation](#activation)
+  
+* [backpropagation](#backprop)
+  
+* [training](#train)
+  
+* [hands-on tutorial](#tuto)
+]
 ---
 ## Foreword
 
@@ -70,11 +77,11 @@ Keras provides a high level API to create deep neural networks and train them us
 
 ---
 class: middle, center
-name: nns
 
 # What is a .red[neural network] made of ?
 
 ---
+name: nns
 ## A Neuron
 
 A neuron is a .green[linear system] with two attributes
@@ -88,6 +95,7 @@ It takes .green[multiple inputs] (from $\mathbf{x}$) and returns .green[a single
 ]
 
 ---
+name: layer
 ## Linear layers
 
 A linear layer is an .green[array of neurons].
@@ -304,7 +312,7 @@ Non-trainable params: 0
 ```
 
 ---
-
+name: activation
 ## Adding non linearities
 
 A network with several linear layers remains a .green[linear system].
@@ -395,6 +403,7 @@ $$ \ell = loss(y, y_t)$$
 $$ \dfrac{\partial \ell}{\partial w} \quad \text{and} \quad \dfrac{\partial \ell}{\partial b} $$
 
 ---
+name: backprop
 ## Backpropagation
 
 A .green[30-years old] algorithm (Rumelhart et al., 1986)
@@ -511,19 +520,7 @@ $$ \dfrac{\partial \ell}{\partial z_i} = \dfrac{\partial \ell}{\partial z^{i+1}}
 .footnote[find a clear and more detailed explaination of backpropagation [here](https://www.jeremyjordan.me/neural-networks-training/)]
 
 ---
-## Network update
-
-1. feedforward and compute loss gradient on the output
-$$ \nabla loss(y) $$
-
-2. for each layer in the backward direction, 
-  * .blue[receive] the gradients from the previous layer, 
-  * .blue[compute] the gradient of the current layer
-  * .blue[multiply] with the weights and .blue[pass] the results on to the next layer
-
-3. for each layer, update their weight and bias using their own gradient, following the optimisation scheme (e.g. gradient descent)
-
----
+name: train
 ## Loss and optimizer
 
 Once your architecture (`model`) is ready, a [loss function](https://keras.io/losses/) and an [optimizer](https://keras.io/optimizers/) .red[must] be specified 
@@ -540,6 +537,21 @@ model.compile(optimizer=Adam(lr=0.01, decay=0.1),
 ```
 
 Choose both according to the target output.
+
+---
+## Network update
+
+1. feedforward and compute loss gradient on the output
+$$ \nabla loss(y) $$
+
+2. for each layer in the backward direction, 
+  * .blue[receive] the gradients from the previous layer, 
+  * .blue[compute] the gradient of the current layer
+  * .blue[multiply] with the weights and .blue[pass] the results on to the next layer
+
+3. for each layer, update their weight and bias using their own gradient, following the optimisation scheme (e.g. gradient descent)
+
+
 
 ---
 ## Training
@@ -630,7 +642,7 @@ name: architectures
 
 ---
 class: middle, center
-name: cnn
+name: tuto
 
 # .red[Tutorial]
 
@@ -639,11 +651,24 @@ name: cnn
 ---
 class: center, middle
 
-## Thank you
-
+# Thank .red[you]
+</br>
+</br>
 .medium[Contact info:]  
 [aboucaud.github.io][website]  
 @aboucaud on GitHub, GitLab  
 [@alxbcd][twitter] on Twitter
 
 [website]: https://aboucaud.github.io
+</br>
+</br>
+</br>
+</br>
+.small[
+  This presentation is licensed under a   
+  [Creative Commons Attribution-ShareAlike 4.0 International License][cc]
+]
+
+[![](https://i.creativecommons.org/l/by-sa/4.0/88x31.png)][cc]
+
+[cc]: http://creativecommons.org/licenses/by-sa/4.0
