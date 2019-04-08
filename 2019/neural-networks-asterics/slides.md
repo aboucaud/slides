@@ -29,8 +29,8 @@ Scientific software engineer at APC, CNRS
 
 </br>
 .medium[Interests:]
-- ‘cosmological’ survey data processing (LSST, Euclid, LISA)
-- “ML applications” in astrophysics (galaxy morphology, deblending)
+- cosmological survey data processing (LSST, Euclid, LISA)
+- ML applications in astrophysics (galaxy morphology, deblending)
 - development of the open source Python scientific ecosystem
 
 </br>
