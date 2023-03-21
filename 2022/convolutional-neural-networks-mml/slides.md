@@ -8,7 +8,7 @@ background-image: url(img/brain.png)
 
 [twitter]: https://twitter.com/alxbcd
 ---
-<!-- exclude: true -->
+exclude: true
 class: middle
 background-image: url(img/brain.png)
 .hidden[aa]
