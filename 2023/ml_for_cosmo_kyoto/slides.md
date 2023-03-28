@@ -3,7 +3,7 @@ background-image: url(../img/brain.png)
 
 # Machine learning for cosmology
 
-#### International Conf. of the Physics of the 2 Infinites – University of Kyoto – March 28 2023 
+#### International Conf. of the Physics of the 2 Infinites – University of Kyoto – March 28th 2023 
 #### [Alexandre Boucaud](mailto:aboucaud@apc.in2p3.fr) – APC/IN2P3/CNRS
 
 .footnote[
@@ -25,9 +25,9 @@ exclude: true
   3 dedicated plenary talks in this conference
 
   - **ML for Gravitational Physics**   
-    Tuesday 28 at 9:00 by _Jonathan Gair_  
+    Tuesday 28th at 9:00 by _Jonathan Gair_  
   - **ML for HEP**  
-    Thursday 30 at 9:25 by _Tobias Golling_
+    Thursday 30th at 9:20 by _Tobias Golling_
 ]
 
 .right-column[
