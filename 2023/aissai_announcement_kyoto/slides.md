@@ -16,17 +16,17 @@ background-image: url(img/brain.png)
 ---
 # AISSAI semester in 2023
 
-AISSAI is a new [CNRS interdisciplinary initiative][aissai] started in 2021 to encourage synergies between CNRS domain scientists and machine learning specialists.
+AISSAI is a new CNRS interdisciplinary initiative started in 2021 to encourage .blue[**synergies between CNRS domain scientists and machine learning specialists**].
 
 The way AISSAI is promoting these .blue[**connexions on an international level**] is through the funding of .red[**scientific semesters**].
 
 Each semester is built by a CNRS institute to gather the international community around its current most relevant themes.
 
-IN2P3 has been assigned the semester of Fall 2023, which David Rousseau (IJCLab) and I are supervising through the IN2P3 Machine Learning master project.
+IN2P3 has been assigned the semester of Fall 2023, which David Rousseau (IJCLab) and I are supervising through the [IN2P3 Machine Learning master project][website].
 
 
 .footnote[
-  <img src="../img/aissai-logo.png" height='120px' alt="AISSAI"> 
+  [<img src="../img/aissai-logo.png" height='120px' alt="AISSAI">][aissai]
 ]
 
 ---
@@ -50,12 +50,13 @@ class: middle, center
 <br>
 <br>
 <br>
-.medium[Stay tuned on our [main website][website]]  
+.medium[Stay tuned on our [main website][events]]  
 or  
-.medium[drop me [an email][mail] to receive update about these events].
+.medium[drop me <a href="mailto:aboucaud@apc.in2p3.fr?subject=AISSAI workshops interest">an email</a> to receive updates about these events*]
 
-
+.footnote[*just these events I promise ;-)]
 
 [aissai]: https://www.cnrs.fr/en/artificial-intelligence-science-science-artificial-intelligence-aissai-center
 [hackweek]: https://aissai-hackathon.astroinfo.in2p3.fr/
-[website]: https://machine-learning.in2p3.fr/events.html
+[events]: https://machine-learning.in2p3.fr/events.html
+[website]: https://machine-learning.in2p3.fr
