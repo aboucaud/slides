@@ -350,34 +350,75 @@ name: density
 ]
 
 ---
+## Untractable likelihoods for Bayesian inference
 
 .center[
-  <img src="../img/francois_marginal_like.png", width="95%", vspace="0px", hspace="0px"/> 
+  <img src="../img/francois_marginal_like.png", width="85%", vspace="0px", hspace="0px"/> 
 ]
 
 .footnote[courtesy F. Lanusse]
 
 ---
-exclude: true
 ## Neural density estimation
 
-.center[<iframe width="590" height="390" src="../img/vid/NF_explanation_justine.mp4" title="Justine NF explanation" frameborder="0" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>]
+.left-column[
+.center.medium[Mixture Density Networks]
+  <br>
+  .center[<img src="../img/mixture-density-networks.png", width="55%" />]
+<br>
+.right[Bishop 94]
+]
 
-.footnote[credit: Justine Zeghal]
+.right-column[
+  .center.medium[Normalising flows]
+  <br>
+  <iframe width="550" height="360" src="../img/vid/NF_explanation_justine.mp4" title="Justine NF explanation" frameborder="0" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<br>
+<br>
+.right[credit: Justine Zeghal]
+]
+
+
 
 ---
-## Cosmological constraints from SBI
+## Cosmological constraints using SBI
 
 .left-column[
 <img src="../img/sbicosmo.png" width="140%" />
 ]
 
 .right-column[
-1. maps are optimally compressed
-2. 
+1. images are optimally compressed into summary statistics to reduce the dimensionality
+2. the marginal likelihood is estimated through neural density estimation
 ]
 
-.footnote[courtesy: M. Huertas-Company]
+.footnote[courtesy M. Huertas-Company]
+
+---
+## Several SBI techniques can be used for inference
+
+.center[
+  <br>
+  <br>
+  <img src="../img/sbi-methods.png" width="100%" />
+]
+
+.footnote[[Lueckmann+ 21](https://arxiv.org/abs/2101.04653)]
+
+---
+## Accelerating SBI with gradients <img src="../img/justine.png" class="circle-image" alt="JZ" style="float: right">
+
+Differentiable simulations provide gradients for free (through autodiff).  
+Can we leverage the gradient information to speed up density estimation ?
+
+.center[
+  Without gradients<br>
+<img src="../img/nde_score_inv_1.png" width="60%" />
+<br>
+<br>
+  With gradients<br>
+<img src="../img/nde_score_inv_2.png" width="60%" />
+]
 
 ---
 ## Accelerating SBI with gradients <img src="../img/justine.png" class="circle-image" alt="JZ" style="float: right">
@@ -392,16 +433,18 @@ exclude: true
   Method is currently being validated on cosmological inference ($\sigma_8-\Omega_c$) from simulated WL log-normal mass maps.]  
 ]
 
+.footnote[[Zeghal+ 22](https://arxiv.org/abs/2207.05636)]
+
 ---
 ## Take home messages
 
-In this presentation we have seen that in cosmology, deep learning techniques
+In this presentation we have seen that deep learning techniques are particularly relevant in ccosmology since they can
 
-- can very well .blue[**extract implicit information**] from multi-band images / spectra to perform tasks such as .green[**detection or classification**].
+- .blue[**extract implicit information**] from multi-band images / spectra to perform tasks such as .green[**detection or classification**].
 .right[.red[***Caveats***] : _model response very non-linear, needs a lot of calibration for regression_]
 
-- can help .blue[**scale up numerical simulations**] by providing a .green[**non-linear approximation of the physical process**] otherwise very expensive to compute.
+- help .blue[**scale up numerical simulations**] by providing a .green[**non-linear approximation of the physical process**] otherwise very expensive to compute.
 .right[.red[***Caveats***] : _often biased in some regimes, need representative training_]
 
-- can be used to .blue[**optimally compress**] the cosmological field information. Simulation-based inference schemes can then leverage that information to provide .green[**amortized inference**] through neural density estimation.
+- be used to .blue[**optimally compress**] the cosmological field information. Simulation-based inference schemes can then leverage that information to provide .green[**amortized inference**] through neural density estimation.
 .right[.red[***Caveats***] : _black-box process, requires lots of simulations, need to check systematics_]
