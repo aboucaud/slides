@@ -113,7 +113,9 @@ This ensures that .red[close points] in latent space lead to .red[the same recon
 
 Adding to the loss term a Kullback-Leibler (KL) divergence term regularizes the structure of the latent space.
 
-.center[<iframe width="540" height="335" src="../img/vid/dkl_2.mp4" title="Justine KL explanation" frameborder="0" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>]
+.center[
+  <iframe width="540" height="335" src="../img/vid/dkl_2.mp4" title="Justine KL explanation" frameborder="0" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+]
 ---
 ## Reparametrisation trick
 
@@ -151,7 +153,7 @@ class: center, middle
 ---
 ## GANs
 
-The idea behing GANs is to train two networks jointly
+The idea behind GANs is to train two networks jointly
 * a discriminator $\mathbf{D}$ to classify samples as "real" or "fake"
 * a generator $\mathbf{G}$ to map a fixed distribution to samples that fool $\mathbf{D}$
 
