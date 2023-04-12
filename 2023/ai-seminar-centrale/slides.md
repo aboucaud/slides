@@ -1085,14 +1085,16 @@ The process avoids the .red[mode collapse] inherent to GANs.
 .footnote[Smith+21 + [GitHub](https://github.com/Smith42/astroddpm)]
 
 ---
-exclude: true
 # Take home message
 
-.middle[
-  .medium[
-
-  ]
-]
+<br>
+.medium[Machine Learning is a .red[**powerful tool**] for physicists and gives state-of-the-art results for .green[detection] and .green[classification] tasks].
+<br>
+<br>
+.medium[It can be used to .red[**explore and extract**] information from .green[high-dimensional datasets] (unsupervised learning) as well as .red[**approximate**] highly .green[non-linear models] (supervised learning).]
+<br>
+<br>
+.medium[As any data driven method, it is very .red[**sensitive to biases**] in the dataset (e.g. selection bias) and one must take good care of .green[validating] the results.]
 
 ---
 class: center, middle
