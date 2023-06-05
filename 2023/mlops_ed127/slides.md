@@ -94,7 +94,7 @@ class: middle
 
 Hyperparameter .red[**configuration**] made easy for ML jobs
 
-👉 see [slides](https://docs.google.com/presentation/d/12xlz64yDC3lQfBacp0vvUM2EX6EitmM1O9clCNa2-HI/edit?usp=sharing) .small[_from Club des développeurs – March 2023_]
+👉 see [slides](https://docs.google.com/presentation/d/12xlz64yDC3lQfBacp0vvUM2EX6EitmM1O9clCNa2-HI/edit?usp=sharing) .small[git p_from Club des développeurs – March 2023_]
 
 ---
 class: middle
@@ -140,7 +140,7 @@ class: center, middle
 </br>
 </br>
 Find this presentation at  
-https://aboucaud.github.io/slides/2023/mlops-ed127
+https://aboucaud.github.io/slides/2023/mlops_ed127
 </br>
 </br>
 </br>
