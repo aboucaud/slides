@@ -54,14 +54,6 @@ exclude: true
 [slides]: https://aboucaud.github.io/slides/2022/euclid-school-ml-cycle2
 
 ---
-class: middle, center
-## Acknowledgement
-
-.big.center[The inspiration for this talk comes from a seminar  
-by .green[**Pierre-Marc Jodoin**] from Université de Sherbrooke  
-in November 2022.]
-
----
 
 ## Reproducibility in research
 
@@ -70,11 +62,20 @@ As scientists, you must account for reproducibility.
 It is often done with code such as in https://paperswithcode.com/
 
 .center[
-<img src="../img/paper-with-code.png" width="75%" />
+    <img src="../img/paper-with-code.png" width="75%" />
 ]
 
 ---
 
+## What does reproducibility imply ?
+
+.center[
+    <img src="../img/mlops-trojan.png" width="75%" />
+]
+
+
+---
+exclude: true
 ## Software development cycle
 
 .center[
@@ -171,7 +172,7 @@ It is often done with code such as in https://paperswithcode.com/
 .footnote[credit: [ml-ops.org](https://ml-ops.org/content/motivation)]
 
 ---
-
+exclude: true
 ## ML life cycle 101
 
 .medium[
@@ -186,6 +187,14 @@ than a certain baseline.
 predictions.
 1. **.green[Model monitoring]**: The model predictive performance is monitored to potentially invoke a new iteration in the ML
 process.
+]
+
+---
+
+## ML life cycle 101
+
+.center[
+    <img src="../img/mlops-end-to-end.png" width="85%">
 ]
 
 ---
@@ -312,12 +321,12 @@ class OptunaCallback(Callback):
     self.study = study
 
   def on_epoch_end(self, epoch, logs=None):
-    self.study.report(logs['val_acc'], epoch)  # <-------------------------- REPORT METRICS TO OPTIMIZER
+    self.study.report(logs['val_acc'], epoch)  # <------------------- REPORT METRICS TO OPTIMIZER
 
 study = optuna.create_study()
 
 model.fit(x_train, y_train, 
-          callbacks=[OptunaCallback(study)])  # <--------------------------- WILL BE RUN IN THE BACKGROUND ON TRAIN
+          callbacks=[OptunaCallback(study)])  # <-------------------- WILL BE RUN IN THE BACKGROUND ON TRAIN
 ```
 
 ---
@@ -331,35 +340,60 @@ Log .red[**hyperparameters**] + .green[**results**] + .blue[**plots**].
 
 .footnote[[docs](https://mlflow.org/docs) | [tutorials](https://mlflow.org/docs/latest/tutorials-and-examples/index.html)]
 
+---
+## MLFlow components
+<br>
+.center[
+    <img src="../img/mlflow-components.png" width="85%">
+]
 
 ---
 
+## MLFlow overview
+
+.center[
+    <img src="../img/mlflow-overview.png" width="85%">
+]
+
+---
 ## MLFlow Setup
 
-- Install MLFlow with pip
+Install mlflow with pip
 
-```bash
-pip install mlflow
+```shell
+python -m pip install mlflow
 ```
 --
-- Set the tracking URI to record run information
+Set a location for the .red[tracking server] (local filesystem, db, remote server)
 
 ```python
 import mlflow
-mlflow.set_tracking_uri("sqlite:///mlflow.db")
-``` 
---
-- Set an experiment name to organize runs
-
-```python
-mlflow.set_experiment("ExperimentABC")
+mlflow.set_tracking_uri("file:///Users/toto/mlruns")      # in every script / notebook
 ```
+or best define it once for your system
+```shell
+export MLFLOW_TRACKING_URI="/Users/toto/mlruns"           # in your .bashrc/.zshrc
+```
+--
+Start a mlflow server from a new terminal to allow access to the UI
+
+```shell
+mlflow ui --backend-store-uri file:///Users/toto/mlruns
+```
+
 ---
 ## Experiment Tracking
 
+Set an experiment name to organize runs
 ```python 
 import mlflow
 
+mlflow.set_experiment("ExperimentABC")
+```
+--
+Then execute code inside a mlflow.start_run() context manager
+
+```python 
 with mlflow.start_run() as run:
     lr = 0.1
     mlflow.log_param("learning_rate", lr)
@@ -368,32 +402,29 @@ with mlflow.start_run() as run:
 
     mlflow.log_metric("accuracy", 0.92) 
 ```
+Each run will log code, parameters, metrics to MLFlow Tracking
 
-- Each run will log code, parameters, metrics to MLFlow Tracking
-
-- Can set run name and nested runs
+Can set run name and nested runs
 
 ---
 ## Log parameters, metrics and models
 
+Key-value pairs for hyperparameters, settings, etc.
 ```python
 mlflow.log_param("num_layers", 3)
 mlflow.log_params({"learning_rate": 0.001, "epochs": 20})
 ```
-
-- Key-value pairs for hyperparameters, settings, etc.
-
+--
+Record evaluation metrics like loss, accuracy  
+These metrics can be plotted in the UI so you can compare runs
 ```python
 mlflow.log_metric("loss", 0.45)
 ```
-
-- Record evaluation metrics like loss, accuracy
-- These metrics can be plotted in the UI so you can compare runs
-
+--
+Record the architecture and weights of the model in the [`MLModel` format](https://mlflow.org/docs/latest/models.html).
 ```python
 mlflow.tensorflow.log_model(model, "Name_for_model")
 ```
-- Record the architecture and weights of the model in the [`MLModel` format](https://mlflow.org/docs/latest/models.html).
 
 ---
 ## Full example with manual logging (best results)
@@ -443,13 +474,13 @@ model.fit(...)
 
 `autolog` will store
 
-- Metrics and Parameters
-   - training loss; validation loss; user-specified metrics
-   - `fit()` or `fit_generator()` parameters; optimizer name; learning rate; epsilon
-- Artifacts
-   - model summary on training start
-   - `MLflow Model` (Keras model)
-   - TensorBoard logs on training end
+1. Metrics and Parameters
+  - training loss; validation loss; user-specified metrics
+  - `fit()` or `fit_generator()` parameters; optimizer name; learning rate; epsilon
+2. Artifacts
+  - model summary on training start
+  - `MLflow Model` (Keras model)
+  - TensorBoard logs on training end
 
 ⚠️️ Only compatible with 2.3.0 <= tensorflow <= 2.13.0 
 
@@ -481,9 +512,9 @@ with mlflow.start_run() as run:
     plt.legend()
     plt.savefig('loss_plot.png')
 
-  mlflow.log_artifact('loss_plot.png')  # <---------------------- THE PLOT WILL BE STORED IN THE DB 
-                                        #                         AND ASSOCIATE IT WITH THE EXPERIMENT RUN
-                                        #                         IT CAN NOW BE VIEWED IN THE MLFLOW UI
+    mlflow.log_artifact('loss_plot.png')  # <---------------------- THE PLOT WILL BE STORED IN THE DB 
+                                          #                         AND ASSOCIATE IT WITH THE EXPERIMENT RUN
+                                          #                         IT CAN NOW BE VIEWED IN THE MLFLOW UI
 ```
 
 ---
@@ -509,7 +540,7 @@ class: center, middle
 </br>
 </br>
 Find this presentation at  
-https://aboucaud.github.io/slides/2023/euclid_school_mlops
+https://aboucaud.github.io/slides/2023/euclid-school-mlops
 </br>
 </br>
 </br>
