@@ -216,10 +216,10 @@ process.
 
 **MLOps = DevOps principles applied to ML systems**
 ]
-- **CI** is no longer only about testing and validating code, but also testing and validating data, data schemas, and models.
-- **CD** is no longer about a single software package, but a system (an ML pipeline) that should automatically deploy another service.
-- **CT** (Continuous training) unique to ML systems : automatically retraining and serving the models
-- **CM** (Continuous monitoring) : model decay tracking, prediction trigger
+- **Continous Integration** is no longer only about testing and validating code, but also .red[**testing and validating data**], data schemas, .red[**and models**].
+- **Continuous Development** is no longer about a single software package, but .green[**a system**] (a ML pipeline) .green[**that should automatically deploy another service**].
+- **Continuous training** is unique to ML systems : .blue[**automatically retraining**] and serving the models
+- **Continuous monitoring**  tracks model decay or triggers predictions
 
 .footnote[https://ml-ops.org]
 
@@ -581,7 +581,7 @@ Incorporating reproducibility tools .green[**in your daily workflow**] will come
 <br>
 <br>
 <br>
-[MLFlow](https://mlflow.org) can be a powerful ally for physicists and engineers to track their experiments and ensure the reproducibility of their results over time.
+[MLFlow](https://mlflow.org) is .red[**not just about machine learning**] and can be a powerful ally for physicists and engineers to .green[**track their software experiments**] and ensure the .green[**reproducibility of their results**] over time. 
 
 
 ---
