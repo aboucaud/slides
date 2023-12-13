@@ -531,8 +531,14 @@ with mlflow.start_run() as run:
                                           #                         AND ASSOCIATE IT WITH THE EXPERIMENT RUN
                                           #                         IT CAN NOW BE VIEWED IN THE MLFLOW UI
 ```
+---
+## Overview of the server : `mlflow ui`
 
 
+.center[  
+    <img src="../img/mlflow-ui.jpeg" width="100%">
+]
+.footnote[towardsdatascience]
 ---
 class: middle, center
 
