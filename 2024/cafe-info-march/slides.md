@@ -40,7 +40,6 @@ class: middle,center
 
 ### That's it for today !
 
---
 This presentation was written in .green[Markdown] using the [remark.js](https://remarkjs.com/) framework.
 
 The presentation is available at  
@@ -48,4 +47,4 @@ https://aboucaud.github.io/slides/2024/cafe-info-march
 
 and the markdown source code can be found [here][mdsource].
 
-[mdsource]: https://github.com/aboucaud/slides/blob/master/2024/cafe-info-march/slides.md
+[mdsource]: https://raw.githubusercontent.com/aboucaud/slides/master/2024/cafe-info-march/slides.md
