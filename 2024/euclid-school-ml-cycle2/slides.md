@@ -394,22 +394,107 @@ The training must be stopped when reaching the .green[sweet spot]
 | `sigmoid/tanh`    | bounded outputs / classification |
 
 ---
-## Zoo of neural networks
+count: false
+## But.. classic neural networks .red[**cannot**]<br>represent uncertainty
+
 .center[
-<img src="../img/nnzoo1.png" style="width: 700px"/>
+  <br>
+  <br>
+  <img src="../img/aleatoric_mse.png" width="85%">
 ]
-.footnote[[Neural network zoo][nnzoo] - Fjodor van Veen (2016)]
+
 
 ---
-## Zoo of neural networks
+## Which uncertainty are we talking about ?
 
-..center[
-<img src="../img/nnzoo2.png" style="width: 700px"/>
+**Aleatoric uncertainty** 
+
+Uncertainty from noise in the observations or measurements and captures uncertainty that cannot be reduced .green[**even if more data was collected**]. It can be modeled by introducing a learned noise parameter per sample.
+
+
+**Epistemic uncertainty** 
+
+Uncertainty from a lack of knowledge and captures .blue[**uncertainty about the model parameters**] that can be reduced given more data. It can be modeled by introducing a prior over the model parameters and inferring a posterior distribution over them given the data.
+In physics we usually call such uncertainty ***systematics***.
+
+---
+## Relation with the Mean Squared Error loss
+
+To perform a regression on a dataset $\vec{x}$ to predict a variable $y$ using a neural network $f_w$ we do traditionnaly the training under a MSE loss which we aim at minimizing
+
+$$\text{MSE} = \frac{1}{N}\sum_i\left(y_i - f_w(x_i)\right)^2$$
+
+---
+## Viewing neural networks as statistical models
+
+.center[$f_w(x) = y$  ↔️️  $p_w(y|x)$]
+
+We have a set of independant realizations $(x_i, y_i)$ $i=1,...,N$
+
+We want to find the underlying probability distribution of $y$ given $x$: $p(y|x)$ 
+
+We make the hypothesis that $p(y_i|x_i)$ is a Gaussian distribution with constant width $\sigma$
+
+We can thus write the joint likelihood 
+
+.center[$$p_\vec{w}(y|x) = L(\vec{w}, \sigma) \propto \prod_i^N \exp(-(y_i - f_w(x_i))^2/\sigma^2)$$]
+
+---
+## Likelihood maximisation
+
+To find the parameters $\vec{w}$ that maximise the likelihood
+.center[$$p_\vec{w}(y|x) = L(\vec{w}, \sigma) \propto \prod_i^N\exp(-(y_i - f_w(x_i))^2/\sigma^2)$$]
+
+we usually work in log-space for simplification (since the $\log$ is monotonous).
+
+Therefore, the optimization problem becomes minimising the .green[**negative log-likelihood**]
+
+$$-\log p_\vec{w}(y|x) \propto \sum_i^N (y_i - f_w(x_i))^2/\sigma^2 + cst$$
+
+---
+## Relation with the Mean Squared Error loss
+
+From the previous equation it appears that training a network with MSE loss on a dataset .blue[is equivalent to] maximising the joint probability of the data under the hypothesis that each data point is 
+- an independant realisation
+- is sampled from a Gaussian distribution of width $\sigma = 1$
+
+The result of the optimisation is that the network will .red[model the mean value] of the distribution. 
+
+---
+## Modeling aleatoric uncertainty
+
+.center[
+  <br>
+  <br>
+  <br>
+  <!-- <img src="../img/jax_logo.png" width="30%"> -->
+  <img src="../img/pyro_logo.png" width="24%">
+  <img src="../img/tfprob_logo.jpeg" width="35%">
+  <br>
 ]
 
-.footnote[[Neural network zoo][nnzoo] - Fjodor van Veen (2016)]
+.medium.center[Probabilistic neural layers]
 
-[nnzoo]: http://www.asimovinstitute.org/neural-network-zoo/
+---
+
+## Mixture density networks
+
+.center[
+  <img src="../img/mdn-archi.png" width="80%">
+]
+
+
+---
+
+## Mixture density networks
+
+.center[
+  <img src="../img/mdn-principle.png" width="80%">
+]
+
+The neural network outputs the parameters of a distribution, on which one can backpropagate.
+
+The network, thanks to the probabilistic layer, can now be trained under .red[**negative log-likelihood minimisation**].
 
 ---
 class: center, middle
