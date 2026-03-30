@@ -563,7 +563,6 @@ prévalence entre charte CNRS et chartes labo / institut ?
 but de ces formations ?  
 a quelle échelle (labo, in2p3, cnrs) ?  
 sensibiliser aux questions éthiques et à la souveraineté des données  
-temps 
 
 ---
 .hidden[toto]
@@ -572,5 +571,13 @@ temps
 demander accès à l'API Mistral au CNRS
 possibilité d'utiliser la ferme locale pour de l'inférence (à travers les notebooks par exemple)  
 mise en place de quotas utilisateurs  
-mise en commun des moyens pour l'ESR
+mise en commun des moyens pour l'ESR  
+impact environnemental de l'utilisation
 
+--
+
+### Risques sociétaux
+
+perte de sens dans le monde de la recherche – [essai](https://davidbessis.substack.com/p/letter-to-a-phd-student)  
+enseignement / formation des jeunes générations aux métiers  
+nouveaux risques psychosociaux – [exemple](https://siddhantkhare.com/writing/ai-fatigue-is-real)
