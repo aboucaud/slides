@@ -39,6 +39,11 @@ li {
   font-size: 90%;
   line-height: 140%;
 }
+li > p {
+  font-size: 1em;
+  line-height: inherit;
+  margin: 0;
+}
 p {
   font-size: 120%;
   line-height: 140%;
