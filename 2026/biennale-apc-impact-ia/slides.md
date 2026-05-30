@@ -9,17 +9,6 @@ class: titre
 
 .apc-logo[]
 
-<!-- ---
-class: citation
-
-.quote-mark["]
-
-> La physique des astroparticules…
-
-.cite-bar[]
-.source[Auteur · Année]
- -->
-
 ---
 class: deux-colonnes
 
@@ -80,13 +69,7 @@ class: citation
 - Collect discussion on the use of **AI in research**.
 - Identify key areas of focus through a **charter or guidelines**.
 
-\vspace{0.5cm}
-\colorbox{green!20}{
-  \parbox{\linewidth}{
-    \color{black}\textbf{Disclaimer:} Our role is \textbf{not} to attack or defend AI,
-    but to examine \newline how to use it effectively in research.
-  }
-}
+.terra[**Disclaimer:** Our role is not to attack nor defend AI, but to examine how to use it effectively in research.]
 
 ## Agentic AI & LLMs
 
@@ -442,14 +425,15 @@ class: deux-colonnes
 - **Explanation of complex concepts in scientific literature**
 - **Interview preparation** (questions)
 ]
+
 .col-droite[
 
 ## IT/Engineers
 
-- **Code assistant** \textcolor{red}{(vague)}.
+- **Code assistant** .big.red[vague].
 - **Propose code architecture & software design**.
 - **Recommend algorithms** (pros/cons).
-- \textcolor{red}{Input from Walter (to be added).}
+- .big.red[Input from Walter (to be added).]
 ]
 ]
 
@@ -470,8 +454,6 @@ class: section
 - **Knowledge gap**: State-of-the-art and capabilities evolve monthly.
 - **Need for flexibility** and a **local experimentation platform**.
 
-\vspace{1cm}
-
 ## Challenges
 
 - **Hard to quantify** environmental impact of individual AI usage.
@@ -486,8 +468,7 @@ class: section
 
 - Laboratory members are **reasonable** in usage.
 
-\vspace{1cm}
-\textcolor{red}{Add some metrics taken from poll ?}
+.big.red[Add some metrics taken from poll ?]
 
 ## Best Practices
 
@@ -520,9 +501,9 @@ $\rightarrow$ Goal: **Experiment and design**.
 
 ## Academic Integrity
 
-- \textbf{arXiv ban}: Risk of training on \textbf{non-peer-reviewed drafts} (data poisoning).
-- \textbf{Declare AI use}: \href{https://declare-ai.org}{\color{blue}\texttt{declare-ai.org}}.
-- \textbf{Adapt policies} for interns/labs (e.g., \href{https://mammouth.ai}{\color{blue}\texttt{mammouth.ai}}).
+- **arXiv ban**: Risk of training on **non-peer-reviewed drafts** (data poisoning.
+- **Declare AI use**: https://declare-ai.org.
+- **Adapt policies** for interns/labs (e.g. https://mammouth.ai).
 
 ---
 
@@ -534,7 +515,7 @@ $\rightarrow$ Goal: **Experiment and design**.
 - **Reflection on change:**
   AI is here to stay, even if usage details evolve. We must consider how it will transform our lives, professions, and teaching. \newline 
 
-**Example: \href{https://astropilot-ai.github.io/DenarioPaperPage/}{\color{blue}Denario}**
+**Example: [Denario](https://astropilot-ai.github.io/DenarioPaperPage)**
 
 \textit{...serve as a scientific research assistant. Denario can perform many different tasks, such as generating ideas, checking the literature, developing research plans, writing and executing code, making plots, and drafting and reviewing a scientific paper. The system has a modular architecture, allowing it to handle specific tasks, such as generating an idea, or carrying out end-to-end scientific analysis...}
 
@@ -555,12 +536,28 @@ $\rightarrow$ Goal: **Experiment and design**.
 **Example:**
 At a conference (UPCité, ~2 years ago), an English teacher (middle/high school) instead of banning ChatGPT for translations, organized sessions to *analyze ChatGPT translations* and compare them with manual translations.\newline
 
-$\rightarrow$ There are no ready-made answers. Instead of saying *"this is wrong,"* we should ask: \newline "Things are different now—we need to adapt."
+--> There are no ready-made answers. Instead of saying *"this is wrong,"* we should ask: \newline "Things are different now—we need to adapt."
 
 ## Best Practices
 
 - **Student responsability**: *"This is your training - you are learning"*
 - **Adapt the way skills * knowledge are evaluated**
+
+---
+class: conclusion
+
+# Merci pour votre attention
+
+.gold-bar[]
+
+## Time for discussions
+
+.apc-logo[]
+
+---
+class: conclusion
+
+# Backup
 
 ---
 
@@ -582,6 +579,54 @@ Cet outil résulte d'un accord passé avec l’entreprise française Mistral AI 
 .footnote[https://emmy.cnrs.fr/]
 
 ---
+class: deux-colonnes
+
+# Inférence as a Service dans l'ESR
+
+.colonnes[
+.gauche[
+
+  ## ILaaS
+
+  > Une fédération mutualisée visant une IA générative de confiance, robuste, éthique, et sobre
+
+  Met à disposition une API d'inférence vers des modèles open-source.
+
+  .terra[UPC va contribuer à cette fédération]
+]
+
+.droite[ .center[
+<img src="../img/ilaas-service.png" width="100%" />
+
+https://ilaas.fr
+]]
+]
+---
+class: deux-colonnes
+
+# Inférence as a Service dans l'ESR
+
+.colonnes[
+.gauche[  .center[
+## Albert – API de la DINUM
+<img src="../img/albert-dinum.png" width="100%" />
+
+https://albert.sites.beta.gouv.fr
+]]
+
+.droite[ .center[
+## Claude Code + Albert API = `le-claude`
+
+<img src="https://raw.githubusercontent.com/EiffL/le-claude/main/assets/le-claude.png" width="90%" />
+
+https://github.com/EiffL/le-claude
+]
+```bash
+  $ npx le-claude
+```
+]
+]
+---
 
 - de .red[favoriser l'absence de transparence] (_acknowledgement_) propre au métier de la recherche, lors de l'utilisation d'IA générative dans le cadre du travail
 
@@ -594,6 +639,7 @@ Cet outil résulte d'un accord passé avec l’entreprise française Mistral AI 
 .blue[**L'échelle de l'IN2P3**] est sans doute plus appropriée que celle du CNRS pour assurer l'inclusitivé de l'ensemble des personnels CNRS + Université, d'où la décision de faire ce sondage.
 
 ---
+
 # Volontés qui ressortent majoritairement
 
 - Un **cadre réglementaire** clair
@@ -725,68 +771,3 @@ impact environnemental de l'utilisation
 perte de sens dans le monde de la recherche – [essai](https://davidbessis.substack.com/p/letter-to-a-phd-student)  
 enseignement / formation des jeunes générations aux métiers  
 nouveaux risques psychosociaux – [exemple](https://siddhantkhare.com/writing/ai-fatigue-is-real)
-
----
-class: conclusion
-
-# Merci pour votre attention
-
-.gold-bar[]
-
-## Time for discussions
-
-.apc-logo[]
-
----
-class: conclusion
-
-# Backup
-
----
-class: deux-colonnes
-
-# Inférence as a Service dans l'ESR
-
-.colonnes[
-.gauche[
-
-  ##ILaaS
-
-  > Une fédération mutualisée visant une IA générative de confiance, robuste, éthique, et sobre
-
-  Met à disposition une API d'inférence vers des modèles open-source.
-
-  .terra[UPC va contribuer à cette fédération]
-]
-
-.droite[ .center[
-<img src="../img/ilaas-service.png" width="100%" />
-
-https://ilaas.fr
-]]
-]
----
-class: deux-colonnes
-
-# Inférence as a Service dans l'ESR
-
-.colonnes[
-.gauche[  .center[
-## Albert – API de la DINUM
-<img src="../img/albert-dinum.png" width="100%" />
-
-https://albert.sites.beta.gouv.fr
-]]
-
-.droite[ .center[
-## Claude Code + Albert API = `le-claude`
-
-<img src="https://raw.githubusercontent.com/EiffL/le-claude/main/assets/le-claude.png" width="90%" />
-
-https://github.com/EiffL/le-claude
-]
-```bash
-  $ npx le-claude
-```
-]
-]
