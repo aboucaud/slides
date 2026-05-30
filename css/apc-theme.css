@@ -1,0 +1,821 @@
+/**
+ * APC Remark.js Theme
+ * Astroparticule et Cosmologie — template officiel
+ *
+ * ─── Mise en page ────────────────────────────────────────────────────────────
+ * Configurez votre présentation en 16:9 (recommandé) :
+ *
+ *   var slideshow = remark.create({
+ *     ratio: '16:9',
+ *     highlightStyle: 'github',
+ *     highlightLines: true,
+ *   });
+ *
+ * ─── Classes disponibles ─────────────────────────────────────────────────────
+ * Ajoutez la classe dans votre Markdown avec `class: NOM` juste après `---` :
+ *
+ *   class: titre        Slide de titre (fond navy, logo, barre or)
+ *   class: section      Slide de section (fond navy, grand numéro en filigrane)
+ *   class: citation     Slide citation (fond rosé, guillemet géant, Lora italic)
+ *   class: conclusion   Slide de conclusion (fond navy, identique au titre)
+ *   (défaut)            Slides de contenu (fond rosé clair, barre header navy)
+ *
+ * ─── Logo ────────────────────────────────────────────────────────────────────
+ * Placez vos fichiers logo dans le même répertoire (ou adaptez les chemins) :
+ *   logo_apc_white.png  → logo blanc sur transparent  (slides sombres)
+ *   logo_apc_light.png  → logo navy sur transparent   (footer slides claires)
+ *
+ * ─── Footer automatique ──────────────────────────────────────────────────────
+ * Pour injecter le footer sur toutes les slides de contenu, utilisez un layout
+ * Remark (slide avec `layout: true`) :
+ *
+ *   ---
+ *   layout: true
+ *   ---
+ *   .footer[
+ *     ![logo](logo_apc_light.png) Astroparticule et Cosmologie
+ *   ]
+ *   ---
+ *   (vos slides ici)
+ * ─────────────────────────────────────────────────────────────────────────────
+ */
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   FONTS
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Lora:ital,wght@0,400;0,600;1,400;1,600&display=swap');
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   VARIABLES
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+:root {
+  --apc-navy:          #013975;
+  --apc-navy-mid:      #012D61;
+  --apc-navy-light:    #E6EDF6;
+  --apc-terracotta:    #B5563D;
+  --apc-terracotta-mid:#C4674F;
+  --apc-rose:          #B89D98;
+  --apc-rose-light:    #F5EEEC;
+  --apc-gold:          #E8A838;
+  --apc-white:         #FFFFFF;
+  --apc-gray-bdr:      #E8DFDC;
+  --apc-text-dark:     #2D3848;
+  --apc-text-mid:      #556070;
+  --apc-text-light:    #8B95A8;
+
+  /* Dimensions structurelles (proportionnel à la hauteur de slide) */
+  --header-h:    5.3rem;    /* hauteur barre header */
+  --footer-h:    1.5rem;    /* hauteur footer */
+  --gold-accent: 1.6rem;    /* largeur accent or (barre droite du header) */
+  --pad-x:       2.5rem;    /* padding horizontal du contenu */
+  --pad-y:       1.2rem;    /* padding vertical du contenu (sous header) */
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   BASE — toutes les slides
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+.remark-slide-content {
+  font-family: 'Inter', 'Helvetica Neue', Arial, sans-serif;
+  font-size: 1.15rem;
+  line-height: 1.55;
+  color: var(--apc-text-dark);
+  background-color: var(--apc-rose-light);
+  padding: calc(var(--header-h) + var(--pad-y)) var(--pad-x) var(--footer-h) var(--pad-x);
+  position: relative;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+/* Barre header navy + accent or à droite */
+.remark-slide-content::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: var(--header-h);
+  background: linear-gradient(
+    to right,
+    var(--apc-navy) calc(100% - var(--gold-accent)),
+    var(--apc-gold) calc(100% - var(--gold-accent))
+  );
+  z-index: 2;
+}
+
+/* ─── Titre de la slide (dans la barre header) ─────────────────────────────── */
+.remark-slide-content h1:first-child {
+  position: absolute;
+  top: 0;
+  left: var(--pad-x);
+  right: calc(var(--gold-accent) + 0.5rem);
+  height: var(--header-h);
+  margin: 0;
+  display: flex;
+  align-items: center;
+  font-size: 2.25rem;
+  font-weight: 600;
+  color: var(--apc-white);
+  z-index: 3;
+  line-height: 1.2;
+}
+
+/* Barre latérale rosée à gauche (accent Contenu texte) */
+.remark-slide-content::after {
+  content: '';
+  position: absolute;
+  top: var(--header-h);
+  left: 0;
+  bottom: var(--footer-h);
+  width: 0.18rem;
+  background: var(--apc-rose);
+}
+
+/* ─── Corps du texte ─────────────────────────────────────────────────────────── */
+.remark-slide-content h2 {
+  font-size: 1.62rem;
+  font-weight: 700;
+  color: var(--apc-navy);
+  margin: 0.4em 0 0.2em;
+}
+
+.remark-slide-content h3 {
+  font-size: 1.32rem;
+  font-weight: 600;
+  color: var(--apc-navy);
+  margin: 0.3em 0 0.15em;
+}
+
+.remark-slide-content p {
+  margin: 0.4em 0;
+}
+
+.remark-slide-content ul,
+.remark-slide-content ol {
+  margin: 0.3em 0 0.3em 1.2em;
+  padding: 0;
+}
+
+.remark-slide-content li {
+  margin-bottom: 0.25em;
+}
+
+
+.remark-slide-content li li {
+  font-size: 0.88em;
+  color: var(--apc-text-mid);
+  margin-bottom: 0.15em;
+}
+
+/* Code inline */
+.remark-slide-content code {
+  font-family: 'Fira Code', 'JetBrains Mono', monospace;
+  font-size: 0.85em;
+  background: var(--apc-gray-bdr);
+  color: var(--apc-navy);
+  padding: 0.05em 0.3em;
+  border-radius: 3px;
+}
+
+/* Blocs de code */
+.remark-slide-content pre code {
+  background: #1e2533;
+  color: #c9d1d9;
+  display: block;
+  padding: 0.6em 1em;
+  border-radius: 5px;
+  font-size: 0.8em;
+  overflow-x: auto;
+}
+
+/* ─── Footer ─────────────────────────────────────────────────────────────────── */
+.footer {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: var(--footer-h);
+  display: flex;
+  align-items: center;
+  padding: 0 var(--pad-x);
+  border-top: 1px solid var(--apc-gray-bdr);
+  font-size: 0.58rem;
+  color: var(--apc-text-light);
+  gap: 0.4rem;
+  z-index: 2;
+}
+
+.footer img {
+  height: 1rem;
+  width: auto;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+/* Numéro de page (Remark l'injecte dans .remark-slide-number) */
+.remark-slide-number {
+  position: absolute;
+  bottom: 0.35rem;
+  right: var(--pad-x);
+  font-size: 0.58rem;
+  color: var(--apc-text-light);
+  font-family: 'Inter', sans-serif;
+  z-index: 3;
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   SLIDE TITRE  (class: titre)
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+.titre.remark-slide-content {
+  background-color: var(--apc-navy);
+  padding: 0 var(--pad-x);
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/* Pas de barre header, pas d'accent latéral */
+.titre.remark-slide-content::before,
+.titre.remark-slide-content::after { display: none; }
+
+/* Bande or en haut */
+.titre.remark-slide-content .gold-stripe {
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 0.35rem;
+  background: var(--apc-gold);
+}
+
+/* Barre or horizontale sous le titre principal */
+.titre.remark-slide-content .gold-bar {
+  display: block;
+  width: 40%;
+  height: 0.18rem;
+  background: var(--apc-gold);
+  margin: 0.5rem 0 1.2rem;
+}
+
+.titre.remark-slide-content h1 {
+  position: static;
+  height: auto;
+  font-size: 3.12rem;
+  font-weight: 700;
+  color: var(--apc-white);
+  line-height: 1.15;
+  margin: 0 0 0.1rem;
+  z-index: auto;
+}
+
+.titre.remark-slide-content h2 {
+  font-size: 1.38rem;
+  font-weight: 400;
+  color: var(--apc-terracotta-mid);
+  margin: 0 0 0.1rem;
+}
+
+.titre.remark-slide-content h3 {
+  font-size: 1.08rem;
+  font-weight: 400;
+  color: var(--apc-navy-light);
+  margin: 0;
+}
+
+/* Logo positionné en bas à droite */
+.titre.remark-slide-content .logo {
+  position: absolute;
+  right: 2.5rem;
+  bottom: 2rem;
+  height: 5.5rem;
+  width: auto;
+  opacity: 1;
+}
+
+/* Numéro de page masqué sur titre */
+.titre .remark-slide-number { display: none; }
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   SLIDE SECTION  (class: section)
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+.section.remark-slide-content {
+  background-color: var(--apc-navy);
+  padding: 0 var(--pad-x);
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.section.remark-slide-content::before,
+.section.remark-slide-content::after { display: none; }
+
+/* Numéro centré dans l'arc en haut à droite */
+.section.remark-slide-content .section-num {
+  position: absolute;
+  right: -1rem;
+  top: -1rem;
+  width: 18rem;
+  height: 18rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 10rem;
+  font-weight: 700;
+  color: var(--apc-navy-mid);
+  line-height: 1;
+  z-index: 1;
+  pointer-events: none;
+  user-select: none;
+}
+
+/* Étiquette SECTION */
+.section.remark-slide-content .section-label {
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.35em;
+  color: var(--apc-terracotta-mid);
+  text-transform: uppercase;
+  margin-bottom: 0.6rem;
+  position: relative;
+  z-index: 1;
+}
+
+/* Barre terracotta sous le label */
+.section.remark-slide-content .section-bar {
+  display: block;
+  width: 5.5rem;
+  height: 0.18rem;
+  background: var(--apc-terracotta-mid);
+  margin-bottom: 0.9rem;
+  position: relative;
+  z-index: 1;
+}
+
+.section.remark-slide-content h1 {
+  position: static;
+  height: auto;
+  font-size: 2.88rem;
+  font-weight: 700;
+  color: var(--apc-white);
+  line-height: 1.2;
+  margin: 0 0 0.4rem;
+  z-index: 1;
+}
+
+.section.remark-slide-content h2 {
+  font-size: 1.2rem;
+  font-weight: 400;
+  color: var(--apc-navy-light);
+  margin: 0;
+  z-index: 1;
+  position: relative;
+}
+
+/* Arc décoratif */
+.section.remark-slide-content .arc {
+  position: absolute;
+  right: -10rem;
+  top: -10rem;
+  width: 36rem;
+  height: 36rem;
+  border-radius: 50%;
+  border: 0.5rem solid var(--apc-terracotta-mid);
+  opacity: 0.5;
+  pointer-events: none;
+}
+
+.section .remark-slide-number { color: var(--apc-navy-light); }
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   SLIDE OUTLINE  (class: outline)
+   — Plan de présentation : titre à gauche, liste numérotée à droite
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+.outline.remark-slide-content {
+  background-color: var(--apc-navy);
+  padding: 3rem var(--pad-x);
+  height: 100%;
+  display: grid;
+  grid-template-columns: 2fr 3fr;
+  align-items: center;
+  column-gap: 3rem;
+  box-sizing: border-box;
+}
+
+.outline.remark-slide-content::before,
+.outline.remark-slide-content::after { display: none; }
+
+.outline.remark-slide-content h1 {
+  position: static;
+  height: auto;
+  grid-column: 1;
+  align-self: center;
+  font-size: 2.88rem;
+  font-weight: 700;
+  color: var(--apc-white);
+  line-height: 1.2;
+  margin: 0;
+  padding-left: 1.2rem;
+  border-left: 0.25rem solid var(--apc-terracotta-mid);
+  z-index: auto;
+}
+
+.outline.remark-slide-content h2 {
+  grid-column: 1;
+  font-size: 1.1rem;
+  font-weight: 400;
+  color: var(--apc-navy-light);
+  margin: 0.4rem 0 0 1.45rem;
+}
+
+.outline.remark-slide-content ol {
+  grid-column: 2;
+  grid-row: 1 / -1;
+  align-self: center;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  counter-reset: outline-item;
+}
+
+.outline.remark-slide-content ol li {
+  counter-increment: outline-item;
+  position: relative;
+  padding: 0.6rem 0 0.6rem 3rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  color: var(--apc-navy-light);
+  font-size: 1.25rem;
+  font-weight: 400;
+  line-height: 1.4;
+  margin-bottom: 0;
+}
+
+.outline.remark-slide-content ol li:first-child {
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.outline.remark-slide-content ol li::before {
+  content: counter(outline-item, decimal-leading-zero);
+  position: absolute;
+  left: 0;
+  top: 0.6rem;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--apc-gold);
+  line-height: 1.4;
+}
+
+.outline .remark-slide-number { color: var(--apc-navy-light); }
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   SLIDE CITATION  (class: citation)
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+.citation.remark-slide-content {
+  background-color: var(--apc-rose-light);
+  padding: var(--pad-y) var(--pad-x);
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.citation.remark-slide-content::before,
+.citation.remark-slide-content::after { display: none; }
+
+/* Guillemet géant */
+.citation.remark-slide-content .quote-mark {
+  position: absolute;
+  top: -1.5rem;
+  left: 0.5rem;
+  font-family: 'Lora', Georgia, serif;
+  font-size: 14rem;
+  color: var(--apc-navy);
+  opacity: 0.12;
+  line-height: 1;
+  pointer-events: none;
+  user-select: none;
+}
+
+/* Texte de la citation */
+.citation.remark-slide-content blockquote,
+.citation.remark-slide-content p.quote {
+  font-family: 'Lora', Georgia, serif;
+  font-size: 1.45rem;
+  font-style: italic;
+  color: var(--apc-navy);
+  line-height: 1.6;
+  margin: 0 0 1rem;
+  border-left: none;
+  padding: 0;
+  position: relative;
+  z-index: 1;
+}
+
+/* Barre terracotta sous la citation */
+.citation.remark-slide-content .cite-bar {
+  display: block;
+  width: 5rem;
+  height: 0.18rem;
+  background: var(--apc-terracotta);
+  margin-bottom: 0.5rem;
+}
+
+/* Source / auteur */
+.citation.remark-slide-content cite,
+.citation.remark-slide-content p.source {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.85rem;
+  font-style: normal;
+  color: var(--apc-terracotta);
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   SLIDE CONCLUSION  (class: conclusion)
+   — Identique au titre, barre or différente
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+.conclusion.remark-slide-content {
+  background-color: var(--apc-navy);
+  padding: 0 var(--pad-x);
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.conclusion.remark-slide-content::before,
+.conclusion.remark-slide-content::after { display: none; }
+
+.conclusion.remark-slide-content h1 {
+  position: static;
+  height: auto;
+  font-size: 3.12rem;
+  font-weight: 700;
+  color: var(--apc-white);
+  line-height: 1.15;
+  margin: 0 0 0.6rem;
+  z-index: auto;
+}
+
+.conclusion.remark-slide-content h2 {
+  font-size: 1.44rem;
+  font-weight: 400;
+  color: var(--apc-terracotta-mid);
+  margin: 0 0 0.1rem;
+}
+
+.conclusion.remark-slide-content h3 {
+  font-size: 1.08rem;
+  font-weight: 400;
+  color: var(--apc-navy-light);
+  margin: 0;
+}
+
+.conclusion.remark-slide-content .gold-bar {
+  display: block;
+  width: 20%;
+  height: 0.18rem;
+  background: var(--apc-gold);
+  margin: 1.2rem 0 0.8rem;
+}
+
+.conclusion.remark-slide-content .logo {
+  position: absolute;
+  right: 2.5rem;
+  bottom: 2rem;
+  height: 5.5rem;
+  width: auto;
+}
+
+.conclusion .remark-slide-number { display: none; }
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   SLIDE DEUX COLONNES  (class: deux-colonnes)
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+.deux-colonnes.remark-slide-content {
+  /* Hérite du style de base (header, fond rosé) */
+}
+
+/* Grille deux colonnes — utilisez .col-gauche et .col-droite dans le Markdown */
+.deux-colonnes .colonnes {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+  height: 100%;
+}
+
+.deux-colonnes .col-gauche,
+.deux-colonnes .col-droite {
+  overflow: hidden;
+}
+
+.deux-colonnes .col-gauche h2 {
+  color: var(--apc-navy);
+  border-bottom: 0.18rem solid var(--apc-navy);
+  padding-bottom: 0.25rem;
+  margin-bottom: 0.5rem;
+}
+
+.deux-colonnes .col-droite h2 {
+  color: var(--apc-terracotta);
+  border-bottom: 0.18rem solid var(--apc-terracotta);
+  padding-bottom: 0.25rem;
+  margin-bottom: 0.5rem;
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   SLIDES SUR FOND BLANC  (class: blanc)
+   Pour slides Texte+Image, Chronologie, Tableau, Équipe
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+.blanc.remark-slide-content {
+  background-color: var(--apc-white);
+}
+
+.blanc.remark-slide-content::after {
+  /* Pas d'accent rose sur fond blanc */
+  display: none;
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   SLIDE PLEIN ÉCRAN  (class: fullbleed)
+   — Pas de bandeau, pas de padding : image ou contenu sur toute la surface
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+.fullbleed.remark-slide-content {
+  padding: 0;
+  background-color: #000;
+}
+
+.fullbleed.remark-slide-content::before,
+.fullbleed.remark-slide-content::after { display: none; }
+
+/* Image qui remplit tout le slide */
+.fullbleed.remark-slide-content img {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Légende optionnelle en bas (class: .caption dans le Markdown) */
+.fullbleed .caption {
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  padding: 0.4rem var(--pad-x);
+  background: rgba(0, 0, 0, 0.5);
+  color: rgba(255, 255, 255, 0.85);
+  font-size: 0.75rem;
+  text-align: right;
+}
+
+.fullbleed .remark-slide-number { color: rgba(255, 255, 255, 0.5); }
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   UTILITAIRES
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+/* Footer APC automatique — usage : .apc-footer[] */
+.apc-footer {
+  display: flex;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: var(--footer-h);
+  align-items: center;
+  padding: 0 var(--pad-x);
+  border-top: 1px solid var(--apc-gray-bdr);
+  font-size: 0.58rem;
+  color: var(--apc-text-light);
+  gap: 0.4rem;
+  z-index: 2;
+}
+
+.apc-footer::before {
+  content: '';
+  display: inline-block;
+  width: 1rem;
+  height: 1rem;
+  background-image: url('../img/logo_apc_light.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  flex-shrink: 0;
+}
+
+.apc-footer::after {
+  content: 'Astroparticule et Cosmologie';
+}
+
+/* Logo APC (blanc, fonds sombres) — usage : .apc-logo[] */
+.apc-logo {
+  display: block;
+  position: absolute;
+  right: 2.5rem;
+  bottom: 2rem;
+  width: 7.5rem;
+  height: 7.5rem;
+  background-image: url('../img/logo-apc-transparent.svg');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+/* Textes colorés */
+.navy    { color: var(--apc-navy); }
+.gold    { color: var(--apc-gold); }
+.terra   { color: var(--apc-terracotta); }
+.rose    { color: var(--apc-rose); }
+.muted   { color: var(--apc-text-mid); font-size: 0.88em; }
+.small   { font-size: 0.82em; }
+.large   { font-size: 1.25em; }
+
+/* Mise en page */
+.center  { text-align: center; }
+.right   { text-align: right; }
+.bold    { font-weight: 700; }
+
+/* Barre horizontale décorative */
+.gold-sep {
+  width: 100%;
+  height: 0.12rem;
+  background: var(--apc-gold);
+  margin: 0.8rem 0;
+  border: none;
+}
+
+/* Encadré mise en avant */
+.highlight-box {
+  background: var(--apc-navy-light);
+  border-left: 0.25rem solid var(--apc-navy);
+  padding: 0.5rem 0.8rem;
+  border-radius: 0 4px 4px 0;
+  margin: 0.5rem 0;
+}
+
+/* Image full-width */
+.img-full img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Grille générique 2 colonnes */
+.cols {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+}
+
+.cols-3 {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 1rem;
+}
+
+/* Tableau */
+.remark-slide-content table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.88rem;
+}
+
+.remark-slide-content th {
+  background: var(--apc-navy);
+  color: var(--apc-white);
+  padding: 0.35rem 0.6rem;
+  font-weight: 600;
+  text-align: left;
+}
+
+.remark-slide-content tr:nth-child(odd) td {
+  background: var(--apc-rose-light);
+}
+
+.remark-slide-content tr:nth-child(even) td {
+  background: var(--apc-white);
+}
+
+.remark-slide-content td {
+  padding: 0.3rem 0.6rem;
+  border-bottom: 1px solid var(--apc-gray-bdr);
+  color: var(--apc-text-dark);
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   REMARK SPÉCIFIQUE
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+/* Cache le slide en cours d'édition dans le mode clône */
+.remark-slide-content .remark-slide-number { z-index: 10; }
+
+/* Transitions (optionnel) */
+.remark-fading .remark-slide-content { opacity: 0.5; }
