@@ -71,7 +71,10 @@ class: citation
 - Collect discussion on the use of **AI in research**.
 - Identify key areas of focus through a **charter or guidelines**.
 
-.terra[**Disclaimer:** Our role is not to attack nor defend AI, but to examine how to use it effectively in research.]
+.highlight-box[**Disclaimer:**
+
+Our role is not to attack nor defend AI, but to examine how to use it effectively in research.
+]
 
 ## Agentic AI & LLMs
 
@@ -152,6 +155,8 @@ Afin d'éviter de répéter régulièrement les mêmes ordres à un agent pour q
 --
 
 La miniaturisation et démocratisation des .blue[outils de vision] (OCR) permet également aux agents d'obtenir une description très bonne de n'importe quelle image, ce qui rajoute la capacité de "voir" tout ce que voit un humain sur son écran (screenshots)
+
+.gold-sep[]
 
 ---
 
