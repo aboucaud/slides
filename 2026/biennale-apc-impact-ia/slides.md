@@ -1,4 +1,4 @@
-class: titre
+class: cover
 
 <!-- .gold-stripe[] -->
 
@@ -10,14 +10,14 @@ class: titre
 .apc-logo[]
 
 ---
-class: deux-colonnes
+class: twocol
 
 # Un sujet hautement sensible
 
 Comme nous le verrons à travers les résultats du sondage, ce sujet est particulièrement clivant au sein de l'APC, de l'IN2P3 ou bien dans la société française.
 
-.colonnes[
-.col-gauche[
+.columns[
+.left-col[
 
 ## Les adoptants
 
@@ -27,7 +27,7 @@ Parmi les adeptes, les demandes sont
 - la nécessité d'avoir .navy[**accès aux outils de pointe**], .terra[**par API**], pour rester compétitifs
 - la .navy[**confiance**] reste .navy[**limitée**] et la peur d'un .red[**appauvrissement intellectuel**] est présente
 ]
-.col-droite[
+.right-col[
 
 ## Les détracteurs
 
@@ -65,6 +65,8 @@ class: citation
 ---
 
 # Purpose of this Working Group
+
+.stamp[Preliminary]
 
 - Collect discussion on the use of **AI in research**.
 - Identify key areas of focus through a **charter or guidelines**.
@@ -217,33 +219,30 @@ Il conceptualise la mise à disposition d’une machine entière à un super-age
 # Le concept d'AI scientist (aparté)
 
 .left-column[
-.center[
-  <img src="../img/denario.png" width="100%">
-]
+  .img-full[![Denario](../img/denario.png)]
 ]
 
 .right-column[
-  .center[
-    <img src="../img/denario-steps.png" width="100%">
-  ]
+  .img-full[![Denario steps](../img/denario-steps.png)]
 ]
 
 .footnote[https://arxiv.org/pdf/2510.26887 discuté par Julien Zoubian lors des réunions RI3-RAGLABS]
 
 ---
-class: deux-colonnes
+class: twocol
+
 # Un essai qui insiste sur les rapports humains dans nos métiers
 
-.colonnes[
+.columns[
 .gauche[
-  .center[
-<img src="../img/hogg-why-astro.png" width="100%" />
 
-https://arxiv.org/abs/2602.10181 - February 2026
-  ]
+.img-full[![David Hogg - Why Astro](../img/hogg-why-astro.png)]
+
+.center[https://arxiv.org/abs/2602.10181 - February 2026]
 ]
 
 .droite[
+
 ## Pitch
 
 - l'arrivée des IA génératives puissantes arrive
@@ -321,7 +320,7 @@ class: middle, center
 ![](../img/taux_paiement_par_statut.svg)
 
 ---
-class: titre
+class: cover
 
 # Quelques citations choisies
 
@@ -381,12 +380,12 @@ class: section
 ## Collected during the preparation meetings and the survey
 
 ---
-class: deux-colonnes
+class: twocol
 
 # Use cases (non-exhaustive)
 
-.colonnes[
-.col-gauche[
+.columns[
+.left-col[
 
 ## Docs/Postdocs
 
@@ -394,7 +393,7 @@ class: deux-colonnes
 - **Brainstorming** (not limited to code).
 - **Bibliographic research**.
 ]
-.col-droite[
+.right-col[
 
 ## Faculty/Researchers
 
@@ -409,12 +408,12 @@ class: deux-colonnes
 ]
 
 ---
-class: deux-colonnes
+class: twocol
 
 # Use cases (non-exhaustive) 2/2
 
-.colonnes[
-.col-gauche[
+.columns[
+.left-col[
 
 ## Administrative/HR
 
@@ -426,7 +425,7 @@ class: deux-colonnes
 - **Interview preparation** (questions)
 ]
 
-.col-droite[
+.right-col[
 
 ## IT/Engineers
 
@@ -544,7 +543,7 @@ At a conference (UPCité, ~2 years ago), an English teacher (middle/high school)
 - **Adapt the way skills * knowledge are evaluated**
 
 ---
-class: conclusion
+class: cover
 
 # Merci pour votre attention
 
@@ -555,7 +554,7 @@ class: conclusion
 .apc-logo[]
 
 ---
-class: conclusion
+class: cover
 
 # Backup
 
@@ -579,11 +578,11 @@ Cet outil résulte d'un accord passé avec l’entreprise française Mistral AI 
 .footnote[https://emmy.cnrs.fr/]
 
 ---
-class: deux-colonnes
+class: twocol
 
 # Inférence as a Service dans l'ESR
 
-.colonnes[
+.columns[
 .gauche[
 
   ## ILaaS
@@ -596,20 +595,20 @@ class: deux-colonnes
 ]
 
 .droite[ .center[
-<img src="../img/ilaas-service.png" width="100%" />
+.img-full[![ILaaS service](../img/ilaas-service.png)]
 
 https://ilaas.fr
 ]]
 ]
 ---
-class: deux-colonnes
+class: twocol
 
 # Inférence as a Service dans l'ESR
 
-.colonnes[
+.columns[
 .gauche[  .center[
 ## Albert – API de la DINUM
-<img src="../img/albert-dinum.png" width="100%" />
+.img-full[![Albert DINUM](../img/albert-dinum.png)]
 
 https://albert.sites.beta.gouv.fr
 ]]

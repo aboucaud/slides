@@ -1,9 +1,9 @@
 /**
  * APC Remark.js Theme
- * Astroparticule et Cosmologie — template officiel
+ * Astroparticule et Cosmologie — official template
  *
- * ─── Mise en page ────────────────────────────────────────────────────────────
- * Configurez votre présentation en 16:9 (recommandé) :
+ * ─── Layout ───────────────────────────────────────────────────────────────────
+ * Configure your presentation in 16:9 (recommended):
  *
  *   var slideshow = remark.create({
  *     ratio: '16:9',
@@ -11,23 +11,77 @@
  *     highlightLines: true,
  *   });
  *
- * ─── Classes disponibles ─────────────────────────────────────────────────────
- * Ajoutez la classe dans votre Markdown avec `class: NOM` juste après `---` :
+ * ─── Slide types ──────────────────────────────────────────────────────────────
+ * Declare the class right after `---` in Markdown:
  *
- *   class: titre        Slide de titre (fond navy, logo, barre or)
- *   class: section      Slide de section (fond navy, grand numéro en filigrane)
- *   class: citation     Slide citation (fond rosé, guillemet géant, Lora italic)
- *   class: conclusion   Slide de conclusion (fond navy, identique au titre)
- *   (défaut)            Slides de contenu (fond rosé clair, barre header navy)
+ *   class: cover      Cover slide (navy bg, centred flex, gold bar, logo) — title & conclusion
+ *   class: section    Section interlude (navy bg, large number inside arc, top-right)
+ *   class: outline    Outline slide (navy bg, title left / numbered list right)
+ *   class: citation   Quote slide (rose-light bg, giant quote mark, Lora italic)
+ *   class: twocol     Two-column content slide (inherits default header)
+ *   class: blanc      White-background content slide (keeps navy header)
+ *   class: fullbleed  Full-bleed image/media slide (no header, no padding)
+ *   (default)         Content slide (rose-light bg, navy header bar)
  *
- * ─── Logo ────────────────────────────────────────────────────────────────────
- * Placez vos fichiers logo dans le même répertoire (ou adaptez les chemins) :
- *   logo_apc_white.png  → logo blanc sur transparent  (slides sombres)
- *   logo_apc_light.png  → logo navy sur transparent   (footer slides claires)
+ * ─── Slide components ─────────────────────────────────────────────────────────
+ * Inline helpers used inside specific slide types:
  *
- * ─── Footer automatique ──────────────────────────────────────────────────────
- * Pour injecter le footer sur toutes les slides de contenu, utilisez un layout
- * Remark (slide avec `layout: true`) :
+ *   .gold-bar[]          Gold horizontal accent bar           (cover, section)
+ *   .gold-stripe[]       Thin gold top stripe (0.35rem)       (cover)
+ *   .logo[![logo]()]     Logo anchored bottom-right           (cover)
+ *   .section-num[]       Large number inside the arc          (section)
+ *   .section-label[]     Uppercase label above the title      (section)
+ *   .section-bar[]       Short terracotta bar                 (section)
+ *   .arc[]               Decorative circle, top-right corner  (section)
+ *   .quote-mark["]       Giant italic quotation mark          (citation)
+ *   .cite-bar[]          Short terracotta bar below quote     (citation)
+ *   .source[] / cite     Quote attribution                    (citation)
+ *   .caption[]           Semi-transparent caption overlay     (fullbleed)
+ *   .columns[…]          Two-column wrapper                   (twocol)
+ *   .left-col[] / .right-col[]  Column content               (twocol)
+ *   .apc-footer[]        Auto APC logo + lab name footer      (any)
+ *   .apc-logo[]          White SVG logo, bottom-right         (dark slides)
+ *   .stamp[TEXT]         Terracotta rubber-stamp overlay      (any)
+ *   .gold-sep            Gold full-width horizontal rule      (any)
+ *   .highlight-box       Navy-light box with navy left border (any)
+ *   .footer[…]           Manual footer (logo + text)          (layout slide)
+ *
+ * ─── Layout utilities ─────────────────────────────────────────────────────────
+ *   .cols                2-column grid (1fr / 1fr)
+ *   .cols-3              3-column grid (1fr / 1fr / 1fr)
+ *   .img-full            Makes image fill its container width
+ *   .center / .right     Text alignment
+ *   .bold                font-weight 700
+ *
+ * ─── Text utilities ───────────────────────────────────────────────────────────
+ *   .navy / .gold / .terra / .rose   APC brand colours
+ *   .muted               Secondary text colour (--apc-text-mid, 0.88em)
+ *   .small               0.82em
+ *   .large               1.25em
+ *
+ * ─── Colour palette ───────────────────────────────────────────────────────────
+ *   --apc-navy           #013975   Main dark background
+ *   --apc-navy-mid       #012D61   Watermark, arc overlay
+ *   --apc-navy-light     #E6EDF6   Text on navy, subtle accents
+ *   --apc-terracotta     #B5563D   Strong accents, stamp
+ *   --apc-terracotta-mid #C4674F   Common accents, bars
+ *   --apc-rose           #B89D98   Left sidebar on content slides
+ *   --apc-rose-light     #F5EEEC   Content slide background (default)
+ *   --apc-gold           #E8A838   Header bar accent, counters
+ *   --apc-white          #FFFFFF   Text on dark backgrounds
+ *   --apc-gray-bdr       #E8DFDC   Borders, separators
+ *   --apc-text-dark      #2D3848   Main body text
+ *   --apc-text-mid       #556070   Secondary text
+ *   --apc-text-light     #8B95A8   Captions, page numbers
+ *
+ * ─── Logo files ───────────────────────────────────────────────────────────────
+ * Place logo files in the same directory (or adjust paths):
+ *   logo_apc_white.png          → white logo on transparent  (dark slides)
+ *   logo_apc_light.png          → navy logo on transparent   (light slide footers)
+ *   logo-apc-transparent.svg    → SVG logo used by .apc-logo utility class
+ *
+ * ─── Automatic footer ─────────────────────────────────────────────────────────
+ * To inject a footer on all content slides, use a Remark layout slide:
  *
  *   ---
  *   layout: true
@@ -36,7 +90,7 @@
  *     ![logo](logo_apc_light.png) Astroparticule et Cosmologie
  *   ]
  *   ---
- *   (vos slides ici)
+ *   (your slides here)
  * ─────────────────────────────────────────────────────────────────────────────
  */
 
@@ -65,12 +119,12 @@
   --apc-text-mid:      #556070;
   --apc-text-light:    #8B95A8;
 
-  /* Dimensions structurelles (proportionnel à la hauteur de slide) */
-  --header-h:    5.3rem;    /* hauteur barre header */
-  --footer-h:    1.5rem;    /* hauteur footer */
-  --gold-accent: 1.6rem;    /* largeur accent or (barre droite du header) */
-  --pad-x:       2.5rem;    /* padding horizontal du contenu */
-  --pad-y:       1.2rem;    /* padding vertical du contenu (sous header) */
+  /* Structural dimensions (relative to slide height) */
+  --header-h:    5.3rem;    /* header bar height */
+  --footer-h:    1.5rem;    /* footer height */
+  --gold-accent: 1.6rem;    /* gold accent width (right side of header) */
+  --pad-x:       2.5rem;    /* horizontal content padding */
+  --pad-y:       1.2rem;    /* vertical content padding (below header) */
 }
 
 /* ═══════════════════════════════════════════════════════════════════════════
@@ -89,7 +143,7 @@
   box-sizing: border-box;
 }
 
-/* Barre header navy + accent or à droite */
+/* Navy header bar + gold accent on the right */
 .remark-slide-content::before {
   content: '';
   position: absolute;
@@ -103,7 +157,7 @@
   z-index: 2;
 }
 
-/* ─── Titre de la slide (dans la barre header) ─────────────────────────────── */
+/* ─── Slide title (displayed inside the header bar) ─────────────────────────── */
 .remark-slide-content h1:first-child {
   position: absolute;
   top: 0;
@@ -120,7 +174,7 @@
   line-height: 1.2;
 }
 
-/* Barre latérale rosée à gauche (accent Contenu texte) */
+/* Rose left sidebar accent */
 .remark-slide-content::after {
   content: '';
   position: absolute;
@@ -131,7 +185,7 @@
   background: var(--apc-rose);
 }
 
-/* ─── Corps du texte ─────────────────────────────────────────────────────────── */
+/* ─── Body text ──────────────────────────────────────────────────────────────── */
 .remark-slide-content h2 {
   font-size: 1.62rem;
   font-weight: 700;
@@ -167,7 +221,7 @@
   margin-bottom: 0.15em;
 }
 
-/* Code inline */
+/* Inline code */
 .remark-slide-content code {
   font-family: 'Fira Code', 'JetBrains Mono', monospace;
   font-size: 0.85em;
@@ -177,7 +231,7 @@
   border-radius: 3px;
 }
 
-/* Blocs de code */
+/* Code blocks */
 .remark-slide-content pre code {
   background: #1e2533;
   color: #c9d1d9;
@@ -188,7 +242,7 @@
   overflow-x: auto;
 }
 
-/* ─── Footer ─────────────────────────────────────────────────────────────────── */
+/* ─── Footer ────────────────────────────────────────────────────────────────── */
 .footer {
   position: absolute;
   bottom: 0;
@@ -212,7 +266,7 @@
   vertical-align: middle;
 }
 
-/* Numéro de page (Remark l'injecte dans .remark-slide-number) */
+/* Page number (injected by Remark into .remark-slide-number) */
 .remark-slide-number {
   position: absolute;
   bottom: 0.35rem;
@@ -224,10 +278,11 @@
 }
 
 /* ═══════════════════════════════════════════════════════════════════════════
-   SLIDE TITRE  (class: titre)
+   COVER SLIDE  (class: cover)
+   — Title / conclusion slide: navy bg, centred flex, gold bar, optional logo
    ═══════════════════════════════════════════════════════════════════════════ */
 
-.titre.remark-slide-content {
+.cover.remark-slide-content {
   background-color: var(--apc-navy);
   padding: 0 var(--pad-x);
   height: 100%;
@@ -236,64 +291,63 @@
   justify-content: center;
 }
 
-/* Pas de barre header, pas d'accent latéral */
-.titre.remark-slide-content::before,
-.titre.remark-slide-content::after { display: none; }
+/* No header bar, no lateral accent */
+.cover.remark-slide-content::before,
+.cover.remark-slide-content::after { display: none; }
 
-/* Bande or en haut */
-.titre.remark-slide-content .gold-stripe {
+/* Thin gold stripe at the top */
+.cover.remark-slide-content .gold-stripe {
   position: absolute;
   top: 0; left: 0; right: 0;
   height: 0.35rem;
   background: var(--apc-gold);
 }
 
-/* Barre or horizontale sous le titre principal */
-.titre.remark-slide-content .gold-bar {
+/* Gold horizontal accent bar */
+.cover.remark-slide-content .gold-bar {
   display: block;
-  width: 40%;
+  width: 35%;
   height: 0.18rem;
   background: var(--apc-gold);
-  margin: 0.5rem 0 1.2rem;
+  margin: 0.6rem 0 1rem;
 }
 
-.titre.remark-slide-content h1 {
+.cover.remark-slide-content h1 {
   position: static;
   height: auto;
   font-size: 3.12rem;
   font-weight: 700;
   color: var(--apc-white);
   line-height: 1.15;
-  margin: 0 0 0.1rem;
+  margin: 0 0 0.3rem;
   z-index: auto;
 }
 
-.titre.remark-slide-content h2 {
-  font-size: 1.38rem;
+.cover.remark-slide-content h2 {
+  font-size: 1.4rem;
   font-weight: 400;
   color: var(--apc-terracotta-mid);
   margin: 0 0 0.1rem;
 }
 
-.titre.remark-slide-content h3 {
+.cover.remark-slide-content h3 {
   font-size: 1.08rem;
   font-weight: 400;
   color: var(--apc-navy-light);
   margin: 0;
 }
 
-/* Logo positionné en bas à droite */
-.titre.remark-slide-content .logo {
+/* Logo anchored bottom-right */
+.cover.remark-slide-content .logo {
   position: absolute;
   right: 2.5rem;
   bottom: 2rem;
   height: 5.5rem;
   width: auto;
-  opacity: 1;
 }
 
-/* Numéro de page masqué sur titre */
-.titre .remark-slide-number { display: none; }
+/* Page number hidden on cover slide */
+.cover .remark-slide-number { display: none; }
 
 /* ═══════════════════════════════════════════════════════════════════════════
    SLIDE SECTION  (class: section)
@@ -312,7 +366,7 @@
 .section.remark-slide-content::before,
 .section.remark-slide-content::after { display: none; }
 
-/* Numéro centré dans l'arc en haut à droite */
+/* Section number centered inside the arc (top-right corner) */
 .section.remark-slide-content .section-num {
   position: absolute;
   right: -1rem;
@@ -331,7 +385,7 @@
   user-select: none;
 }
 
-/* Étiquette SECTION */
+/* Section label */
 .section.remark-slide-content .section-label {
   font-size: 0.7rem;
   font-weight: 600;
@@ -343,7 +397,7 @@
   z-index: 1;
 }
 
-/* Barre terracotta sous le label */
+/* Terracotta bar below the label */
 .section.remark-slide-content .section-bar {
   display: block;
   width: 5.5rem;
@@ -374,7 +428,7 @@
   position: relative;
 }
 
-/* Arc décoratif */
+/* Decorative arc */
 .section.remark-slide-content .arc {
   position: absolute;
   right: -10rem;
@@ -391,7 +445,7 @@
 
 /* ═══════════════════════════════════════════════════════════════════════════
    SLIDE OUTLINE  (class: outline)
-   — Plan de présentation : titre à gauche, liste numérotée à droite
+   — Presentation outline: title on the left, numbered list on the right
    ═══════════════════════════════════════════════════════════════════════════ */
 
 .outline.remark-slide-content {
@@ -486,7 +540,7 @@
 .citation.remark-slide-content::before,
 .citation.remark-slide-content::after { display: none; }
 
-/* Guillemet géant */
+/* Giant quotation mark */
 .citation.remark-slide-content .quote-mark {
   position: absolute;
   top: -1.5rem;
@@ -500,7 +554,7 @@
   user-select: none;
 }
 
-/* Texte de la citation */
+/* Quote text */
 .citation.remark-slide-content blockquote,
 .citation.remark-slide-content p.quote {
   font-family: 'Lora', Georgia, serif;
@@ -515,7 +569,7 @@
   z-index: 1;
 }
 
-/* Barre terracotta sous la citation */
+/* Terracotta bar below the quote */
 .citation.remark-slide-content .cite-bar {
   display: block;
   width: 5rem;
@@ -524,7 +578,7 @@
   margin-bottom: 0.5rem;
 }
 
-/* Source / auteur */
+/* Source / author */
 .citation.remark-slide-content cite,
 .citation.remark-slide-content p.source {
   font-family: 'Inter', sans-serif;
@@ -534,94 +588,30 @@
 }
 
 /* ═══════════════════════════════════════════════════════════════════════════
-   SLIDE CONCLUSION  (class: conclusion)
-   — Identique au titre, barre or différente
+   TWO-COLUMN SLIDE  (class: twocol)
    ═══════════════════════════════════════════════════════════════════════════ */
 
-.conclusion.remark-slide-content {
-  background-color: var(--apc-navy);
-  padding: 0 var(--pad-x);
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-
-.conclusion.remark-slide-content::before,
-.conclusion.remark-slide-content::after { display: none; }
-
-.conclusion.remark-slide-content h1 {
-  position: static;
-  height: auto;
-  font-size: 3.12rem;
-  font-weight: 700;
-  color: var(--apc-white);
-  line-height: 1.15;
-  margin: 0 0 0.6rem;
-  z-index: auto;
-}
-
-.conclusion.remark-slide-content h2 {
-  font-size: 1.44rem;
-  font-weight: 400;
-  color: var(--apc-terracotta-mid);
-  margin: 0 0 0.1rem;
-}
-
-.conclusion.remark-slide-content h3 {
-  font-size: 1.08rem;
-  font-weight: 400;
-  color: var(--apc-navy-light);
-  margin: 0;
-}
-
-.conclusion.remark-slide-content .gold-bar {
-  display: block;
-  width: 20%;
-  height: 0.18rem;
-  background: var(--apc-gold);
-  margin: 1.2rem 0 0.8rem;
-}
-
-.conclusion.remark-slide-content .logo {
-  position: absolute;
-  right: 2.5rem;
-  bottom: 2rem;
-  height: 5.5rem;
-  width: auto;
-}
-
-.conclusion .remark-slide-number { display: none; }
-
-/* ═══════════════════════════════════════════════════════════════════════════
-   SLIDE DEUX COLONNES  (class: deux-colonnes)
-   ═══════════════════════════════════════════════════════════════════════════ */
-
-.deux-colonnes.remark-slide-content {
-  /* Hérite du style de base (header, fond rosé) */
-}
-
-/* Grille deux colonnes — utilisez .col-gauche et .col-droite dans le Markdown */
-.deux-colonnes .colonnes {
+/* Two-column grid — use .left-col and .right-col in Markdown */
+.twocol .columns {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 1.5rem;
   height: 100%;
 }
 
-.deux-colonnes .col-gauche,
-.deux-colonnes .col-droite {
+.twocol .left-col,
+.twocol .right-col {
   overflow: hidden;
 }
 
-.deux-colonnes .col-gauche h2 {
+.twocol .left-col h2 {
   color: var(--apc-navy);
   border-bottom: 0.18rem solid var(--apc-navy);
   padding-bottom: 0.25rem;
   margin-bottom: 0.5rem;
 }
 
-.deux-colonnes .col-droite h2 {
+.twocol .right-col h2 {
   color: var(--apc-terracotta);
   border-bottom: 0.18rem solid var(--apc-terracotta);
   padding-bottom: 0.25rem;
@@ -629,8 +619,8 @@
 }
 
 /* ═══════════════════════════════════════════════════════════════════════════
-   SLIDES SUR FOND BLANC  (class: blanc)
-   Pour slides Texte+Image, Chronologie, Tableau, Équipe
+   WHITE BACKGROUND SLIDE  (class: blanc)
+   For text+image, timeline, table, and team slides
    ═══════════════════════════════════════════════════════════════════════════ */
 
 .blanc.remark-slide-content {
@@ -638,13 +628,13 @@
 }
 
 .blanc.remark-slide-content::after {
-  /* Pas d'accent rose sur fond blanc */
+  /* No rose accent on white background */
   display: none;
 }
 
 /* ═══════════════════════════════════════════════════════════════════════════
-   SLIDE PLEIN ÉCRAN  (class: fullbleed)
-   — Pas de bandeau, pas de padding : image ou contenu sur toute la surface
+   FULL-BLEED SLIDE  (class: fullbleed)
+   — No header, no padding: image or content fills the entire slide
    ═══════════════════════════════════════════════════════════════════════════ */
 
 .fullbleed.remark-slide-content {
@@ -655,7 +645,7 @@
 .fullbleed.remark-slide-content::before,
 .fullbleed.remark-slide-content::after { display: none; }
 
-/* Image qui remplit tout le slide */
+/* Image filling the entire slide */
 .fullbleed.remark-slide-content img {
   position: absolute;
   top: 0; left: 0;
@@ -665,7 +655,7 @@
   display: block;
 }
 
-/* Légende optionnelle en bas (class: .caption dans le Markdown) */
+/* Optional caption at the bottom (use .caption[] in Markdown) */
 .fullbleed .caption {
   position: absolute;
   bottom: 0; left: 0; right: 0;
@@ -679,10 +669,10 @@
 .fullbleed .remark-slide-number { color: rgba(255, 255, 255, 0.5); }
 
 /* ═══════════════════════════════════════════════════════════════════════════
-   UTILITAIRES
+   UTILITIES
    ═══════════════════════════════════════════════════════════════════════════ */
 
-/* Footer APC automatique — usage : .apc-footer[] */
+/* Automatic APC footer — usage: .apc-footer[] */
 .apc-footer {
   display: flex;
   position: absolute;
@@ -715,7 +705,7 @@
   content: 'Astroparticule et Cosmologie';
 }
 
-/* Logo APC (blanc, fonds sombres) — usage : .apc-logo[] */
+/* APC logo (white, for dark backgrounds) — usage: .apc-logo[] */
 .apc-logo {
   display: block;
   position: absolute;
@@ -729,7 +719,7 @@
   background-position: center;
 }
 
-/* Textes colorés */
+/* Text colors */
 .navy    { color: var(--apc-navy); }
 .gold    { color: var(--apc-gold); }
 .terra   { color: var(--apc-terracotta); }
@@ -738,12 +728,34 @@
 .small   { font-size: 0.82em; }
 .large   { font-size: 1.25em; }
 
-/* Mise en page */
+/* Layout */
 .center  { text-align: center; }
 .right   { text-align: right; }
 .bold    { font-weight: 700; }
 
-/* Barre horizontale décorative */
+/* Decorative stamp — usage: .stamp[PRELIMINARY] */
+.stamp {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(-18deg);
+  padding: 1rem 2rem;
+  border: 0.5rem solid var(--apc-terracotta);
+  outline: 0.1rem solid var(--apc-terracotta);
+  outline-offset: 0.45rem;
+  color: var(--apc-terracotta);
+  font-size: 2.5rem;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  opacity: 0.35;
+  white-space: nowrap;
+  pointer-events: none;
+  user-select: none;
+  z-index: 10;
+}
+
+/* Decorative horizontal bar */
 .gold-sep {
   width: 100%;
   height: 0.12rem;
@@ -752,7 +764,7 @@
   border: none;
 }
 
-/* Encadré mise en avant */
+/* Highlighted box */
 .highlight-box {
   background: var(--apc-navy-light);
   border-left: 0.25rem solid var(--apc-navy);
@@ -768,7 +780,7 @@
   display: block;
 }
 
-/* Grille générique 2 colonnes */
+/* Generic 2-column grid */
 .cols {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -781,7 +793,7 @@
   gap: 1rem;
 }
 
-/* Tableau */
+/* Table */
 .remark-slide-content table {
   width: 100%;
   border-collapse: collapse;
@@ -811,11 +823,11 @@
 }
 
 /* ═══════════════════════════════════════════════════════════════════════════
-   REMARK SPÉCIFIQUE
+   REMARK-SPECIFIC
    ═══════════════════════════════════════════════════════════════════════════ */
 
-/* Cache le slide en cours d'édition dans le mode clône */
+/* Hides the slide being edited in clone mode */
 .remark-slide-content .remark-slide-number { z-index: 10; }
 
-/* Transitions (optionnel) */
+/* Transitions (optional) */
 .remark-fading .remark-slide-content { opacity: 0.5; }
