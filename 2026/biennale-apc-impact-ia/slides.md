@@ -5,37 +5,37 @@ class: cover
 # Agentic AI impact on our activities
 .gold-bar[]
 ## Philippe Bacon - Paul Zakharov - Alexandre Boucaud
-### Biennale APC - Juin 2026
+### Biennale APC - June 2026
 
 .apc-logo[]
 
 ---
 class: twocol
 
-# Un sujet hautement sensible
+# A Highly Divisive Topic
 
-Comme nous le verrons à travers les résultats du sondage, ce sujet est particulièrement clivant au sein de l'APC, de l'IN2P3 ou bien dans la société française.
+As we will see through the survey results, this topic is particularly divisive within APC, IN2P3, and in French society more broadly.
 
 .columns[
 .left-col[
 
-## Les adoptants
+## Adopters
 
-Parmi les adeptes, les demandes sont
+Among enthusiasts, the main requests are
 
-- .navy[**sécurité des données**] et la mise en place d'.terra[**outils institutionnels**] avec un .navy[**usage raisonné**]
-- la nécessité d'avoir .navy[**accès aux outils de pointe**], .terra[**par API**], pour rester compétitifs
-- la .navy[**confiance**] reste .navy[**limitée**] et la peur d'un .red[**appauvrissement intellectuel**] est présente
+- .navy[**data security**] and the deployment of .terra[**institutional tools**] with .navy[**responsible usage**]
+- the need for .navy[**access to state-of-the-art tools**], .terra[**via API**], to stay competitive
+- .navy[**trust**] remains .navy[**limited**] and the fear of .red[**intellectual impoverishment**] is present
 ]
 .right-col[
 
-## Les détracteurs
+## Critics
 
-Les raisons principales des oppositions fortes
+The main reasons for strong opposition
 
-- un .red[gouffre énergétique et matériel] à l'impact écologique .red[non soutenable]
-- une .red[source de précarisation du travail] et d'affaiblissement
-- un .blue[**choix**] technologique qui nécessite un .blue[**débat collectif**]
+- an .red[energy and material sinkhole] with an .red[unsustainable] ecological impact
+- a .red[source of job precarity] and skills erosion
+- a .blue[**technological choice**] that requires .blue[**collective debate**]
 ]
 ]
 
@@ -48,7 +48,7 @@ background-size: cover
 
 .hidden[toto]  
 .hidden[tototototototototototo]
-👉 [Lire les résultats de la consultation][consult]
+👉 [Read the consultation results][consult]
 
 [consult]: https://www.conseil-ia-numerique.fr/le-numerique-est-une-affaire-collective-decouvrez-les-resultats-de-la-consultation-citoyenne-du
 
@@ -110,31 +110,31 @@ class: section
 
 ---
 
-# L'IA agentique en 1 slide
+# Agentic AI in 1 Slide
 
-Les modèles de langage de 2024 sont devenus en 2025 des .blue[modèles de raisonnement] (chain-of-thought), permettant de travailler par étapes et sur de plus larges données d'entrée.
-
---
-
-Puis ils ont été dotés d'outils permettant d'accomplir des calculs ou de faire des actions (récupérer le contenu d'une page internet, écrire, exécuter un script puis lire le résultat).
+The 2024 language models became .blue[reasoning models] (chain-of-thought) in 2025, enabling step-by-step processing of larger inputs.
 
 --
 
-En leur donnant la capacité de s'évaluer à la fin d'une tâche, pour éventuellement recommencer autrement, ils sont devenus des .blue[_agents_].
+They were then equipped with tools to perform calculations or take actions (retrieve web page content, write and run a script, then read the result).
 
 --
 
-Les agents se sont ensuite spécialisés à des tâches précises (ex. coder, lire un pdf, chercher sur internet), ce qui a créé le concept de .blue[multi-agents]. Un agent orchestrateur qui gère des agents spécialisés et qui agrège le résultat.
+By giving them the ability to self-evaluate at the end of a task — and potentially retry differently — they became .blue[_agents_].
 
 --
 
-Jusqu'à fin 2025, ces agents .red[faisaient beaucoup d'erreurs ou étaient inutilement très verbeux en code], d'où un sentiment d'outil peu fiable.
+Agents then specialized in specific tasks (e.g. coding, reading PDFs, web search), giving rise to the concept of .blue[multi-agent] systems — an orchestrator agent managing specialized agents and aggregating results.
+
+--
+
+Until late 2025, these agents .red[made many errors or produced needlessly verbose code], leading to a perception of unreliable tools.
 
 ---
 
-# Le Model Context Protocol
+# The Model Context Protocol
 
-Anthropic a mis en 2025 au point un protocol de communication pour que les agents puissent utiliser très facilement les outils à travers leur API, ce qui permet de retourner directement des résultats dans le bon format.
+In 2025, Anthropic developed a communication protocol enabling agents to easily use tools via their API, returning results directly in the correct format.
 
 .center[
   <img src="https://raw.githubusercontent.com/lbourdois/blog/refs/heads/master/assets/images/Agents/image_35.png" width="70%">
@@ -144,31 +144,31 @@ Anthropic a mis en 2025 au point un protocol de communication pour que les agent
 
 ---
 
-# La personnalisation des agents
+# Agent Customization
 
-La personnalisation des agents s'est normalisée autour d'un fichier .red[`AGENT.md`] qui pour un projet donné contient tout le contexte qu'il doit savoir et peut servir de mémoire statique. 
-
---
-
-Afin d'éviter de répéter régulièrement les mêmes ordres à un agent pour qu'il accomplisse des tâches spécifiques, des fichiers de compétences .red[`SKILLS.md`] ont vu le jour, permettant d'augmenter et de focaliser leur capacités.
+Agent customization has converged around a .red[`AGENT.md`] file that, for a given project, holds all the context the agent needs and serves as static memory.
 
 --
 
-La miniaturisation et démocratisation des .blue[outils de vision] (OCR) permet également aux agents d'obtenir une description très bonne de n'importe quelle image, ce qui rajoute la capacité de "voir" tout ce que voit un humain sur son écran (screenshots)
+To avoid repeatedly issuing the same instructions for specific tasks, .red[`SKILLS.md`] skill files emerged, allowing agents' capabilities to be extended and focused.
+
+--
+
+The miniaturization and democratization of .blue[vision tools] (OCR) also gives agents the ability to produce accurate descriptions of any image, adding the capacity to "see" everything a human sees on their screen (screenshots).
 
 .gold-sep[]
 
 ---
 
-# Début 2026 changement de paradigme
+# Early 2026: A Paradigm Shift
 
 .left-column[
 
-  Un bond très important dans les performances depuis décembre 2025 et un deuxième en février 2026.
+  A major leap in performance since December 2025, followed by a second one in February 2026.
   
-  Cet effet s'est notamment vu d'abord avec la sortie de Google Gemini 3 Pro, puis des modèles Anthropic Claude Opus 4.6 (large) et Claude Sonnet 4.6 (médium).
+  This was first seen with the release of Google Gemini 3 Pro, then Anthropic's Claude Opus 4.6 (large) and Claude Sonnet 4.6 (medium).
 
-  .terra[**La fiabilité et la focalisation des modèles fait un énorme bond en avant**] et les rend beaucoup plus utiles aux tâches de développement.
+  .terra[**Model reliability and focus made an enormous leap forward**], making them far more useful for development tasks.
 
 ]
 
@@ -180,7 +180,7 @@ La miniaturisation et démocratisation des .blue[outils de vision] (OCR) permet 
 
 ---
 
-# Benchmark sur la détection d'erreurs
+# Error Detection Benchmark
 
 .center[
 <img src="../img/bullshitbenchv2-march2026.png" width="80%">
@@ -190,12 +190,12 @@ La miniaturisation et démocratisation des .blue[outils de vision] (OCR) permet 
 
 ---
 
-# Impact sur notre métier
+# Impact on Our Profession
 
 .left-column[
-Divers études récentes (souvent biaisées car montées par les grands groupes eux mêmes) indiquent le pourcentage des tâches classiques d’un corps de métier que l’IA serait en capacité d’accomplir.
+Various recent studies (often biased, as they are commissioned by the tech giants themselves) report the percentage of typical job tasks that AI would be capable of handling.
 
-On voit que notre métier fait partie de ceux qui vont subir une pression forte de l'IA, qu’on le veuille ou non.
+It is clear that our profession is among those that will face strong AI-driven pressure, whether we like it or not.
 ]
 
 .right-column[
@@ -209,19 +209,19 @@ On voit que notre métier fait partie de ceux qui vont subir une pression forte 
 
 ---
 
-# Clawdbot / OpenClaw (aparté)
+# Clawdbot / OpenClaw (aside)
 
-En parallèle, à partir de fin Novembre 2025, un projet d'IA agentique indépendante voit le jour.
+In parallel, starting in late November 2025, an independent agentic AI project emerged.
 
 .center[<img src="https://imgs.search.brave.com/GLssrqcoxMIafoEOGcEtWCrEHznGg0GOfa-q73oq-oY/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9kb2lt/YWdlcy5ueWMzLmNk/bi5kaWdpdGFsb2Nl/YW5zcGFjZXMuY29t/LzAwOEFydGljbGVJ/bWFnZXMvV2hhdC1J/cy1PcGVuQ2xhdy9X/aGF0JTIwaXMlMjBP/cGVuQ2xhdy5wbmc" width="40%">]
 
-Il conceptualise la mise à disposition d’une machine entière à un super-agent (équivalent Jarvis dans IronMan ©) qu'il va piloter de manière autonome : contrôle de la boîte mail, gestion de tous les fichiers sur la machine, pilotage à distance par messagerie (WhatsApp / Telegram). On commence par lui donner une âme .red[`SOUL.md`] et on le laisse faire ses tâches.  
+The concept is to hand an entire machine over to a super-agent (the Jarvis equivalent from IronMan ©) to pilot autonomously: email inbox control, full file management, remote control via messaging apps (WhatsApp / Telegram). You start by giving it a soul .red[`SOUL.md`] and let it handle its tasks.  
 
-.right[[Et ces agents deviennent des bullies..](https://simonwillison.net/2026/Feb/12/an-ai-agent-published-a-hit-piece-on-me/)]
+.right[[And these agents can turn into bullies..](https://simonwillison.net/2026/Feb/12/an-ai-agent-published-a-hit-piece-on-me/)]
 
 ---
 
-# Le concept d'AI scientist (aparté)
+# The AI Scientist Concept (aside)
 
 .left-column[
   .img-full[![Denario](../img/denario.png)]
@@ -231,12 +231,10 @@ Il conceptualise la mise à disposition d’une machine entière à un super-age
   .img-full[![Denario steps](../img/denario-steps.png)]
 ]
 
-.footnote[https://arxiv.org/pdf/2510.26887 discuté par Julien Zoubian lors des réunions RI3-RAGLABS]
-
 ---
 class: twocol
 
-# Un essai qui insiste sur les rapports humains dans nos métiers
+# An Essay Emphasizing the Human Dimension of Our Work
 
 .columns[
 .gauche[
@@ -250,10 +248,10 @@ class: twocol
 
 ## Pitch
 
-- l'arrivée des IA génératives puissantes arrive
-- plusieurs options s'offrent à nous en tant que scientifiques
-- deux sont particulièrement mauvaises (l'acceptation du "tout IA") et le rejet complet de leur utilisation par "flicage" des chercheurs
-- il en profite pour redire les fondamentaux qui font qu'on aime ce travail et ouvre quelques perspectives sur notre manière de travailler avec l'IA
+- the arrival of powerful generative AI is here
+- several options are available to us as scientists
+- two are particularly bad: full acceptance ("all-AI") and outright rejection through policing of researchers
+- he uses it to revisit the fundamentals of why we love this work and opens perspectives on how to work alongside AI
 ]
 ]
 
@@ -272,62 +270,62 @@ class: section
 ---
 class: middle, center
 
-# Utilisation par les développeurs
+# Usage by Developers
 
 ![](../img/taches_developpement.svg)
 
 ---
 class: middle, center
 
-# Souhaits des développeurs
+# What Developers Want
 
 ![](../img/accompagnement_par_statut.svg)
 ---
 class: middle, center
 
-# Indice de confiance
+# Confidence Index
 
 ![](../img/niveau_confiance.svg)
 
 ---
 class: middle, center
 
-# Freins à l'usage de l'IAg
+# Barriers to Agentic AI Usage
 
 ![](../img/freins_usage.svg)
 
 ---
 class: middle, center
 
-# Freins à l'usage en fonction de la fréquence d'utilisation
+# Barriers to Usage by Frequency of Use
 
 ![](../img/freins_par_categorie.svg)
 
 ---
 class: middle, center
 
-# Jugement de productivité en fonction du statut
+# Productivity Assessment by Status
 
 ![](../img/score_par_statut.svg)
 
 ---
 class: middle, center
 
-# Jugement de productivité en fonction de la fréquence d'utilisation
+# Productivity Assessment by Frequency of Use
 
 ![](../img/score_par_frequence.svg)
 
 ---
 class: middle, center
 
-# % de personnes prêtes à payer un abonnement en fonction du statut
+# % of People Willing to Pay a Subscription by Status
 
 ![](../img/taux_paiement_par_statut.svg)
 
 ---
 class: cover
 
-# Quelques citations choisies
+# Selected Quotes
 
 ---
 class: citation
@@ -565,38 +563,38 @@ class: cover
 
 ---
 
-# L'IA générative au CNRS: Emmy
+# Generative AI at CNRS: Emmy
 
-Mi-décembre 2025, lancement d’.blue[**Emmy**], l’IA générative .red[pour les agents du CNRS], dont les capacités sont
+Mid-December 2025, launch of .blue[**Emmy**], the generative AI .red[for CNRS staff], whose capabilities include
 
-- traduction de textes en toutes langues ;
-- synthèses de documents ;
-- aide à la reformulation ;
-- aide à la réflexion ;
-- recherche sur le web ;
-- reconnaissance de textes et d’images ;
-- mode « raisonnement » : l’IA traite la question de l’utilisateur étape par étape afin de donner une réponse plus pertinente et plus complète ;
-- collections de documents
+- text translation in all languages;
+- document summarization;
+- rephrasing assistance;
+- reasoning support;
+- web search;
+- text and image recognition;
+- "reasoning" mode: the AI processes the user's question step by step to provide a more relevant and comprehensive answer;
+- document collections
 
-Cet outil résulte d'un accord passé avec l’entreprise française Mistral AI pour 35 000 utilisateurs pour l'usage de leur offre .blue[**Le Chat Entreprise**].
+This tool results from a deal between CNRS and the Mistral IA company for 35,000 licenses of their .blue[**Le Chat Entreprise**] offer.
 
 .footnote[https://emmy.cnrs.fr/]
 
 ---
 class: twocol
 
-# Inférence as a Service dans l'ESR
+# Inference as a Service in French Academia
 
 .columns[
 .gauche[
 
   ## ILaaS
 
-  > Une fédération mutualisée visant une IA générative de confiance, robuste, éthique, et sobre
+  > A shared federation aiming for trustworthy, robust, ethical, and frugal generative AI
 
-  Met à disposition une API d'inférence vers des modèles open-source.
+  Provides an inference API for open-source models.
 
-  .terra[UPC va contribuer à cette fédération]
+  .terra[UPC will contribute to this federation]
 ]
 
 .droite[ .center[
@@ -608,11 +606,11 @@ https://ilaas.fr
 ---
 class: twocol
 
-# Inférence as a Service dans l'ESR
+# Inference as a Service in French Academia
 
 .columns[
 .gauche[  .center[
-## Albert – API de la DINUM
+## Albert – DINUM API
 .img-full[![Albert DINUM](../img/albert-dinum.png)]
 
 https://albert.sites.beta.gouv.fr
@@ -632,85 +630,85 @@ https://github.com/EiffL/le-claude
 ]
 ---
 
-- de .red[favoriser l'absence de transparence] (_acknowledgement_) propre au métier de la recherche, lors de l'utilisation d'IA générative dans le cadre du travail
+- to .red[encourage a lack of transparency] (_acknowledgement_) inherent to research practice, when using generative AI at work
 
 --
 
-- de .red[renforcer l'isolement des personnels] qui sont livrés à eux mêmes face à ces questions et qui profitent des outils "interdits" par d'autres intermédiaires : une collaboration scientifique (CERN), une offre pour l'éducation (Copilot) ou une souscription personnelle
+- to .red[reinforce the isolation of staff] who are left to navigate these questions alone and who access "banned" tools through other channels: a scientific collaboration (CERN), an educational subscription (Copilot), or a personal one
 
 --
 
-.blue[**L'échelle de l'IN2P3**] est sans doute plus appropriée que celle du CNRS pour assurer l'inclusitivé de l'ensemble des personnels CNRS + Université, d'où la décision de faire ce sondage.
+.blue[**The IN2P3 scale**] is arguably more appropriate than the CNRS scale to ensure inclusivity for all staff (CNRS + University), hence the decision to conduct this survey.
 
 ---
 
-# Volontés qui ressortent majoritairement
+# Top Requests from the Survey
 
-- Un **cadre réglementaire** clair
+- A clear **regulatory framework**
 
-- Service d’inférence .green[**sécurisé et souverain**] .blue[**pour tous**] (CNRS + Universitaires)  
-=> l'API de MistralAI est très demandée ou une plateforme intégrée au CC-IN2P3
+- An inference service that is .green[**secure and sovereign**] .blue[**for all**] (CNRS + University staff)  
+=> MistralAI API is highly requested, or a platform integrated with CC-IN2P3
   
-- Privilégier les .green[**modèles open source**] et les modèles auditables
+- Prioritize .green[**open-source models**] and auditable models
 
-- S’assurer d’avoir accès aux .green[**modèles de pointe**] si on veut remporter l’adhésion et éviter l'utilisation des modèles
+- Ensure access to .green[**state-of-the-art models**] to gain buy-in and deter use of off-platform models
 
-- L’impact écologique étant un frein globalement partagé, .red[**définir des quotas**] (projet, labo) tout comme on a sur le calcul + mettre en place un .green[**calcul de la consommation**]
+- Ecological impact being a widely shared concern, .red[**define quotas**] (project, lab) as with compute time + implement .green[**consumption tracking**]
 
 ---
 
-# Volontés qui ressortent majoritairement
+# Top Requests from the Survey
 
-- Favoriser une utilisation modérée pour des tâches identifiées car l'usage très régulier de l'IA risque de créer une .red[perte globale de connaissances]  
-=> le développement est un savoir-faire et il faut .green[**le préserver**]
+- Encourage moderate usage for identified tasks, as very frequent AI use risks causing .red[global knowledge erosion]  
+=> development is a craft and must .green[**be preserved**]
 
-- La .blue[transparence sur l'utilisation] est nécessaire
+- .blue[Transparency about AI usage] is essential
 
-- Faire .red[attention aux licences]  
-=> voir présentation de Philippe
+- Be .red[mindful of licenses]  
+=> see Philippe's presentation
 
 ---
 class: middle
 
-# Quelques initiatives dans l'ESR
+# Some Initiatives in French Academia
 
 ---
 
-# Chartes IA
+# AI Charters
 
-Discuté dans Reprises
+Discussed in Reprises sessions
 
-- **Cadre légal** : RGPD, droits d’auteur, conformité sectorielle (ex. : santé, éducation).
-- **Principe d’éthique** : Transparence, responsabilité, équité, respect de la vie privée.
-- **Bonnes pratiques** :
-  - limites d’usage
-  - validation humaine des résultats
-  - traçabilité des contenus générés
-  - impact écologique
+- **Legal framework**: GDPR, copyright, sector-specific compliance (e.g. health, education).
+- **Ethics principles**: Transparency, accountability, fairness, privacy.
+- **Best practices**:
+  - usage limits
+  - human validation of results
+  - traceability of generated content
+  - ecological impact
 
 --
 
-.right.medium[Doit être pédagogique !]
+.right.medium[Must be educational!]
 
-Exemples:
+Examples:
 
-- [portail des chartes IA dans l'administration](https://alliance.numerique.gouv.fr/cartographie/portail-des-chartes-ia-dans-ladministration/)
-- [template KairoiAI utilisé comme base par le LIP6](https://github.com/KairoiAI/Resources/blob/main/Template-ChatGPT-policy.md)
-- [charte personnelle d'un doctorant](https://kilianrouge.github.io/posts/2026/2_AI_Charter)
+- [AI charter portal in public administration](https://alliance.numerique.gouv.fr/cartographie/portail-des-chartes-ia-dans-ladministration/)
+- [KairoiAI template used as a basis by LIP6](https://github.com/KairoiAI/Resources/blob/main/Template-ChatGPT-policy.md)
+- [personal charter of a PhD student](https://kilianrouge.github.io/posts/2026/2_AI_Charter)
 
 ---
 
-# Usage de l'IAg en parallèle d'un cours
+# Using Agentic AI Alongside a Course
 
-Usage des llm dans le cadre d'un cours d'astrophysique à Harvard.
+Use of LLMs in an astrophysics course at Harvard.
 
-Les points clés
+Key points
 
-- gros travail de préparation en amont sur les prompts (tout est partagé dans l'article)
-- entraînement en RAG sur un document de cours
-- restriction de l'IA à de courtes réponses .blue[**avec citation du cours**] et un non-engagement de l'étudiant dans une discussion
-- indications de quand l'utilisation est autorisée et quand elle est fortement déconseillée  
-  **=> a beaucoup plu aux étudiant**
+- substantial upfront preparation work on prompts (everything is shared in the paper)
+- RAG fine-tuning on a course document
+- AI restricted to short answers .blue[**with course citations**] and no extended student–AI dialog
+- guidelines on when use is authorized and when it is strongly discouraged  
+  **=> very well received by students**
 
 .footnote[Stubbs et al. 2026 - https://arxiv.org/abs/2602.04389]
 
@@ -718,8 +716,8 @@ Les points clés
 
 # Ecole thématique Labobots / AISSAI
 
-Un second semestre thématique du [centre interdisciplinaire du CNRS AISSAI][aissai] est organisé cette année en partenariat avec l'IN2P3.
-Dans ce cadre, une école / ANF intitulée Labobots sera proposée à la rentrée (29 septembre au 2 octobre 2026 à Saint-Rémy-lès-Chevreuse) par l'équipe du RI3-RAGLABS 
+A second thematic semester of the [CNRS interdisciplinary center AISSAI][aissai] is being organized this year in partnership with IN2P3.
+As part of this, a school / ANF called Labobots will be held in the fall (September 29 – October 2, 2026, Saint-Rémy-lès-Chevreuse) by the RI3-RAGLABS team.
 
 .left-column[
 - Françoise Bouvet (IJCLab)
@@ -733,7 +731,7 @@ Dans ce cadre, une école / ANF intitulée Labobots sera proposée à la rentré
 - Anne-Laure Méalier (Centrale Mediterrannée)
 - Alexandre Boucaud (APC)]
 
-Annonce à venir..
+Announcement coming soon..
 
 .footnote[
   <img src="../img/aissai-logo.png" height='80px' alt="AISSAI"> 
@@ -744,34 +742,34 @@ Annonce à venir..
 ---
 
 .hidden[toto]
-### Charte IA
+### AI Charter
   
-quels usages veut-on proscrire à l'IN2P3 ?  
-conséquences en cas de non respect ?  
-prévalence entre charte CNRS et chartes labo / institut ?
+what uses do we want to prohibit at IN2P3?  
+consequences in case of non-compliance?  
+precedence between the CNRS charter and lab/institute charters?
 
 --
 
-### Formation des personnels
+### Staff Training
 
-but de ces formations ?  
-a quelle échelle (labo, in2p3, cnrs) ?  
-sensibiliser aux questions éthiques et à la souveraineté des données  
+what is the purpose of these training sessions?  
+at what scale (lab, in2p3, cnrs)?  
+raise awareness of ethical issues and data sovereignty  
 
 ---
 .hidden[toto]
-### API institutionnelle sécurisée
+### Secure Institutional API
 
-demander accès à l'API Mistral au CNRS
-possibilité d'utiliser la ferme locale pour de l'inférence (à travers les notebooks par exemple)  
-mise en place de quotas utilisateurs  
-mise en commun des moyens pour l'ESR  
-impact environnemental de l'utilisation
+request access to the Mistral API through CNRS
+possibility of using the local cluster for inference (e.g. via notebooks)  
+implement user quotas  
+pool resources for French academia  
+environmental impact of usage
 
 --
 
-### Risques sociétaux
+### Societal Risks
 
-perte de sens dans le monde de la recherche – [essai](https://davidbessis.substack.com/p/letter-to-a-phd-student)  
-enseignement / formation des jeunes générations aux métiers  
-nouveaux risques psychosociaux – [exemple](https://siddhantkhare.com/writing/ai-fatigue-is-real)
+loss of meaning in the research world – [essay](https://davidbessis.substack.com/p/letter-to-a-phd-student)  
+teaching / training younger generations for the profession  
+new psychosocial risks – [example](https://siddhantkhare.com/writing/ai-fatigue-is-real)
