@@ -66,20 +66,23 @@ class: citation
 
 # Purpose of this Working Group
 
-.stamp[Preliminary]
+<!-- .stamp[Preliminary] -->
+AI has become a major topic in today's society, no matter what we think of it.
 
-- Collect discussion on the use of **AI in research**.
-- Identify key areas of focus through a **charter or guidelines**.
+We do think there is a .terra[**need for discussions at the level of the lab**] to learn about its current capabilities, review the general usage and question our practices.
+
+This working group was formed to
+
+- collect discussion on the use of **AI in research**,
+- focus on **practical applications** in research contexts.
+- identify key areas of focus with some **guidelines**.
+
+.hidden[toto]
 
 .highlight-box[**Disclaimer:**
 
 Our role is not to attack nor defend AI, but to examine how to use it effectively in research.
 ]
-
-## Agentic AI & LLMs
-
-- Overview of **agentic AI** and **Large Language Models (LLMs)**.
-- Focus on **practical applications** in research contexts.
 
 ---
 class: outline
@@ -190,7 +193,7 @@ The miniaturization and democratization of .blue[vision tools] (OCR) also gives 
 
 ---
 
-# Impact on Our Profession
+# Possible Impact on Our Profession
 
 .left-column[
 Various recent studies (often biased, as they are commissioned by the tech giants themselves) report the percentage of typical job tasks that AI would be capable of handling.
@@ -229,30 +232,6 @@ The concept is to hand an entire machine over to a super-agent (the Jarvis equiv
 
 .right-column[
   .img-full[![Denario steps](../img/denario-steps.png)]
-]
-
----
-class: twocol
-
-# An Essay Emphasizing the Human Dimension of Our Work
-
-.columns[
-.gauche[
-
-.img-full[![David Hogg - Why Astro](../img/hogg-why-astro.png)]
-
-.center[https://arxiv.org/abs/2602.10181 - February 2026]
-]
-
-.droite[
-
-## Pitch
-
-- the arrival of powerful generative AI is here
-- several options are available to us as scientists
-- two are particularly bad: full acceptance ("all-AI") and outright rejection through policing of researchers
-- he uses it to revisit the fundamentals of why we love this work and opens perspectives on how to work alongside AI
-]
 ]
 
 ---
@@ -440,128 +419,6 @@ class: twocol
 ]
 
 ---
-class: section
-
-.section-num[03]
-.section-label[Section 03]
-.section-bar[]
-
-# Major themes
-
----
-
-# Environmental Impact
-
-- **Rapid advancement** of generative AI (~month) vs. research timelines.
-- **Knowledge gap**: State-of-the-art and capabilities evolve monthly.
-- **Need for flexibility** and a **local experimentation platform**.
-
-## Challenges
-
-- **Hard to quantify** environmental impact of individual AI usage.
-- **Rising RAM costs** + **hardware availability** issues.
-- **Global resource reallocation** toward AI.
-
----
-
-# Environmental Impact
-
-## Local Observations
-
-- Laboratory members are **reasonable** in usage.
-
-.big.red[Add some metrics taken from poll ?]
-
-## Best Practices
-
-- **Rate-limited inference services** (e.g., Albert, ILaaS).
-- **Shared computing resources**.
-- **Recycling hardware** (Environmental charter - Art. 1.1, 3.2, 3.3)
-- **Token allocation** (like compute time requests).
-- **Carbon footprint tracking**:
-  - Include in **annual lab reports**.
-  - Add to **job submission metrics**.
-- **Local Platform**: Small-scale testing (not for scaling demand). \newline
-$\rightarrow$ Goal: **Experiment and design**.
-
----
-
-# Transparency & Security
-
-- **CNRS-Mistral contract (Emmy)**: Data remains **private** and **not used for training**.
-- **UPC**: ILaaS runs on **French inference servers**.
-- **Prohibited usage**: Any other tool must comply with **RGPD**.
-  - **No sharing** of personal data (e.g., student lists) without **explicit consent**.
-  - **Anonymize data** if necessary.
-
-## Best Practices
-
-- **Always apply critical thinking** to AI responses. \newline
-  Models can fail unpredictably (e.g., after 10 exchanges, AI hallucination).
-- **Expertise first**: Use AI as a **tool**, not a replacement.
-  - **Improve/correct** AI outputs with human input.
-
-## Academic Integrity
-
-- **arXiv ban**: Risk of training on **non-peer-reviewed drafts** (data poisoning.
-- **Declare AI use**: https://declare-ai.org.
-- **Adapt policies** for interns/labs (e.g. https://mammouth.ai).
-
----
-
-# Futures of the Profession
-
-- **Adaptation**: AI is here to stay—**how will it change our work?**
-  Dependecy develops with publication pressure (docs/postdocs)
-- **Deskilling risk**: Preserve **expertise** and avoid tool dependency.
-- **Reflection on change:**
-  AI is here to stay, even if usage details evolve. We must consider how it will transform our lives, professions, and teaching. \newline 
-
-**Example: [Denario](https://astropilot-ai.github.io/DenarioPaperPage)**
-
-\textit{...serve as a scientific research assistant. Denario can perform many different tasks, such as generating ideas, checking the literature, developing research plans, writing and executing code, making plots, and drafting and reviewing a scientific paper. The system has a modular architecture, allowing it to handle specific tasks, such as generating an idea, or carrying out end-to-end scientific analysis...}
-
-\vspace{0.5cm}
-
-## Best Practices
-
-- Avoid **dependency** ("IA fatigue").
-- Re-evaluate the role of scientific publications as the primary means of assessing research. 
-
----
-
-# Teaching
-
-- **AI Charter**: Underway at UPC (aligned with other labs).
-- **\href{https://www.ilaas.fr/}{\color{blue}\texttt{Projet ILaaS}}**: UPC will provide **inference resources** for ESR members (faculty + students).
-
-**Example:**
-At a conference (UPCité, ~2 years ago), an English teacher (middle/high school) instead of banning ChatGPT for translations, organized sessions to *analyze ChatGPT translations* and compare them with manual translations.\newline
-
---> There are no ready-made answers. Instead of saying *"this is wrong,"* we should ask: \newline "Things are different now—we need to adapt."
-
-## Best Practices
-
-- **Student responsability**: *"This is your training - you are learning"*
-- **Adapt the way skills * knowledge are evaluated**
-
----
-class: cover
-
-# Merci pour votre attention
-
-.gold-bar[]
-
-## Time for discussions
-
-.apc-logo[]
-
----
-class: cover
-
-# Backup
-
----
 
 # Generative AI at CNRS: Emmy
 
@@ -628,49 +485,75 @@ https://github.com/EiffL/le-claude
 ```
 ]
 ]
----
-
-- to .red[encourage a lack of transparency] (_acknowledgement_) inherent to research practice, when using generative AI at work
-
---
-
-- to .red[reinforce the isolation of staff] who are left to navigate these questions alone and who access "banned" tools through other channels: a scientific collaboration (CERN), an educational subscription (Copilot), or a personal one
-
---
-
-.blue[**The IN2P3 scale**] is arguably more appropriate than the CNRS scale to ensure inclusivity for all staff (CNRS + University), hence the decision to conduct this survey.
 
 ---
+class: section
 
-# Top Requests from the Survey
+.section-num[03]
+.section-label[Section 03]
+.section-bar[]
 
-- A clear **regulatory framework**
-
-- An inference service that is .green[**secure and sovereign**] .blue[**for all**] (CNRS + University staff)  
-=> MistralAI API is highly requested, or a platform integrated with CC-IN2P3
-  
-- Prioritize .green[**open-source models**] and auditable models
-
-- Ensure access to .green[**state-of-the-art models**] to gain buy-in and deter use of off-platform models
-
-- Ecological impact being a widely shared concern, .red[**define quotas**] (project, lab) as with compute time + implement .green[**consumption tracking**]
+# Major themes
 
 ---
 
-# Top Requests from the Survey
+# Environmental Impact
 
-- Encourage moderate usage for identified tasks, as very frequent AI use risks causing .red[global knowledge erosion]  
-=> development is a craft and must .green[**be preserved**]
+- **Rapid advancement** of generative AI (~month) vs. research timelines.
+- **Knowledge gap**: State-of-the-art and capabilities evolve monthly.
+- **Need for flexibility** and a **local experimentation platform**.
 
-- .blue[Transparency about AI usage] is essential
+## Challenges
 
-- Be .red[mindful of licenses]  
-=> see Philippe's presentation
+- **Hard to quantify** environmental impact of individual AI usage.
+- **Rising RAM costs** + **hardware availability** issues.
+- **Global resource reallocation** toward AI.
 
 ---
-class: middle
 
-# Some Initiatives in French Academia
+# Environmental Impact
+
+## Local Observations
+
+- Laboratory members are **reasonable** in usage.
+
+.big.red[Add some metrics taken from poll ?]
+
+## Guidelines
+
+- **Rate-limited inference services** (e.g., Albert, ILaaS).
+- **Shared computing resources**.
+- **Recycling hardware** (Environmental charter - Art. 1.1, 3.2, 3.3)
+- **Token allocation** (like compute time requests).
+- **Carbon footprint tracking**:
+  - Include in **annual lab reports**.
+  - Add to **job submission metrics**.
+- **Local Platform**: Small-scale testing (not for scaling demand). 
+
+--> Goal: **Experiment and design**.
+
+---
+
+# Transparency & Security
+
+- **CNRS-Mistral contract (Emmy)**: Data remains **private** and **not used for training**.
+- **UPC**: ILaaS runs on **French inference servers**.
+- **Prohibited usage**: Any other tool must comply with **RGPD**.
+  - **No sharing** of personal data (e.g., student lists) without **explicit consent**.
+  - **Anonymize data** if necessary.
+
+## Guidelines
+
+- **Always apply critical thinking** to AI responses.
+  Models can fail unpredictably (e.g., after 10 exchanges, AI hallucination).
+- **Expertise first**: Use AI as a **tool**, not a replacement.
+  - **Improve/correct** AI outputs with human input.
+
+## Academic Integrity
+
+- **arXiv ban**: Risk of training on **non-peer-reviewed drafts** (data poisoning).
+- **Declare AI use**: https://declare-ai.org.
+- **Adapt policies** for interns/labs (e.g. https://mammouth.ai).
 
 ---
 
@@ -698,17 +581,96 @@ Examples:
 
 ---
 
-# Using Agentic AI Alongside a Course
+# Futures of the Profession
 
-Use of LLMs in an astrophysics course at Harvard.
+.navy[**Adaptation**]: How will it change our work?
 
-Key points
+> Identified risks
+- affect social relations
+- AI related illnesses (e.g. "AI fatigue")
+- publication pressure
+- hiring pressure (docs/postdocs)
+- dependency
+- expertise preservation
 
+---
+class: twocol
+
+# An Essay Emphasizing the Human Dimension of Our Work
+
+.columns[
+.gauche[
+
+.img-full[![David Hogg - Why Astro](../img/hogg-why-astro.png)]
+
+.center[https://arxiv.org/abs/2602.10181 - February 2026]
+]
+
+.droite[
+
+## Pitch
+
+- the arrival of powerful generative AI is here
+- several options are available to us as scientists
+- two are particularly bad: full acceptance ("all-AI") and outright rejection through policing of researchers
+- he uses it to revisit the fundamentals of why we love this work and opens perspectives on how to work alongside AI
+]
+]
+
+---
+
+# Futures of the Profession
+
+.navy[**Adaptation**]: How will it change our work?
+
+> Identified risks
+- affect social relations
+- AI related illnesses (e.g. "AI fatigue")
+- publication pressure
+- hiring pressure (docs/postdocs)
+- dependency
+- expertise preservation
+
+## Guidelines
+
+Reflect collectively on that transformation (AI charter ?)
+
+Include ethical considerations.
+
+Rethink the Research metrics - role of publications vs. other means
+
+---
+
+# Teaching
+
+- **AI Charter**: Underway at UPC (aligned with other labs).
+- **[Projet ILaaS](https://www.ilaas.fr/)**: UPC will provide **inference resources** for ESR members (faculty + students).
+
+**Example:**
+At a conference (UPCité, ~2 years ago), an English teacher (middle/high school) instead of banning ChatGPT for translations, organized sessions to *analyze ChatGPT translations* and compare them with manual translations.
+
+--> There are no ready-made answers. Instead of saying *"this is wrong,"* we should ask: 
+
+"Things are different now—we need to adapt."
+
+## Guidelines
+
+- **Student responsability**: *"This is your training - you are learning"*
+- **Adapt the way skills * knowledge are evaluated**
+
+---
+
+# Teaching Agentic AI Alongside a University Course
+
+**Feedback** of the use of LLMs in an astrophysics course at Harvard by Chris Stubbs.
+
+> Key points
 - substantial upfront preparation work on prompts (everything is shared in the paper)
 - RAG fine-tuning on a course document
-- AI restricted to short answers .blue[**with course citations**] and no extended student–AI dialog
+- AI restricted to short answers .navy[**with course citations**] and no extended student–AI dialog
 - guidelines on when use is authorized and when it is strongly discouraged  
-  **=> very well received by students**
+
+  .terra[**=> Overall very well received by students**]
 
 .footnote[Stubbs et al. 2026 - https://arxiv.org/abs/2602.04389]
 
@@ -716,22 +678,31 @@ Key points
 
 # Ecole thématique Labobots / AISSAI
 
-A second thematic semester of the [CNRS interdisciplinary center AISSAI][aissai] is being organized this year in partnership with IN2P3.
-As part of this, a school / ANF called Labobots will be held in the fall (September 29 – October 2, 2026, Saint-Rémy-lès-Chevreuse) by the RI3-RAGLABS team.
+A second thematic semester of  is being organized this year in partnership with IN2P3.  
+A thematic school **for ITA** called _Labobots_ will be held in the fall September 29 –> October 2, 2026
+in Saint-Rémy-lès-Chevreuse. It will be sponsored by the [CNRS center AISSAI][aissai].
 
+.highlight-box[
+  **Registration opened this morning !**
+  
+  https://indico.ijclab.in2p3.fr/event/13661
+]
+
+Organisation
 .left-column[
 - Françoise Bouvet (IJCLab)
 - David Rousseau (IJCLab)
 - David Chamont (IJCLab)
-- Hugo Bacard (IJCLab)]
+- Hugo Bacard (IJCLab)
+]
 
 .right-column[
 - Sébastien Gadrat (CCIN2P3)
 - Imed Magroune (CEA)
 - Anne-Laure Méalier (Centrale Mediterrannée)
-- Alexandre Boucaud (APC)]
+- Alexandre Boucaud (APC)
+]
 
-Announcement coming soon..
 
 .footnote[
   <img src="../img/aissai-logo.png" height='80px' alt="AISSAI"> 
@@ -740,36 +711,85 @@ Announcement coming soon..
 [aissai]: https://aissai.cnrs.fr/en/
 
 ---
+class: cover
 
-.hidden[toto]
-### AI Charter
-  
-what uses do we want to prohibit at IN2P3?  
-consequences in case of non-compliance?  
-precedence between the CNRS charter and lab/institute charters?
+# Merci pour votre attention
 
---
+.gold-bar[]
 
-### Staff Training
+## Time for discussions
 
-what is the purpose of these training sessions?  
-at what scale (lab, in2p3, cnrs)?  
-raise awareness of ethical issues and data sovereignty  
+.apc-logo[]
 
 ---
-.hidden[toto]
-### Secure Institutional API
+class: middle
 
-request access to the Mistral API through CNRS
-possibility of using the local cluster for inference (e.g. via notebooks)  
-implement user quotas  
-pool resources for French academia  
-environmental impact of usage
+# Questions for the discussion
 
---
+.large[Quand est-ce acceptable d'utiliser l'IA pour produire un document à notre place ?]
 
-### Societal Risks
+.rose[_When is it acceptable to have AI write a document for us?_]
 
-loss of meaning in the research world – [essay](https://davidbessis.substack.com/p/letter-to-a-phd-student)  
-teaching / training younger generations for the profession  
-new psychosocial risks – [example](https://siddhantkhare.com/writing/ai-fatigue-is-real)
+.terra[ex: rapport, mail, travail intellectuel, revue, ...]
+
+.large[Quelles règles aimeriez-vous faire adopter au niveau du labo ?]
+
+.rose[_Which rules would you like to have the lab commit to?_]
+
+.terra[ex: charte interne, points de vigilance, ...]
+
+.large[Quelles sont vos attentes vis-à-vis du laboratoire concernant l'IA ?]
+
+.rose[_What are your expectations from the lab concerning AI?_]
+
+.terra[ex: cours, discussions usages / éthique, actualités et évolution, ...]
+
+---
+
+# Why banning AI can be harmful?
+
+.stamp[TO INTEGRATE]
+
+.red[encourage a lack of transparency] (_acknowledgement_) inherent to research practice, when using generative AI at work
+
+.red[reinforce the isolation of staff] who are left to navigate these questions alone and who access "banned" tools through other channels: a scientific collaboration (CERN), an educational subscription (Copilot), or a personal one
+
+---
+
+# Top Requests from the Survey
+
+.stamp[TO INTEGRATE]
+
+- A clear **regulatory framework**
+
+- An inference service that is .green[**secure and sovereign**] .blue[**for all**] (CNRS + University staff)  
+=> MistralAI API is highly requested, or a platform integrated with CC-IN2P3
+  
+- Prioritize .green[**open-source models**] and auditable models
+
+- Ensure access to .green[**state-of-the-art models**] to gain buy-in and deter use of off-platform models
+
+- Ecological impact being a widely shared concern, .red[**define quotas**] (project, lab) as with compute time + implement .green[**consumption tracking**]
+
+---
+
+# Top Requests from the Survey
+
+.stamp[TO INTEGRATE]
+
+- Encourage moderate usage for identified tasks, as very frequent AI use risks causing .red[global knowledge erosion]  
+=> development is a craft and must .green[**be preserved**]
+
+- .blue[Transparency about AI usage] is essential
+
+- Be .red[mindful of licenses]  
+
+---
+
+# Societal Risks
+
+.stamp[TO INTEGRATE]
+
+- loss of meaning in the research world – [essay](https://davidbessis.substack.com/p/letter-to-a-phd-student)  
+- teaching / training younger generations for the profession  
+- new psychosocial risks – [example](https://siddhantkhare.com/writing/ai-fatigue-is-real)
