@@ -223,6 +223,7 @@ The concept is to hand an entire machine over to a super-agent (the Jarvis equiv
 .right[[And these agents can turn into bullies..](https://simonwillison.net/2026/Feb/12/an-ai-agent-published-a-hit-piece-on-me/)]
 
 ---
+class: blanc, middle
 
 # The AI Scientist Concept (aside)
 
@@ -232,6 +233,32 @@ The concept is to hand an entire machine over to a super-agent (the Jarvis equiv
 
 .right-column[
   .img-full[![Denario steps](../img/denario-steps.png)]
+]
+
+---
+class: twocol, center
+# Towards Agentic AI serving Science with builtin rigor
+
+.columns[
+.gauche[
+![](https://lightconeresearch.org/img/logo-primary.svg)
+
+Open-source initiative between CNRS and UC Berkeley focused on .navy[**verifiable**] and .navy[**reproducible**] AI-assisted science.
+
+https://lightconeresearch.org
+
+https://github.com/LightconeResearch 
+]
+
+.droite[
+## ASTRA 
+
+Specification format for computational science that tracks every the provenance of data, model and insights, and records every decision that was made for a given analysis.
+
+## lightcone-cli
+
+Command line interface leveraging an AI agent that turns any ASTRA specification into materialized results through custom recipes (workflows).
+]
 ]
 
 ---
@@ -245,6 +272,29 @@ class: section
 # Survey results
 
 ## https://machine-learning.pages.in2p3.fr/llm-survey-2026
+
+---
+class: blanc, center
+
+# APC responders
+
+![](survey-plots/01_statut.svg)
+
+64 APC members replied, 53 actually using AI.
+
+---
+class: blanc, center
+
+# Confidence Index
+
+![](survey-plots/12_confiance.svg)
+
+---
+class: blanc, center
+
+# Usage frequency
+
+![](survey-plots/18_vs_frequence.svg)
 
 ---
 class: blanc, center
@@ -270,23 +320,9 @@ class: blanc, center
 ---
 class: blanc, center
 
-# Confidence Index
-
-![](survey-plots/12_confiance.svg)
-
----
-class: blanc, center
-
 # Barriers to Usage by Frequency of Use
 
 ![](../img/freins_par_categorie.svg)
-
----
-class: blanc, center
-
-# Usage frequency
-
-![](survey-plots/18_vs_frequence.svg)
 
 ---
 class: cover
@@ -352,7 +388,7 @@ class: section
 ---
 class: twocol
 
-# Use cases (non-exhaustive)
+# Use cases per job category (non-exhaustive)
 
 .columns[
 .left-col[
@@ -380,7 +416,7 @@ class: twocol
 ---
 class: twocol
 
-# Use cases (non-exhaustive) 2/2
+# Use cases per job category (non-exhaustive)
 
 .columns[
 .left-col[
@@ -425,55 +461,6 @@ This tool results from a deal between CNRS and the Mistral IA company for 35,000
 .footnote[https://emmy.cnrs.fr/]
 
 ---
-class: twocol, blanc
-
-# Inference as a Service in French Academia
-
-.columns[
-.gauche[
-
-  ## ILaaS
-
-  > A shared federation aiming for trustworthy, robust, ethical, and frugal generative AI
-
-  Provides an inference API for open-source models.
-
-  .terra[UPC will contribute to this federation]
-]
-
-.droite[ .center[
-.img-full[![ILaaS service](../img/ilaas-service.png)]
-
-https://ilaas.fr
-]]
-]
----
-class: twocol, blanc
-
-# Inference as a Service in French Academia
-
-.columns[
-.gauche[  .center[
-## Albert – DINUM API
-.img-full[![Albert DINUM](../img/albert-dinum.png)]
-
-https://albert.sites.beta.gouv.fr
-]]
-
-.droite[ .center[
-## Claude Code + Albert API = `le-claude`
-
-<img src="https://raw.githubusercontent.com/EiffL/le-claude/main/assets/le-claude.png" width="90%" />
-
-https://github.com/EiffL/le-claude
-]
-```bash
-  $ npx le-claude
-```
-]
-]
-
----
 class: section
 
 .section-num[04]
@@ -508,17 +495,66 @@ class: section
 
 # Environmental Impact
 
-## Guidelines
+## Ideas
 
-- **Rate-limited inference services** (e.g., Albert, ILaaS).
-- **Shared computing resources**.
-- **Recycling hardware** (Environmental charter - Art. 1.1, 3.2, 3.3)
-- **Token allocation** (like compute time requests).
-- **Carbon footprint tracking** (anonymous):
+- **Use .terra[rate-limited] inference services** (e.g., Albert, ILaaS).
+- **Stick to .terra[shared] computing resources**.
+- **Recycle hardware** (Environmental charter - Art. 1.1, 3.2, 3.3)
+- **Set up yearly token allocation** (like we already do with compute time).
+- **Rub carbon footprint tracking** (anonymous):
   - Include in **annual lab reports**.
   - Add to **job submission metrics**.
-- **Local Platform**: Small-scale testing (not for scaling demand).
+- **Use local platform** only for small-scale testing (not for scaling demand).
   - Helps designing infrastructure adapted to the need.
+
+---
+class: twocol, blanc
+
+# Example: Inference as a Service in French Academia
+
+.columns[
+.gauche[
+
+  ## ILaaS
+
+  > A shared federation aiming for trustworthy, robust, ethical, and frugal generative AI
+
+  Provides an inference API for open-source models.
+
+  .terra[UPC will contribute to this federation]
+]
+
+.droite[ .center[
+.img-full[![ILaaS service](../img/ilaas-service.png)]
+
+https://ilaas.fr
+]]
+]
+---
+class: twocol, blanc
+
+# Example: Inference as a Service in French Academia
+
+.columns[
+.gauche[  .center[
+## Albert – DINUM API
+.img-full[![Albert DINUM](../img/albert-dinum.png)]
+
+https://albert.sites.beta.gouv.fr
+]]
+
+.droite[ .center[
+## Claude Code + Albert API = `le-claude`
+
+<img src="https://raw.githubusercontent.com/EiffL/le-claude/main/assets/le-claude.png" width="90%" />
+
+https://github.com/EiffL/le-claude
+]
+```bash
+  $ npx le-claude
+```
+]
+]
 
 ---
 
@@ -530,7 +566,7 @@ class: section
   - **No sharing** of personal data (e.g., student lists) without **explicit consent**.
   - **Anonymize data** if necessary.
 
-## Guidelines
+## Ideas
 
 - **Always apply critical thinking** to AI responses.
   - Models can fail unpredictably (e.g., 10 exchanges then AI hallucination).
@@ -546,7 +582,7 @@ class: section
 
 ---
 
-# AI Charters
+# Example: AI Charters
 
 Discussed in Reprises sessions
 
@@ -585,7 +621,7 @@ Examples:
 ---
 class: twocol, blanc
 
-# An Essay Emphasizing the Human Dimension of Our Work
+# Example: Essay Emphasizing the Human Dimension of Our Work
 
 .columns[
 .gauche[
@@ -620,7 +656,7 @@ class: twocol, blanc
 - dependency
 - expertise preservation
 
-## Guidelines
+## Ideas
 
 - Reflect collectively on that transformation
 - Include ethical considerations.
@@ -630,27 +666,22 @@ class: twocol, blanc
 
 # Teaching
 
-- **AI Charter**: Underway at UPC (aligned with other labs).
-- **[Projet ILaaS](https://www.ilaas.fr/)**: UPC will provide **inference resources** for ESR members (faculty + students).
+- **AI Charter** on the use of AI at UPC underway (aligned with other universities).
 
-**Example:**
-At a conference (UPCité, ~2 years ago), an English teacher (middle/high school) instead of banning ChatGPT for translations, organized sessions to *analyze ChatGPT translations* and compare them with manual translations.
+- UPC will get it's own LLM by contributing to the inference resources of the **[ILaaS](https://www.ilaas.fr/)**
 
---> There are no ready-made answers. Instead of saying *"this is wrong,"* we should ask: 
+- Things are different now - we need to adapt
+  - Ex: instead of banning ChatGPT for translations, an English teacher (middle/high school) organized a session to *analyze ChatGPT translations* and compare them with manual translations, only to demonstrate the shortcomings of using AI.
 
-.highlight-box[
-  *"Things are different now—we need to adapt."*
-]
+## Ideas
 
-
-## Guidelines
-
-- **Student responsability**: *"This is your training - you are learning"*
-- **Adapt the way skills & knowledge are evaluated**
+- Instead of banning AI, encourage moderate use by calling on **student responsability**
+  - *"This is your training - you are learning"*
+- **Adapt** the way skills & knowledge are **evaluated**
 
 ---
 
-# Teaching Agentic AI Alongside a University Course
+# Example: Teaching Agentic AI Alongside a University Course
 
 **Feedback** of the use of LLMs in an astrophysics course at Harvard by Chris Stubbs.
 
@@ -665,15 +696,26 @@ At a conference (UPCité, ~2 years ago), an English teacher (middle/high school)
 .footnote[Stubbs et al. 2026 - https://arxiv.org/abs/2602.04389]
 
 ---
+class: cover
 
-# Ecole thématique Labobots / AISSAI
+# Merci pour votre attention
+
+.gold-bar[]
+
+## Time for discussions
+
+.apc-logo[]
+
+---
+
+# Ad: Ecole thématique Labobots / AISSAI
 
 A second thematic semester is being organized this year in partnership with IN2P3.  
 A thematic school **for ITA** called _Labobots_ will be held in the fall September 29 –> October 2, 2026
 in Saint-Rémy-lès-Chevreuse. It will be sponsored by the [CNRS center AISSAI][aissai].
 
 .highlight-box[
-  **Registration opened this morning !**
+  **Registration opening today or tomorrow !**
   
   https://indico.ijclab.in2p3.fr/event/13661
 ]
@@ -701,36 +743,25 @@ Organisation
 [aissai]: https://aissai.cnrs.fr/en/
 
 ---
-class: cover
-
-# Merci pour votre attention
-
-.gold-bar[]
-
-## Time for discussions
-
-.apc-logo[]
-
----
 class: middle
 
 # Questions for the discussion
 
 .large[Quand est-il acceptable d'utiliser l'IA pour produire un document à notre place ?]
 
-.rose[_When is it acceptable to have AI write a document for us?_]
+.navy[_When is it acceptable to have AI write a document for us?_]
 
 .terra[&emsp; ex: rapport, mail, travail intellectuel, revue, ...]
 
 .large[Quelles règles aimeriez-vous faire adopter au niveau du laboratoire ?]
 
-.rose[_Which rules would you like to have the lab commit to?_]
+.navy[_Which rules would you like to have the lab commit to?_]
 
 .terra[&emsp; ex: charte interne, points de vigilance, ...]
 
 .large[Quelles sont vos attentes vis-à-vis du laboratoire concernant l'IA ?]
 
-.rose[_What are your expectations from the lab concerning AI?_]
+.navy[_What are your expectations from the lab concerning AI?_]
 
 .terra[&emsp; ex: cours, discussions usages / éthique, actualités et évolution, ...]
 
