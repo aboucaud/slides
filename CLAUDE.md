@@ -1,5 +1,7 @@
 # Slides — CSS reference
 
+**Always invoke the `remarkjs` skill** (via the Skill tool) before creating or editing presentations in this repository.
+
 This repository uses [Remark.js](https://remarkjs.com/) to generate HTML presentations from Markdown files.
 Each presentation loads two stylesheets:
 
