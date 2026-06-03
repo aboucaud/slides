@@ -102,7 +102,7 @@ class: outline
 ---
 class: section
 
-<!-- .section-num[01] -->
+.section-num[01]
 <!-- .arc[] -->
 .section-label[Section 01]
 .section-bar[]
@@ -237,7 +237,7 @@ The concept is to hand an entire machine over to a super-agent (the Jarvis equiv
 ---
 class: section
 
-<!-- .section-num[02] -->
+.section-num[02]
 <!-- .arc[] -->
 .section-label[Section 02]
 .section-bar[]
@@ -247,59 +247,46 @@ class: section
 ## https://machine-learning.pages.in2p3.fr/llm-survey-2026
 
 ---
-class: middle, center
+class: blanc, center
 
-# Usage by Developers
+# Usage by APC members (code developers)
 
-![](../img/taches_developpement.svg)
+![](survey-plots/08_taches.svg)
 
 ---
-class: middle, center
+class: blanc, center
+
+# What Tools do People Use
+
+![](survey-plots/19_vs_outils.svg)
+
+---
+class: blanc, center
 
 # What Developers Want
 
-![](../img/accompagnement_par_statut.svg)
+![](survey-plots/16_accompagnement.svg)
+
 ---
-class: middle, center
+class: blanc, center
 
 # Confidence Index
 
-![](../img/niveau_confiance.svg)
+![](survey-plots/12_confiance.svg)
 
 ---
-class: middle, center
-
-# Barriers to Agentic AI Usage
-
-![](../img/freins_usage.svg)
-
----
-class: middle, center
+class: blanc, center
 
 # Barriers to Usage by Frequency of Use
 
 ![](../img/freins_par_categorie.svg)
 
 ---
-class: middle, center
+class: blanc, center
 
-# Productivity Assessment by Status
+# Usage frequency
 
-![](../img/score_par_statut.svg)
-
----
-class: middle, center
-
-# Productivity Assessment by Frequency of Use
-
-![](../img/score_par_frequence.svg)
-
----
-class: middle, center
-
-# % of People Willing to Pay a Subscription by Status
-
-![](../img/taux_paiement_par_statut.svg)
+![](survey-plots/18_vs_frequence.svg)
 
 ---
 class: cover
@@ -315,11 +302,11 @@ class: citation
 
 .cite-bar[]
 
-> I am afraid of becoming stupid, loosing my brain power
+> I am afraid of becoming stupid, losing my brain power
 
 .cite-bar[]
 
-> Financement de ces outils au meme titre que n'importe quel logiciel de CAO
+> Financement de ces outils au même titre que n'importe quel logiciel de CAO
 
 .cite-bar[]
 
@@ -330,7 +317,7 @@ class: citation
 
 .quote-mark["]
 
-> Un rappel clair et précis sur les effets sociaux de l'IA générative
+> Un rappel clair et précis sur les effets sociaux de l'IA générative.
 
 .cite-bar[]
 
@@ -338,22 +325,23 @@ class: citation
 
 .cite-bar[]
 
-> Je n'utilise pas l'IA par fierté. J'estime être en capacité de produire de moi même ce qui pourrait concerner mes demandes. Bien évidement dans le cadre de mon travail. Cependant comme tout outil j'ai bel et bien conscience de son utilité et de son efficacité.
+> Je n'utilise pas l'IA par fierté. J'estime être en capacité de produire de moi même ce qui pourrait concerner mes demandes. Bien évidement dans le cadre de mon travail. Cependant, comme tout outil, j'ai bel et bien conscience de son utilité et de son efficacité.
 
 ---
 class: citation
 
 .quote-mark["]
 
-> Notre rôle de scientifique est d'être des dépositaires humains de la connaissance, si nos compétences et notre capacité à raisonner sont dépendantes d'outils qui nous privent de notre réflexion propre, je pense que notre intégrité est menacée. Il est clair que l'usage de LLM a des effets très négatifs sur une partie de la population, je pense que nous jouons un rôle d'exemplarité dans la prudence vis-a-vis de ces outils.
+> Notre rôle de scientifique est d'être des dépositaires humains de la connaissance, si nos compétences et notre capacité à raisonner sont dépendantes d'outils qui nous privent de notre réflexion propre, je pense que notre intégrité est menacée. Il est clair que l'usage de LLM a des effets très négatifs sur une partie de la population, je pense que nous jouons un rôle d'exemplarité dans la prudence vis-à-vis de ces outils.
 
 .cite-bar[]
 
-> all shall use AI, from all scientific domains .. it is not a choice ...
+> All shall use AI, from all scientific domains .. it is not a choice ...
 
 ---
 class: section
 
+.section-num[03]
 .section-label[Section 03]
 .section-bar[]
 
@@ -411,10 +399,9 @@ class: twocol
 
 ## IT/Engineers
 
-- **Code assistant** .big.red[vague].
+- **"Code assistant"** (unit testing, debugging, refactoring)
 - **Propose code architecture & software design**.
 - **Recommend algorithms** (pros/cons).
-- .big.red[Input from Walter (to be added).]
 ]
 ]
 
@@ -438,7 +425,7 @@ This tool results from a deal between CNRS and the Mistral IA company for 35,000
 .footnote[https://emmy.cnrs.fr/]
 
 ---
-class: twocol
+class: twocol, blanc
 
 # Inference as a Service in French Academia
 
@@ -461,7 +448,7 @@ https://ilaas.fr
 ]]
 ]
 ---
-class: twocol
+class: twocol, blanc
 
 # Inference as a Service in French Academia
 
@@ -489,8 +476,8 @@ https://github.com/EiffL/le-claude
 ---
 class: section
 
-.section-num[03]
-.section-label[Section 03]
+.section-num[04]
+.section-label[Section 04]
 .section-bar[]
 
 # Major themes
@@ -499,25 +486,27 @@ class: section
 
 # Environmental Impact
 
+- **Huge training & inference cost**: ~1.8–2.2% of France’s annual electricity production (growing)
 - **Rapid advancement** of generative AI (~month) vs. research timelines.
+  - Hard to quickly adapt habits, technologies and guidelines.
 - **Knowledge gap**: State-of-the-art and capabilities evolve monthly.
+  - A technology is rapidly oudated...
+  - ... so does the use of it.
 - **Need for flexibility** and a **local experimentation platform**.
+  - Experimentation to design needs for ressources (hardware, electric consumption)
+  - Goal is *not* to scale with large model providers.
+
+--
 
 ## Challenges
 
 - **Hard to quantify** environmental impact of individual AI usage.
 - **Rising RAM costs** + **hardware availability** issues.
-- **Global resource reallocation** toward AI.
+  - Global resource reallocation toward AI.
 
 ---
 
 # Environmental Impact
-
-## Local Observations
-
-- Laboratory members are **reasonable** in usage.
-
-.big.red[Add some metrics taken from poll ?]
 
 ## Guidelines
 
@@ -525,12 +514,11 @@ class: section
 - **Shared computing resources**.
 - **Recycling hardware** (Environmental charter - Art. 1.1, 3.2, 3.3)
 - **Token allocation** (like compute time requests).
-- **Carbon footprint tracking**:
+- **Carbon footprint tracking** (anonymous):
   - Include in **annual lab reports**.
   - Add to **job submission metrics**.
-- **Local Platform**: Small-scale testing (not for scaling demand). 
-
---> Goal: **Experiment and design**.
+- **Local Platform**: Small-scale testing (not for scaling demand).
+  - Helps designing infrastructure adapted to the need.
 
 ---
 
@@ -545,13 +533,14 @@ class: section
 ## Guidelines
 
 - **Always apply critical thinking** to AI responses.
-  Models can fail unpredictably (e.g., after 10 exchanges, AI hallucination).
+  - Models can fail unpredictably (e.g., 10 exchanges then AI hallucination).
 - **Expertise first**: Use AI as a **tool**, not a replacement.
   - **Improve/correct** AI outputs with human input.
 
 ## Academic Integrity
 
-- **arXiv ban**: Risk of training on **non-peer-reviewed drafts** (data poisoning).
+- **arXiv ban**: if manifest use of AI is detected
+- **Data poisoning**: Risk of training on **non-peer-reviewed drafts**
 - **Declare AI use**: https://declare-ai.org.
 - **Adapt policies** for interns/labs (e.g. https://mammouth.ai).
 
@@ -566,7 +555,7 @@ Discussed in Reprises sessions
 - **Best practices**:
   - usage limits
   - human validation of results
-  - traceability of generated content
+  - traceability of generated content (source)
   - ecological impact
 
 --
@@ -591,10 +580,10 @@ Examples:
 - publication pressure
 - hiring pressure (docs/postdocs)
 - dependency
-- expertise preservation
+- Knowledge acquisition & expertise preservation
 
 ---
-class: twocol
+class: twocol, blanc
 
 # An Essay Emphasizing the Human Dimension of Our Work
 
@@ -633,11 +622,9 @@ class: twocol
 
 ## Guidelines
 
-Reflect collectively on that transformation (AI charter ?)
-
-Include ethical considerations.
-
-Rethink the Research metrics - role of publications vs. other means
+- Reflect collectively on that transformation
+- Include ethical considerations.
+- Rethink the Research metrics - role of publications vs. other means
 
 ---
 
@@ -651,12 +638,15 @@ At a conference (UPCité, ~2 years ago), an English teacher (middle/high school)
 
 --> There are no ready-made answers. Instead of saying *"this is wrong,"* we should ask: 
 
-"Things are different now—we need to adapt."
+.highlight-box[
+  *"Things are different now—we need to adapt."*
+]
+
 
 ## Guidelines
 
 - **Student responsability**: *"This is your training - you are learning"*
-- **Adapt the way skills * knowledge are evaluated**
+- **Adapt the way skills & knowledge are evaluated**
 
 ---
 
@@ -678,7 +668,7 @@ At a conference (UPCité, ~2 years ago), an English teacher (middle/high school)
 
 # Ecole thématique Labobots / AISSAI
 
-A second thematic semester of  is being organized this year in partnership with IN2P3.  
+A second thematic semester is being organized this year in partnership with IN2P3.  
 A thematic school **for ITA** called _Labobots_ will be held in the fall September 29 –> October 2, 2026
 in Saint-Rémy-lès-Chevreuse. It will be sponsored by the [CNRS center AISSAI][aissai].
 
@@ -726,23 +716,23 @@ class: middle
 
 # Questions for the discussion
 
-.large[Quand est-ce acceptable d'utiliser l'IA pour produire un document à notre place ?]
+.large[Quand est-il acceptable d'utiliser l'IA pour produire un document à notre place ?]
 
 .rose[_When is it acceptable to have AI write a document for us?_]
 
-.terra[ex: rapport, mail, travail intellectuel, revue, ...]
+.terra[&emsp; ex: rapport, mail, travail intellectuel, revue, ...]
 
-.large[Quelles règles aimeriez-vous faire adopter au niveau du labo ?]
+.large[Quelles règles aimeriez-vous faire adopter au niveau du laboratoire ?]
 
 .rose[_Which rules would you like to have the lab commit to?_]
 
-.terra[ex: charte interne, points de vigilance, ...]
+.terra[&emsp; ex: charte interne, points de vigilance, ...]
 
 .large[Quelles sont vos attentes vis-à-vis du laboratoire concernant l'IA ?]
 
 .rose[_What are your expectations from the lab concerning AI?_]
 
-.terra[ex: cours, discussions usages / éthique, actualités et évolution, ...]
+.terra[&emsp; ex: cours, discussions usages / éthique, actualités et évolution, ...]
 
 ---
 
