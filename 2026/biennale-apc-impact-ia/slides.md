@@ -661,6 +661,9 @@ class: twocol, blanc
 - Reflect collectively on that transformation
 - Include ethical considerations.
 - Rethink the Research metrics - role of publications vs. other means
+- Be mindful of new societal risks
+  - loss of meaning in the research world – [essay](https://davidbessis.substack.com/p/letter-to-a-phd-student)  
+  - new psychosocial risks – [example](https://siddhantkhare.com/writing/ai-fatigue-is-real)
 
 ---
 
@@ -764,53 +767,3 @@ class: middle
 .navy[_What are your expectations from the lab concerning AI?_]
 
 .terra[&emsp; ex: cours, discussions usages / éthique, actualités et évolution, ...]
-
----
-
-# Why banning AI can be harmful?
-
-.stamp[TO INTEGRATE]
-
-.red[encourage a lack of transparency] (_acknowledgement_) inherent to research practice, when using generative AI at work
-
-.red[reinforce the isolation of staff] who are left to navigate these questions alone and who access "banned" tools through other channels: a scientific collaboration (CERN), an educational subscription (Copilot), or a personal one
-
----
-
-# Top Requests from the Survey
-
-.stamp[TO INTEGRATE]
-
-- A clear **regulatory framework**
-
-- An inference service that is .green[**secure and sovereign**] .blue[**for all**] (CNRS + University staff)  
-=> MistralAI API is highly requested, or a platform integrated with CC-IN2P3
-  
-- Prioritize .green[**open-source models**] and auditable models
-
-- Ensure access to .green[**state-of-the-art models**] to gain buy-in and deter use of off-platform models
-
-- Ecological impact being a widely shared concern, .red[**define quotas**] (project, lab) as with compute time + implement .green[**consumption tracking**]
-
----
-
-# Top Requests from the Survey
-
-.stamp[TO INTEGRATE]
-
-- Encourage moderate usage for identified tasks, as very frequent AI use risks causing .red[global knowledge erosion]  
-=> development is a craft and must .green[**be preserved**]
-
-- .blue[Transparency about AI usage] is essential
-
-- Be .red[mindful of licenses]  
-
----
-
-# Societal Risks
-
-.stamp[TO INTEGRATE]
-
-- loss of meaning in the research world – [essay](https://davidbessis.substack.com/p/letter-to-a-phd-student)  
-- teaching / training younger generations for the profession  
-- new psychosocial risks – [example](https://siddhantkhare.com/writing/ai-fatigue-is-real)
