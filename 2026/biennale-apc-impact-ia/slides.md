@@ -115,23 +115,27 @@ class: section
 
 # Agentic AI in 1 Slide
 
-The 2024 language models became .blue[reasoning models] (chain-of-thought) in 2025, enabling step-by-step processing of larger inputs.
+**November 30th 2022** - First release of ChatGPT (OpenAI), opened a .blue[**new era of langage models**]
 
 --
 
-They were then equipped with tools to perform calculations or take actions (retrieve web page content, write and run a script, then read the result).
+Many language models were released, getting better with time until they became .blue[**reasoning models**] (_chain-of-thought_) **in 2025**, enabling step-by-step processing of larger inputs.
 
 --
 
-By giving them the ability to self-evaluate at the end of a task — and potentially retry differently — they became .blue[_agents_].
+They were then equipped with .blue[**tools**] to perform calculations or take actions (retrieve web page content, write and run a script, then read the result).
 
 --
 
-Agents then specialized in specific tasks (e.g. coding, reading PDFs, web search), giving rise to the concept of .blue[multi-agent] systems — an orchestrator agent managing specialized agents and aggregating results.
+By giving them the ability to self-evaluate at the end of a task — and potentially retry differently — they became .blue[**agents**].
 
 --
 
-Until late 2025, these agents .red[made many errors or produced needlessly verbose code], leading to a perception of unreliable tools.
+Agents then specialized in specific tasks (e.g. coding, reading PDFs, web search), giving rise to the concept of .blue[**multi-agent**] systems — an orchestrator agent managing specialized agents and aggregating results.
+
+--
+
+Until late 2025, these agents .terra[made many errors or produced needlessly verbose code], leading to a perception of unreliable tools.
 
 ---
 
@@ -191,6 +195,41 @@ The miniaturization and democratization of .blue[vision tools] (OCR) also gives 
 
 .footnote[https://petergpt.github.io/bullshit-benchmark]
 
+<!-- ---
+class: hidden
+
+# Clawdbot / OpenClaw (aside)
+
+In parallel, starting in late November 2025, an independent agentic AI project emerged.
+
+.center[<img src="https://imgs.search.brave.com/GLssrqcoxMIafoEOGcEtWCrEHznGg0GOfa-q73oq-oY/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9kb2lt/YWdlcy5ueWMzLmNk/bi5kaWdpdGFsb2Nl/YW5zcGFjZXMuY29t/LzAwOEFydGljbGVJ/bWFnZXMvV2hhdC1J/cy1PcGVuQ2xhdy9X/aGF0JTIwaXMlMjBP/cGVuQ2xhdy5wbmc" width="40%">]
+
+The concept is to hand an entire machine over to a super-agent (the Jarvis equivalent from IronMan ©) to pilot autonomously: email inbox control, full file management, remote control via messaging apps (WhatsApp / Telegram). You start by giving it a soul .red[`SOUL.md`] and let it handle its tasks.  
+
+.right[[And these agents can turn into bullies..](https://simonwillison.net/2026/Feb/12/an-ai-agent-published-a-hit-piece-on-me/)] -->
+
+---
+class: twocol, center
+# Breakthrough in Mathematics - Solving Erdös Problems
+
+.columns[
+.gauche[
+  ## May 20th 2026
+<img src="../img/openai-erdos.png" width="80%" />
+https://openai.com/fr-FR/index/model-disproves-discrete-geometry-conjecture
+]
+
+.droite[
+  ## May 22nd 2026
+<img src="../img/deepmind-alphaproof-erdos.png" width="80%" />
+
+AlphaProof autonomously solved 9 Erdös conjectures
+
+https://arxiv.org/abs/2605.22763
+  
+]
+]
+
 ---
 
 # Possible Impact on Our Profession
@@ -211,21 +250,9 @@ It is clear that our profession is among those that will face strong AI-driven p
 .footnote[https://www.anthropic.com/research/labor-market-impacts - March 2026]
 
 ---
-
-# Clawdbot / OpenClaw (aside)
-
-In parallel, starting in late November 2025, an independent agentic AI project emerged.
-
-.center[<img src="https://imgs.search.brave.com/GLssrqcoxMIafoEOGcEtWCrEHznGg0GOfa-q73oq-oY/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9kb2lt/YWdlcy5ueWMzLmNk/bi5kaWdpdGFsb2Nl/YW5zcGFjZXMuY29t/LzAwOEFydGljbGVJ/bWFnZXMvV2hhdC1J/cy1PcGVuQ2xhdy9X/aGF0JTIwaXMlMjBP/cGVuQ2xhdy5wbmc" width="40%">]
-
-The concept is to hand an entire machine over to a super-agent (the Jarvis equivalent from IronMan ©) to pilot autonomously: email inbox control, full file management, remote control via messaging apps (WhatsApp / Telegram). You start by giving it a soul .red[`SOUL.md`] and let it handle its tasks.  
-
-.right[[And these agents can turn into bullies..](https://simonwillison.net/2026/Feb/12/an-ai-agent-published-a-hit-piece-on-me/)]
-
----
 class: blanc, middle
 
-# The AI Scientist Concept (aside)
+# More related to us there is a trend in AI Scientist Concept
 
 .left-column[
   .img-full[![Denario](../img/denario.png)]
@@ -701,7 +728,7 @@ class: twocol, blanc
 ---
 class: cover
 
-# Merci pour votre attention
+# Merci à toutes les personnes ayant répondu au sondage et celles présentes aux réunions du WG
 
 .gold-bar[]
 
