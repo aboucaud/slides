@@ -139,7 +139,7 @@ Until late 2025, these agents .terra[made many errors or produced needlessly ver
 
 ---
 
-# The Model Context Protocol
+<!-- # The Model Context Protocol
 
 In 2025, Anthropic developed a communication protocol enabling agents to easily use tools via their API, returning results directly in the correct format.
 
@@ -149,23 +149,18 @@ In 2025, Anthropic developed a communication protocol enabling agents to easily 
 
 .footnote[Credit https://lbourdois.github.io/blog/LLM_Agents/]
 
----
+--- -->
 
-# Agent Customization
+<!-- # Agent Customization -->
 
-Agent customization has converged around a .red[`AGENT.md`] file that, for a given project, holds all the context the agent needs and serves as static memory.
-
---
+<!-- Agent customization has converged around a .red[`AGENT.md`] file that, for a given project, holds all the context the agent needs and serves as static memory.
 
 To avoid repeatedly issuing the same instructions for specific tasks, .red[`SKILLS.md`] skill files emerged, allowing agents' capabilities to be extended and focused.
 
---
+The miniaturization and democratization of .blue[vision tools] (OCR) also gives agents the ability to produce accurate descriptions of any image, adding the capacity to "see" everything a human sees on their screen (screenshots). -->
 
-The miniaturization and democratization of .blue[vision tools] (OCR) also gives agents the ability to produce accurate descriptions of any image, adding the capacity to "see" everything a human sees on their screen (screenshots).
 
-.gold-sep[]
-
----
+<!-- --- -->
 
 # Early 2026: A Paradigm Shift
 
@@ -524,11 +519,11 @@ class: section
 
 ## Ideas
 
-- **Use .terra[rate-limited] inference services** (e.g., Albert, ILaaS).
-- **Stick to .terra[shared] computing resources**.
-- **Recycle hardware** (Environmental charter - Art. 1.1, 3.2, 3.3)
+- **Use .green[rate-limited] inference services** (e.g., Albert, ILaaS).
+- **Stick to .green[shared] computing resources**.
+- **.green[Recycle] hardware** (Environmental charter - Art. 1.1, 3.2, 3.3)
 - **Set up yearly token allocation** (like we already do with compute time).
-- **Rub carbon footprint tracking** (anonymous):
+- **Run .terra[carbon footprint tracking]** (anonymous):
   - Include in **annual lab reports**.
   - Add to **job submission metrics**.
 - **Use local platform** only for small-scale testing (not for scaling demand).
