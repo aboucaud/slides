@@ -1,1 +1,4 @@
-.DS_Store
+*.DS_Store
+
+# Make sure PDF exports are not commited
+*.pdf
