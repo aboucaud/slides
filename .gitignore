@@ -1,4 +1,8 @@
+# macOS specific
 *.DS_Store
+
+# Python
+__pycache__
 
 # Make sure PDF exports are not commited
 *.pdf
