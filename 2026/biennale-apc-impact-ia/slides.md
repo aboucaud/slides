@@ -1,7 +1,5 @@
 class: cover
 
-<!-- .gold-stripe[] -->
-
 # Agentic AI impact on our activities
 .gold-bar[]
 ## Philippe Bacon - Paul Zakharov - Alexandre Boucaud
@@ -139,29 +137,6 @@ Until late 2025, these agents .terra[made many errors or produced needlessly ver
 
 ---
 
-<!-- # The Model Context Protocol
-
-In 2025, Anthropic developed a communication protocol enabling agents to easily use tools via their API, returning results directly in the correct format.
-
-.center[
-  <img src="https://raw.githubusercontent.com/lbourdois/blog/refs/heads/master/assets/images/Agents/image_35.png" width="70%">
-]
-
-.footnote[Credit https://lbourdois.github.io/blog/LLM_Agents/]
-
---- -->
-
-<!-- # Agent Customization -->
-
-<!-- Agent customization has converged around a .red[`AGENT.md`] file that, for a given project, holds all the context the agent needs and serves as static memory.
-
-To avoid repeatedly issuing the same instructions for specific tasks, .red[`SKILLS.md`] skill files emerged, allowing agents' capabilities to be extended and focused.
-
-The miniaturization and democratization of .blue[vision tools] (OCR) also gives agents the ability to produce accurate descriptions of any image, adding the capacity to "see" everything a human sees on their screen (screenshots). -->
-
-
-<!-- --- -->
-
 # Early 2026: A Paradigm Shift
 
 .left-column[
@@ -189,19 +164,6 @@ The miniaturization and democratization of .blue[vision tools] (OCR) also gives 
 ]
 
 .footnote[https://petergpt.github.io/bullshit-benchmark]
-
-<!-- ---
-class: hidden
-
-# Clawdbot / OpenClaw (aside)
-
-In parallel, starting in late November 2025, an independent agentic AI project emerged.
-
-.center[<img src="https://imgs.search.brave.com/GLssrqcoxMIafoEOGcEtWCrEHznGg0GOfa-q73oq-oY/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9kb2lt/YWdlcy5ueWMzLmNk/bi5kaWdpdGFsb2Nl/YW5zcGFjZXMuY29t/LzAwOEFydGljbGVJ/bWFnZXMvV2hhdC1J/cy1PcGVuQ2xhdy9X/aGF0JTIwaXMlMjBP/cGVuQ2xhdy5wbmc" width="40%">]
-
-The concept is to hand an entire machine over to a super-agent (the Jarvis equivalent from IronMan ©) to pilot autonomously: email inbox control, full file management, remote control via messaging apps (WhatsApp / Telegram). You start by giving it a soul .red[`SOUL.md`] and let it handle its tasks.  
-
-.right[[And these agents can turn into bullies..](https://simonwillison.net/2026/Feb/12/an-ai-agent-published-a-hit-piece-on-me/)] -->
 
 ---
 class: twocol, center
