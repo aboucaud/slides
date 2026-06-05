@@ -67,5 +67,20 @@
       highlightSpans: true,
     });
   </script>
+  <script>
+    // Auto-inject .apc-footer on default/twocol/blanc/citation slides.
+    // Remove this block to disable; manually placed .apc-footer[] are respected.
+    (function () {
+      document.querySelectorAll(
+        '.remark-slide-content:not(.cover):not(.section):not(.outline):not(.fullbleed)'
+      ).forEach(function (slide) {
+        if (!slide.querySelector('.apc-footer')) {
+          var el = document.createElement('div');
+          el.className = 'apc-footer';
+          slide.appendChild(el);
+        }
+      });
+    })();
+  </script>
 </body>
 </html>

@@ -175,7 +175,7 @@ class: outline
 
 #### `class: citation`
 
-Quote slide. Background `--apc-rose-light`. Giant quotation mark watermark via `.quote-mark[]`. Text in `blockquote` (Lora italic). Terracotta bar via `.cite-bar[]`. Source via `.source[]` or `cite`.
+Quote slide. Background `--apc-rose-light`. Giant quotation mark watermark via `.quote-mark[]`. Text in `blockquote` (Lora italic). Terracotta bar via `.cite-bar[]`. Source via `.source[]` or `cite`. Has `padding-bottom: var(--footer-h)` so it is compatible with the auto-footer script.
 
 ```markdown
 ---
