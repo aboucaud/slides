@@ -1,0 +1,554 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lectures and Presentations — Alexandre Boucaud</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Space+Grotesk:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --accent:     #3d6b57;
+    --accent-mid: #8ab09a;
+    --bg:         #f4f2ee;
+    --bg-card:    #ffffff;
+    --border:     #deded8;
+    --text:       #1c1c1c;
+    --muted:      #5c5c5c;
+    --subtle:     #888888;
+    --f-display:  'DM Serif Display', Georgia, serif;
+    --f-body:     'Space Grotesk', system-ui, sans-serif;
+  }
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: var(--f-body);
+    font-size: 1rem;
+    font-weight: 300;
+    line-height: 1.7;
+    color: var(--muted);
+    background: #2a1f18;
+    -webkit-font-smoothing: antialiased;
+  }
+  a { color: var(--accent); text-decoration: none; transition: opacity 0.15s; }
+  a:hover { opacity: 0.7; }
+  .site {
+    max-width: 960px;
+    margin: 0 auto;
+    background: var(--bg);
+    box-shadow: 0 0 80px rgba(0,0,0,0.15);
+    min-height: 100vh;
+  }
+  .topbar { height: 2px; background: var(--accent); }
+  nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 22px 40px;
+    background: var(--bg-card);
+    border-bottom: 0.5px solid var(--border);
+  }
+  .nav-links { display: flex; gap: 52px; list-style: none; }
+  .nav-links a {
+    font-family: var(--f-display);
+    font-size: 1.15rem;
+    color: var(--muted);
+    transition: color 0.15s;
+    opacity: 1;
+  }
+  .nav-links a:hover, .nav-links a.active { color: var(--accent); opacity: 1; }
+  .section { padding: 52px 40px; border-bottom: 0.5px solid var(--border); }
+  .section-alt { background: var(--bg-card); }
+  .section-header {
+    display: flex;
+    align-items: baseline;
+    gap: 16px;
+    margin-bottom: 32px;
+  }
+  .section-title {
+    font-family: var(--f-display);
+    font-size: clamp(1.5rem, 3.5vw, 1.875rem);
+    font-weight: 400;
+    color: var(--text);
+    white-space: nowrap;
+  }
+  .section-rule { flex: 1; height: 0.5px; background: var(--border); }
+  .section-meta {
+    font-size: 0.625rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--subtle);
+    white-space: nowrap;
+  }
+  .filter-bar {
+    display: flex;
+    gap: 6px;
+    flex-wrap: wrap;
+    margin-bottom: 28px;
+  }
+  .filter-pill {
+    font-family: var(--f-body);
+    font-size: 0.5625rem;
+    font-weight: 500;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    padding: 4px 11px;
+    border: 0.5px solid var(--border);
+    border-radius: 3px;
+    cursor: pointer;
+    background: var(--bg-card);
+    color: var(--muted);
+    transition: all 0.15s;
+  }
+  .filter-pill.active {
+    background: var(--accent);
+    border-color: var(--accent);
+    color: #fff;
+  }
+  .filter-pill:hover:not(.active) {
+    border-color: var(--accent-mid);
+    color: var(--accent);
+  }
+  .talks-subhead {
+    font-family: var(--f-body);
+    font-size: 0.625rem;
+    font-weight: 500;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--subtle);
+    margin: 32px 0 0;
+  }
+  .talks-subhead:first-of-type { margin-top: 0; }
+  .talks-list { display: flex; flex-direction: column; }
+  .talk-row {
+    display: grid;
+    grid-template-columns: 56px 1fr auto;
+    gap: 20px;
+    align-items: center;
+    padding: 13px 0;
+    border-bottom: 0.5px solid var(--border);
+  }
+  .talk-row:first-child { border-top: 0.5px solid var(--border); }
+  .talk-badge {
+    font-size: 0.5rem;
+    font-weight: 500;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    padding: 3px 7px;
+    border: 0.5px solid var(--border);
+    border-radius: 3px;
+    color: var(--subtle);
+    background: var(--bg-card);
+    text-align: center;
+    white-space: nowrap;
+    min-height: 20px;
+    display: inline-block;
+  }
+  /* Topic badge colours — add a new line here when adding a topic to topics.yml */
+  .talk-badge.ml     { color: #3d6b57; border-color: #8ab09a; background: #edf4f0; }
+  .talk-badge.mlops  { color: #7a6030; border-color: #c9a84c; background: #faf5e8; }
+  .talk-badge.ai     { color: #4a5568; border-color: #a0aec0; background: #edf2f7; }
+  .talk-badge.python { color: #5c3d99; border-color: #b39ddb; background: #f3eeff; }
+  .talk-badge.git    { color: #8b3a3a; border-color: #e9aaaa; background: #fdf0f0; }
+  .talk-badge.tools  { color: #888888; border-color: #deded8; background: #f5f5f5; }
+  .talk-body { display: flex; flex-direction: column; gap: 2px; }
+  .talk-title {
+    font-size: 0.8125rem;
+    color: var(--text);
+    font-weight: 400;
+    line-height: 1.4;
+    opacity: 1;
+  }
+  .talk-title:hover { color: var(--accent); opacity: 1; }
+  .talk-venue {
+    font-size: 0.6875rem;
+    color: var(--muted);
+    font-weight: 300;
+  }
+  .talk-year-col {
+    font-size: 0.6875rem;
+    color: var(--subtle);
+    text-align: right;
+    white-space: nowrap;
+  }
+  footer {
+    padding: 20px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .footer-copy { font-size: 0.6875rem; color: var(--subtle); }
+  @media (max-width: 700px) {
+    nav { padding: 16px 20px; }
+    .nav-links { gap: 28px; }
+    .section { padding: 36px 20px; }
+    .talk-row { grid-template-columns: 48px 1fr; gap: 12px; }
+    .talk-year-col { display: none; }
+    footer { padding: 16px 20px; flex-direction: column; gap: 4px; align-items: flex-start; }
+  }
+</style>
+</head>
+<body>
+<div class="site">
+  <div class="topbar"></div>
+  <nav>
+    <ul class="nav-links">
+      <li><a href="https://aboucaud.github.io">Home</a></li>
+      <li><a href="." class="active">Talks</a></li>
+      <li><a href="https://aboucaud.github.io#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <section class="section section-alt">
+    <div class="section-header">
+      <h2 class="section-title">Presentations</h2>
+      <div class="section-rule"></div>
+      <span class="section-meta">35 talks &middot; 2016–2026</span>
+    </div>
+
+    <div class="filter-bar">
+      <button class="filter-pill active" data-topic="all">All</button>
+      <button class="filter-pill" data-topic="ai">AI</button>
+      <button class="filter-pill" data-topic="git">Git</button>
+      <button class="filter-pill" data-topic="ml">ML</button>
+      <button class="filter-pill" data-topic="mlops">MLOps</button>
+      <button class="filter-pill" data-topic="python">Python</button>
+      <button class="filter-pill" data-topic="tools">Tools</button>
+
+    </div>
+
+    <p class="talks-subhead">2026</p>
+    <div class="talks-list">
+      <div class="talk-row" data-topic="ai">
+        <span class="talk-badge ai">AI</span>
+        <div class="talk-body">
+          <a class="talk-title" href="2026/biennale-apc-impact-ia/">Agentic AI impact on our activities</a>
+          <span class="talk-venue">Biennale APC - June 2026</span>
+        </div>
+        <span class="talk-year-col">2026</span>
+      </div>
+      <div class="talk-row" data-topic="ai">
+        <span class="talk-badge ai">AI</span>
+        <div class="talk-body">
+          <a class="talk-title" href="2026/journee_dev_ccin2p3/">IA générative pour le développement</a>
+          <span class="talk-venue">Journées développements logiciels IN2P3 – 30 mars 2026</span>
+        </div>
+        <span class="talk-year-col">2026</span>
+      </div>
+    </div>
+    <p class="talks-subhead">2024</p>
+    <div class="talks-list">
+      <div class="talk-row" data-topic="tools">
+        <span class="talk-badge tools">Tools</span>
+        <div class="talk-body">
+          <a class="talk-title" href="2024/cafe-info-march/">HTML presentations 🧑🏼‍🏫️</a>
+          <span class="talk-venue">Café info – 21 mars 2024</span>
+        </div>
+        <span class="talk-year-col">2024</span>
+      </div>
+      <div class="talk-row" data-topic="ml">
+        <span class="talk-badge ml">ML</span>
+        <div class="talk-body">
+          <a class="talk-title" href="2024/cfe-neural-networks/">Introduction to Neural Networks</a>
+        </div>
+        <span class="talk-year-col">2024</span>
+      </div>
+      <div class="talk-row" data-topic="ml">
+        <span class="talk-badge ml">ML</span>
+        <div class="talk-body">
+          <a class="talk-title" href="2024/euclid-school-ml-cycle1/">Introduction to machine learning</a>
+          <span class="talk-venue">Ecole d&#x27;été Rodolphe Clédassou 2024 – Cycle 1</span>
+        </div>
+        <span class="talk-year-col">2024</span>
+      </div>
+      <div class="talk-row" data-topic="ml">
+        <span class="talk-badge ml">ML</span>
+        <div class="talk-body">
+          <a class="talk-title" href="2024/euclid-school-ml-cycle2/">Introduction to deep learning for cosmology</a>
+          <span class="talk-venue">Ecole d&#x27;été Rodolphe Clédassou 2024 – Cycle 2</span>
+        </div>
+        <span class="talk-year-col">2024</span>
+      </div>
+    </div>
+    <p class="talks-subhead">2023</p>
+    <div class="talks-list">
+      <div class="talk-row" data-topic="ai">
+        <span class="talk-badge ai">AI</span>
+        <div class="talk-body">
+          <a class="talk-title" href="2023/ai-seminar-centrale/">Introduction to machine learning</a>
+          <span class="talk-venue">ST4 - Black Swans Detection in Particle Physics and Cosmology – April 12th 2023</span>
+        </div>
+        <span class="talk-year-col">2023</span>
+      </div>
+      <div class="talk-row" data-topic="ai">
+        <span class="talk-badge ai">AI</span>
+        <div class="talk-body">
+          <a class="talk-title" href="2023/aissai_announcement_kyoto/">AISSAI IN2P3 semester announcement</a>
+          <span class="talk-venue">International Conf. of the Physics of the 2 Infinites – 28 mars 2023 – University of Kyoto</span>
+        </div>
+        <span class="talk-year-col">2023</span>
+      </div>
+      <div class="talk-row" data-topic="ml">
+        <span class="talk-badge ml">ML</span>
+        <div class="talk-body">
+          <a class="talk-title" href="2023/euclid-school-ml-cycle1/">Introduction to machine learning</a>
+          <span class="talk-venue">Ecole d&#x27;été Rodolphe Clédassou 2023 – Cycle 1</span>
+        </div>
+        <span class="talk-year-col">2023</span>
+      </div>
+      <div class="talk-row" data-topic="ml">
+        <span class="talk-badge ml">ML</span>
+        <div class="talk-body">
+          <a class="talk-title" href="2023/euclid-school-ml-cycle2/">Introduction to deep learning for cosmology</a>
+          <span class="talk-venue">Ecole d&#x27;été Rodolphe Clédassou 2023 – Cycle 2</span>
+        </div>
+        <span class="talk-year-col">2023</span>
+      </div>
+      <div class="talk-row" data-topic="mlops">
+        <span class="talk-badge mlops">MLOps</span>
+        <div class="talk-body">
+          <a class="talk-title" href="2023/euclid-school-mlops/">An introduction to MLOps</a>
+          <span class="talk-venue">Ecole Rodolphe Clédassou – August 2023</span>
+        </div>
+        <span class="talk-year-col">2023</span>
+      </div>
+      <div class="talk-row" data-topic="ml">
+        <span class="talk-badge ml">ML</span>
+        <div class="talk-body">
+          <a class="talk-title" href="2023/generative-networks-mml/">Introduction to generative networks</a>
+        </div>
+        <span class="talk-year-col">2023</span>
+      </div>
+      <div class="talk-row" data-topic="ml">
+        <span class="talk-badge ml">ML</span>
+        <div class="talk-body">
+          <a class="talk-title" href="2023/journee_RT_APC/">Machine learning</a>
+          <span class="talk-venue">Séminaire Technique APC – 24 mars 2023</span>
+        </div>
+        <span class="talk-year-col">2023</span>
+      </div>
+      <div class="talk-row" data-topic="mlops">
+        <span class="talk-badge mlops">MLOps</span>
+        <div class="talk-body">
+          <a class="talk-title" href="2023/lsst-france-mlops/">An introduction to MLOps</a>
+          <span class="talk-venue">LSST France – Lyon – December 2023</span>
+        </div>
+        <span class="talk-year-col">2023</span>
+      </div>
+      <div class="talk-row" data-topic="ml">
+        <span class="talk-badge ml">ML</span>
+        <div class="talk-body">
+          <a class="talk-title" href="2023/ml_for_cosmo_kyoto/">Machine learning for cosmology</a>
+          <span class="talk-venue">International Conf. of the Physics of the 2 Infinites – University of Kyoto – March 28th 2023</span>
+        </div>
+        <span class="talk-year-col">2023</span>
+      </div>
+      <div class="talk-row" data-topic="mlops">
+        <span class="talk-badge mlops">MLOps</span>
+        <div class="talk-body">
+          <a class="talk-title" href="2023/mlops_astroinfo/">An introduction to MLOps</a>
+          <span class="talk-venue">Ecole CNRS AstroInfo2023 – June 2023</span>
+        </div>
+        <span class="talk-year-col">2023</span>
+      </div>
+      <div class="talk-row" data-topic="mlops">
+        <span class="talk-badge mlops">MLOps</span>
+        <div class="talk-body">
+          <a class="talk-title" href="2023/mlops_ed127/">Introduction to ML reproducibility</a>
+          <span class="talk-venue">Cours de ML – ED 127 – June 2023</span>
+        </div>
+        <span class="talk-year-col">2023</span>
+      </div>
+    </div>
+    <p class="talks-subhead">2022</p>
+    <div class="talks-list">
+      <div class="talk-row" data-topic="ml">
+        <span class="talk-badge ml">ML</span>
+        <div class="talk-body">
+          <a class="talk-title" href="2022/convolutional-neural-networks-mml/">Hands on deep learning</a>
+        </div>
+        <span class="talk-year-col">2022</span>
+      </div>
+      <div class="talk-row" data-topic="ml">
+        <span class="talk-badge ml">ML</span>
+        <div class="talk-body">
+          <a class="talk-title" href="2022/euclid-school-ml-cycle1/">Introduction to machine learning</a>
+          <span class="talk-venue">Euclid Summer School 2022 – Cycle 1</span>
+        </div>
+        <span class="talk-year-col">2022</span>
+      </div>
+      <div class="talk-row" data-topic="ml">
+        <span class="talk-badge ml">ML</span>
+        <div class="talk-body">
+          <a class="talk-title" href="2022/euclid-school-ml-cycle2/">Introduction to deep learning</a>
+          <span class="talk-venue">Euclid Summer School 2022 – Cycle 2</span>
+        </div>
+        <span class="talk-year-col">2022</span>
+      </div>
+      <div class="talk-row" data-topic="ml">
+        <span class="talk-badge ml">ML</span>
+        <div class="talk-body">
+          <a class="talk-title" href="2022/journee_RT_APC/">Machine learning</a>
+          <span class="talk-venue">Séminaire Technique APC – 24 mars 2022</span>
+        </div>
+        <span class="talk-year-col">2022</span>
+      </div>
+      <div class="talk-row" data-topic="ml">
+        <span class="talk-badge ml">ML</span>
+        <div class="talk-body">
+          <a class="talk-title" href="2022/journee_RT_IN2P3/">Machine learning</a>
+          <span class="talk-venue">Journées R&amp;T IN2P3 – 19 octobre 2022</span>
+        </div>
+        <span class="talk-year-col">2022</span>
+      </div>
+      <div class="talk-row" data-topic="ml">
+        <span class="talk-badge ml">ML</span>
+        <div class="talk-body">
+          <a class="talk-title" href="2022/neural-networks-mml/">Hands on neural networks</a>
+        </div>
+        <span class="talk-year-col">2022</span>
+      </div>
+    </div>
+    <p class="talks-subhead">2020</p>
+    <div class="talks-list">
+      <div class="talk-row" data-topic="ml">
+        <span class="talk-badge ml">ML</span>
+        <div class="talk-body">
+          <a class="talk-title" href="2020/convolutional-neural-networks-mml/">Hands on deep learning</a>
+          <span class="talk-venue">UE MML - 20 mars 2020</span>
+        </div>
+        <span class="talk-year-col">2020</span>
+      </div>
+      <div class="talk-row" data-topic="ml">
+        <span class="talk-badge ml">ML</span>
+        <div class="talk-body">
+          <a class="talk-title" href="2020/neural-networks-mml/">Hands on neural networks</a>
+          <span class="talk-venue">UE MML - 13 mars 2020</span>
+        </div>
+        <span class="talk-year-col">2020</span>
+      </div>
+    </div>
+    <p class="talks-subhead">2019</p>
+    <div class="talks-list">
+      <div class="talk-row" data-topic="ml">
+        <span class="talk-badge ml">ML</span>
+        <div class="talk-body">
+          <a class="talk-title" href="2019/deep-learning-asterics/">Hands on deep learning</a>
+          <span class="talk-venue">ASTERICS-OBELICS School - Apr 2019</span>
+        </div>
+        <span class="talk-year-col">2019</span>
+      </div>
+      <div class="talk-row" data-topic="ml">
+        <span class="talk-badge ml">ML</span>
+        <div class="talk-body">
+          <a class="talk-title" href="2019/hands-on-deep-learning-ccin2p3/">Hands on deep learning</a>
+          <span class="talk-venue">CCIN2P3 GPU workshop - Apr 2019</span>
+        </div>
+        <span class="talk-year-col">2019</span>
+      </div>
+      <div class="talk-row" data-topic="ml">
+        <span class="talk-badge ml">ML</span>
+        <div class="talk-body">
+          <a class="talk-title" href="2019/neural-networks-asterics/">Hands on neural networks</a>
+          <span class="talk-venue">ASTERICS-OBELICS School - Apr 2019</span>
+        </div>
+        <span class="talk-year-col">2019</span>
+      </div>
+    </div>
+    <p class="talks-subhead">2018</p>
+    <div class="talks-list">
+      <div class="talk-row" data-topic="ml">
+        <span class="talk-badge ml">ML</span>
+        <div class="talk-body">
+          <a class="talk-title" href="2018/hands-on-deep-learning/">Hands on deep learning</a>
+        </div>
+        <span class="talk-year-col">2018</span>
+      </div>
+    </div>
+    <p class="talks-subhead">2017</p>
+    <div class="talks-list">
+      <div class="talk-row" data-topic="git">
+        <span class="talk-badge git">Git</span>
+        <div class="talk-body">
+          <a class="talk-title" href="2017/git-advanced/">Git Advanced</a>
+        </div>
+        <span class="talk-year-col">2017</span>
+      </div>
+      <div class="talk-row" data-topic="git">
+        <span class="talk-badge git">Git</span>
+        <div class="talk-body">
+          <a class="talk-title" href="2017/git-tutorial/">Git Tutorial</a>
+        </div>
+        <span class="talk-year-col">2017</span>
+      </div>
+      <div class="talk-row" data-topic="git">
+        <span class="talk-badge git">Git</span>
+        <div class="talk-body">
+          <a class="talk-title" href="2017/gitlab-ci/">Gitlab Ci</a>
+        </div>
+        <span class="talk-year-col">2017</span>
+      </div>
+    </div>
+    <p class="talks-subhead">2016</p>
+    <div class="talks-list">
+      <div class="talk-row" data-topic="python">
+        <span class="talk-badge python">Python</span>
+        <div class="talk-body">
+          <a class="talk-title" href="2016/python-cheatsheet/">Python Cheatsheet</a>
+        </div>
+        <span class="talk-year-col">2016</span>
+      </div>
+      <div class="talk-row" data-topic="python">
+        <span class="talk-badge python">Python</span>
+        <div class="talk-body">
+          <a class="talk-title" href="2016/python-classes/">Python Classes</a>
+        </div>
+        <span class="talk-year-col">2016</span>
+      </div>
+      <div class="talk-row" data-topic="python">
+        <span class="talk-badge python">Python</span>
+        <div class="talk-body">
+          <a class="talk-title" href="2016/python-docstrings/">Python Docstrings</a>
+        </div>
+        <span class="talk-year-col">2016</span>
+      </div>
+    </div>
+
+  </section>
+
+  <footer>
+    <span class="footer-copy">Alexandre Boucaud</span>
+    <span class="footer-copy">
+      Generated automatically &middot;
+      <a href="https://github.com/aboucaud/slides">source</a>
+    </span>
+  </footer>
+</div>
+
+<script>
+(function () {
+  var pills = document.querySelectorAll('.filter-pill');
+  pills.forEach(function (pill) {
+    pill.addEventListener('click', function () {
+      pills.forEach(function (p) { p.classList.remove('active'); });
+      pill.classList.add('active');
+      var topic = pill.dataset.topic;
+      document.querySelectorAll('.talk-row').forEach(function (row) {
+        row.style.display = (topic === 'all' || row.dataset.topic === topic) ? '' : 'none';
+      });
+      document.querySelectorAll('.talks-subhead, .talks-subhead + .talks-list').forEach(function (el) {
+        var list = el.classList.contains('talks-subhead') ? el.nextElementSibling : el;
+        var sub  = el.classList.contains('talks-subhead') ? el : el.previousElementSibling;
+        if (!list) return;
+        var hasVisible = Array.from(list.querySelectorAll('.talk-row')).some(function (r) {
+          return r.style.display !== 'none';
+        });
+        sub.style.display  = hasVisible ? '' : 'none';
+        list.style.display = hasVisible ? '' : 'none';
+      });
+    });
+  });
+})();
+</script>
+</body>
+</html>

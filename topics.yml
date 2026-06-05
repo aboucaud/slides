@@ -1,0 +1,46 @@
+# Flat map: YYYY/folder-name → topic
+# Seeded automatically by scripts/build_index.py — edit freely.
+
+2026/journee_dev_ccin2p3: AI
+2026/biennale-apc-impact-ia: AI
+
+2024/euclid-school-ml-cycle2: ML
+2024/euclid-school-ml-cycle1: ML
+2024/cfe-neural-networks: ML
+2024/cafe-info-march: Tools
+
+2023/mlops_ed127: MLOps
+2023/mlops_astroinfo: MLOps
+2023/ml_for_cosmo_kyoto: ML
+2023/lsst-france-mlops: MLOps
+2023/generative-networks-mml: ML
+2023/euclid-school-mlops: MLOps
+2023/euclid-school-ml-cycle2: ML
+2023/euclid-school-ml-cycle1: ML
+2023/journee_RT_APC: ML
+2023/aissai_announcement_kyoto: AI
+2023/ai-seminar-centrale: AI
+
+2022/neural-networks-mml: ML
+2022/journee_RT_IN2P3: ML
+2022/journee_RT_APC: ML
+2022/euclid-school-ml-cycle2: ML
+2022/euclid-school-ml-cycle1: ML
+2022/convolutional-neural-networks-mml: ML
+
+2020/neural-networks-mml: ML
+2020/convolutional-neural-networks-mml: ML
+
+2019/neural-networks-asterics: ML
+2019/hands-on-deep-learning-ccin2p3: ML
+2019/deep-learning-asterics: ML
+
+2018/hands-on-deep-learning: ML
+
+2017/gitlab-ci: Git
+2017/git-tutorial: Git
+2017/git-advanced: Git
+
+2016/python-docstrings: Python
+2016/python-classes: Python
+2016/python-cheatsheet: Python
