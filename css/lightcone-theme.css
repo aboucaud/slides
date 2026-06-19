@@ -1,0 +1,1582 @@
+/*
+ * ==========================================================================
+ * LIGHTCONE — Remark.js Theme
+ * Ported from the Reveal.js lightcone theme.
+ * Brand palette and typography from Lightcone Research (Branding.pdf).
+ * ==========================================================================
+ *
+ * BRAND PALETTE
+ * ---------------------------------------------------------------------------
+ *   --lc-bg            #f8f7f3    "Parchment"      slide background
+ *   --lc-surface       #f0eee8    derived          inset surfaces, code blocks
+ *   --lc-primary       #4e5a70    "Blue Ink"       headings, UI
+ *   --lc-secondary     #426b78    "Slate Blue"     links, h3/h4
+ *   --lc-accent        #18401c    "Pine Green"     success, highlights
+ *   --lc-warm          #a67c3c    "Antique Gold"   h1/h2, brand mark
+ *   --lc-text          #221f20    "Charcoal"       body text
+ *   --lc-muted         #6b7585    graphite         captions, secondary
+ *   --lc-highlight     #8e3a1c    "Wax Red"        alerts
+ *
+ * TYPOGRAPHY
+ * ---------------------------------------------------------------------------
+ *   Headings:  Quattrocento     humanist serif
+ *   Body:      Newsreader       editorial serif
+ *   Interface: Alegreya Sans    labels, UI
+ *   Mono:      JetBrains Mono   code
+ *
+ * ==========================================================================
+ */
+
+/* ---------------------------------------------------------------------------
+   Google Fonts
+   --------------------------------------------------------------------------- */
+@import url('https://fonts.googleapis.com/css2?family=Quattrocento:wght@400;700&family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400&family=Alegreya+Sans:wght@300;400;500;700&family=JetBrains+Mono:wght@400;500&display=swap');
+
+/* ---------------------------------------------------------------------------
+   Design tokens
+   --------------------------------------------------------------------------- */
+:root {
+    --lc-bg:          #f8f7f3;
+    --lc-surface:     #f0eee8;
+    --lc-primary:     #4e5a70;
+    --lc-secondary:   #426b78;
+    --lc-accent:      #18401c;
+    --lc-warm:        #a67c3c;
+    --lc-sage:        #a6ba99;
+    --lc-text:        #221f20;
+    --lc-muted:       #6b7585;
+    --lc-highlight:   #8e3a1c;
+
+    --lc-primary-rgb:   78, 90, 112;
+    --lc-secondary-rgb: 66, 107, 120;
+    --lc-accent-rgb:    24, 64, 28;
+    --lc-warm-rgb:      166, 124, 60;
+    --lc-highlight-rgb: 142, 58, 28;
+
+    --lc-surface-lowest:  #ffffff;
+    --lc-surface-low:     #f0eee8;
+    --lc-surface-high:    #e6e3db;
+    --lc-outline-variant: rgba(78, 90, 112, 0.15);
+
+    --lc-secondary-container: #d6e0cc;
+    --lc-on-secondary-container: #1f3a25;
+
+    --lc-font-heading: 'Quattrocento', Georgia, serif;
+    --lc-font-body:    'Newsreader', Georgia, serif;
+    --lc-font-ui:      'Alegreya Sans', system-ui, sans-serif;
+    --lc-font-mono:    'JetBrains Mono', 'Fira Code', monospace;
+
+    --lc-shadow-ambient: 0 24px 48px -12px rgba(78, 90, 112, 0.08);
+    --lc-brand-mark: url('../img/lightcone/primary-logo.svg');
+
+    /* Component tokens */
+    --lc-rule:        rgba(78, 90, 112, 0.18);
+    --lc-radius:      0.25rem;
+    --lc-radius-pill: 999px;
+}
+
+/* ---------------------------------------------------------------------------
+   Container background
+   --------------------------------------------------------------------------- */
+.remark-container {
+    background: var(--lc-bg);
+}
+
+/* ---------------------------------------------------------------------------
+   Base slide
+   --------------------------------------------------------------------------- */
+.remark-slide-content {
+    background: var(--lc-bg);
+    font-family: var(--lc-font-body);
+    font-size: 20px;
+    font-weight: 400;
+    color: var(--lc-text);
+    letter-spacing: -0.01em;
+    padding: 3em 4em;
+}
+
+/* ---------------------------------------------------------------------------
+   Typography
+   --------------------------------------------------------------------------- */
+.remark-slide-content h1 {
+    font-family: var(--lc-font-heading);
+    font-size: 2.1em;
+    font-weight: 400;
+    color: var(--lc-warm);
+    letter-spacing: -0.01em;
+    line-height: 1.15;
+    margin-bottom: 0.5em;
+}
+
+.remark-slide-content h2 {
+    font-family: var(--lc-font-heading);
+    font-size: 1.5em;
+    font-weight: 400;
+    color: var(--lc-warm);
+    letter-spacing: -0.005em;
+    line-height: 1.2;
+    margin-bottom: 0.4em;
+}
+
+.remark-slide-content h3 {
+    font-family: var(--lc-font-heading);
+    font-size: 1.1em;
+    font-weight: 400;
+    color: var(--lc-secondary);
+    letter-spacing: 0;
+    line-height: 1.3;
+    margin-bottom: 0.3em;
+}
+
+.remark-slide-content h4 {
+    font-family: var(--lc-font-heading);
+    font-size: 0.9em;
+    font-weight: 400;
+    color: var(--lc-secondary);
+    line-height: 1.3;
+    margin-bottom: 0.25em;
+}
+
+.remark-slide-content p {
+    font-family: var(--lc-font-body);
+    font-size: 0.95em;
+    line-height: 1.65;
+    margin-bottom: 0.4em;
+    color: var(--lc-text);
+}
+
+/* Neutralise the li(90%) × p(120%) compounding in loose Remark lists */
+.remark-slide-content li > p {
+    font-size: 1em;
+    margin-bottom: 0;
+}
+
+.remark-slide-content small {
+    font-family: var(--lc-font-ui);
+    font-size: 0.7em;
+    color: var(--lc-muted);
+}
+
+.remark-slide-content strong {
+    font-weight: 600;
+    color: var(--lc-primary);
+}
+
+.remark-slide-content em {
+    color: var(--lc-secondary);
+    font-style: italic;
+}
+
+/* ---------------------------------------------------------------------------
+   Links
+   --------------------------------------------------------------------------- */
+.remark-slide-content a {
+    color: var(--lc-secondary);
+    text-decoration: none;
+    border-bottom: 1px solid rgba(66, 107, 120, 0.3);
+    transition: color 0.2s ease, border-color 0.2s ease;
+}
+
+.remark-slide-content a:hover {
+    color: var(--lc-primary);
+    border-bottom-color: var(--lc-primary);
+}
+
+/* ---------------------------------------------------------------------------
+   Lists
+   --------------------------------------------------------------------------- */
+.remark-slide-content ul,
+.remark-slide-content ol {
+    font-family: var(--lc-font-body);
+    font-size: 0.95em;
+    line-height: 1.7;
+    margin-left: 1.2em;
+    text-align: left;
+}
+
+.remark-slide-content li {
+    margin-bottom: 0.25em;
+}
+
+.remark-slide-content ul li::marker {
+    color: var(--lc-secondary);
+}
+
+.remark-slide-content ol li::marker {
+    color: var(--lc-primary);
+    font-weight: 600;
+    font-family: var(--lc-font-heading);
+}
+
+/* ---------------------------------------------------------------------------
+   Code
+   --------------------------------------------------------------------------- */
+.remark-slide-content code {
+    font-family: var(--lc-font-mono);
+    font-size: 0.78em;
+    background: var(--lc-surface);
+    color: var(--lc-primary);
+    padding: 0.1em 0.35em;
+    border-radius: 0.25rem;
+    border: none;
+}
+
+.remark-slide-content pre {
+    font-size: 0.72em;
+    box-shadow: none;
+    text-align: left;
+    margin: 0.8em 0;
+}
+
+.remark-slide-content pre code {
+    display: block;
+    padding: 0.8em 1em;
+    line-height: 1.55;
+    background: var(--lc-surface);
+    border: none;
+    border-radius: 0.25rem;
+    color: var(--lc-text);
+    white-space: pre;
+    overflow: auto;
+    word-wrap: normal;
+}
+
+.remark-code-line-highlighted {
+    background-color: rgba(166, 124, 60, 0.15);
+}
+
+/* ---------------------------------------------------------------------------
+   Blockquote
+   --------------------------------------------------------------------------- */
+.remark-slide-content blockquote {
+    background: var(--lc-surface);
+    border-left: 3px solid var(--lc-secondary);
+    padding: 0.7em 1em;
+    margin: 0.7em 0;
+    border-radius: 0 0.25rem 0.25rem 0;
+    font-style: normal;
+    font-size: 0.9em;
+    color: var(--lc-text);
+    box-shadow: none;
+}
+
+.remark-slide-content blockquote p { margin-bottom: 0; }
+
+/* ---------------------------------------------------------------------------
+   Tables
+   --------------------------------------------------------------------------- */
+.remark-slide-content table {
+    font-size: 0.8em;
+    border-collapse: collapse;
+    margin: 0.7em auto;
+}
+
+.remark-slide-content table th {
+    font-family: var(--lc-font-heading);
+    font-weight: 600;
+    font-size: 0.78em;
+    color: var(--lc-primary);
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    padding: 0.4em 0.7em;
+    border-bottom: 2px solid rgba(78, 90, 112, 0.12);
+    text-align: left;
+}
+
+.remark-slide-content table td {
+    padding: 0.4em 0.7em;
+    border-bottom: none;
+}
+
+/* ---------------------------------------------------------------------------
+   Images
+   --------------------------------------------------------------------------- */
+.remark-slide-content img {
+    border: none;
+    box-shadow: none;
+    background: none;
+    max-width: 100%;
+    border-radius: 0.25rem;
+}
+
+/* ---------------------------------------------------------------------------
+   HR
+   --------------------------------------------------------------------------- */
+.remark-slide-content hr {
+    border: none;
+    height: 1px;
+    background: linear-gradient(90deg,
+        transparent 0%,
+        rgba(166, 124, 60, 0.35) 50%,
+        transparent 100%
+    );
+    margin: 1em 0;
+}
+
+/* ---------------------------------------------------------------------------
+   Slide number
+   --------------------------------------------------------------------------- */
+.remark-slide-number {
+    font-family: var(--lc-font-mono);
+    font-size: 0.55em;
+    color: var(--lc-muted);
+    background: transparent;
+}
+
+/* ---------------------------------------------------------------------------
+   Brand mark — top-left on all content slides except cover/section/outline/fullbleed
+   --------------------------------------------------------------------------- */
+.remark-slide-content:not(.cover):not(.section):not(.outline):not(.fullbleed)::after {
+    content: '';
+    position: absolute;
+    top: 20px;
+    left: 24px;
+    width: 160px;
+    height: 26px;
+    background-image: var(--lc-brand-mark);
+    background-repeat: no-repeat;
+    background-position: left center;
+    background-size: contain;
+    pointer-events: none;
+    z-index: 10;
+}
+
+/* ============================================================================
+   SLIDE TYPES
+   ============================================================================ */
+
+/* ---------------------------------------------------------------------------
+   Cover slide
+   --------------------------------------------------------------------------- */
+.remark-slide-content.cover {
+    background: var(--lc-bg);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 2em 5em;
+}
+
+/* Subtle radial gold glow */
+.remark-slide-content.cover::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(
+        ellipse 60% 50% at 50% 45%,
+        rgba(166, 124, 60, 0.07) 0%,
+        transparent 70%
+    );
+    pointer-events: none;
+    z-index: 0;
+}
+
+.remark-slide-content.cover > * { position: relative; z-index: 1; }
+
+.remark-slide-content.cover h1 {
+    font-size: 2.8em;
+    letter-spacing: -0.015em;
+    line-height: 1.08;
+    margin-bottom: 0.25em;
+}
+
+.remark-slide-content.cover h2 {
+    font-family: var(--lc-font-body);
+    font-size: 1.05em;
+    font-weight: 300;
+    color: var(--lc-muted);
+    letter-spacing: 0.02em;
+    margin-top: 0;
+    margin-bottom: 0.3em;
+}
+
+.remark-slide-content.cover h3 {
+    font-family: var(--lc-font-ui);
+    font-size: 0.78em;
+    font-weight: 400;
+    color: var(--lc-muted);
+    letter-spacing: 0.04em;
+    margin-top: 0.5em;
+}
+
+/* ---------------------------------------------------------------------------
+   Masthead rule — thin gold gradient decorative line, used on cover slides
+   --------------------------------------------------------------------------- */
+.masthead-rule {
+    display: block;
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    height: 1px;
+    background: linear-gradient(90deg,
+        transparent 0%,
+        rgba(166, 124, 60, 0.55) 25%,
+        rgba(166, 124, 60, 0.55) 75%,
+        transparent 100%
+    );
+    margin-bottom: 2.5em;
+    flex-shrink: 0;
+}
+
+/* ---------------------------------------------------------------------------
+   LightCone logo component — centered on cover slides
+   --------------------------------------------------------------------------- */
+.lc-logo {
+    display: block;
+    position: relative;
+    z-index: 1;
+    width: 180px;
+    height: 29px;
+    margin: 1.8em auto 0;
+    background-image: var(--lc-brand-mark);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    flex-shrink: 0;
+}
+
+/* ---------------------------------------------------------------------------
+   Section slide
+   --------------------------------------------------------------------------- */
+.remark-slide-content.section {
+    background: var(--lc-bg);
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    padding: 3em 4.5em;
+}
+
+/* Warm accent stripe at top */
+.remark-slide-content.section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg,
+        var(--lc-warm) 0%,
+        rgba(166, 124, 60, 0.25) 65%,
+        transparent 100%
+    );
+}
+
+.remark-slide-content.section h1 {
+    font-size: 2.4em;
+    color: var(--lc-warm);
+    letter-spacing: -0.015em;
+    line-height: 1.1;
+    margin-top: 0.3em;
+    margin-bottom: 0;
+}
+
+/* ---------------------------------------------------------------------------
+   Section label — small caps chip, used on section/content slides
+   --------------------------------------------------------------------------- */
+.section-label {
+    display: inline-block;
+    font-family: var(--lc-font-ui);
+    font-size: 0.6em;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.14em;
+    color: var(--lc-primary);
+    padding: 0.25em 0.75em;
+    border-radius: 0.25rem;
+    background: rgba(78, 90, 112, 0.08);
+    margin-bottom: 0.6em;
+}
+
+/* ---------------------------------------------------------------------------
+   Outline slide
+   --------------------------------------------------------------------------- */
+.remark-slide-content.outline {
+    background: var(--lc-bg);
+    padding: 2.5em 4em;
+}
+
+.remark-slide-content.outline h1 {
+    font-size: 1.5em;
+    color: var(--lc-primary);
+    border-bottom: 2px solid rgba(78, 90, 112, 0.12);
+    padding-bottom: 0.3em;
+    margin-bottom: 0.8em;
+}
+
+.remark-slide-content.outline ol {
+    counter-reset: outline-counter;
+    list-style: none;
+    margin-left: 0;
+    font-size: 1.05em;
+    line-height: 2.1;
+}
+
+.remark-slide-content.outline ol li {
+    counter-increment: outline-counter;
+    color: var(--lc-text);
+    margin-bottom: 0;
+}
+
+.remark-slide-content.outline ol li::before {
+    content: counter(outline-counter, decimal-leading-zero) ". ";
+    font-family: var(--lc-font-heading);
+    font-weight: 700;
+    color: var(--lc-warm);
+    margin-right: 0.4em;
+    letter-spacing: 0.02em;
+}
+
+/* Suppress the default marker since we use ::before */
+.remark-slide-content.outline ol li::marker { content: ''; }
+
+/* ---------------------------------------------------------------------------
+   Blanc slide — white background
+   --------------------------------------------------------------------------- */
+.remark-slide-content.blanc {
+    background: var(--lc-surface-lowest);
+}
+
+/* ---------------------------------------------------------------------------
+   Fullbleed slide
+   --------------------------------------------------------------------------- */
+.remark-slide-content.fullbleed {
+    background: #000;
+    padding: 0;
+}
+
+.remark-slide-content.fullbleed img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 0;
+    max-width: none;
+}
+
+.remark-slide-content.fullbleed .caption {
+    position: absolute;
+    bottom: 0.8em;
+    right: 1em;
+    font-family: var(--lc-font-ui);
+    font-size: 0.6em;
+    color: rgba(255, 255, 255, 0.7);
+    background: rgba(0, 0, 0, 0.45);
+    padding: 0.2em 0.55em;
+    border-radius: 0.15rem;
+}
+
+/* ============================================================================
+   UTILITY CLASSES
+   ============================================================================ */
+
+/* -- Text colors ------------------------------------------------------------- */
+.text-primary   { color: var(--lc-primary)   !important; }
+.text-secondary { color: var(--lc-secondary) !important; }
+.text-accent    { color: var(--lc-accent)    !important; }
+.text-warm      { color: var(--lc-warm)      !important; }
+.text-highlight { color: var(--lc-highlight) !important; }
+.text-muted     { color: var(--lc-muted)     !important; }
+
+/* APC-compatible aliases */
+.navy  { color: var(--lc-primary)   !important; }
+.gold  { color: var(--lc-warm)      !important; }
+.terra { color: var(--lc-highlight) !important; }
+.rose  { color: var(--lc-secondary) !important; }
+
+/* -- Size helpers ----------------------------------------------------------- */
+.small  { font-size: 0.82em; }
+.medium { font-size: 1.1em; }
+.large  { font-size: 1.25em; }
+.huge   { font-size: 1.5em; }
+
+/* -- Alignment -------------------------------------------------------------- */
+.center { text-align: center !important; }
+.right  { text-align: right  !important; }
+.bold   { font-weight: 700   !important; }
+
+/* -- Muted ------------------------------------------------------------------ */
+.muted { color: var(--lc-muted); font-size: 0.88em; }
+
+/* -- Visibility ------------------------------------------------------------- */
+.hidden { visibility: hidden; }
+
+/* -- Hero title ------------------------------------------------------------- */
+.hero-title {
+    font-family: var(--lc-font-heading);
+    font-size: 2.8em;
+    font-weight: 400;
+    letter-spacing: -0.015em;
+    line-height: 1.05;
+    color: var(--lc-warm);
+    margin-bottom: 0.4em;
+}
+
+/* -- Subtitle --------------------------------------------------------------- */
+.subtitle {
+    font-family: var(--lc-font-body);
+    font-size: 1.05em;
+    font-weight: 300;
+    color: var(--lc-muted);
+    letter-spacing: 0.02em;
+    margin-top: 0;
+}
+
+/* -- Stat / KPI block ------------------------------------------------------- */
+.stat { text-align: center; padding: 0.6em 0; }
+
+.stat-number {
+    font-family: var(--lc-font-heading);
+    font-size: 2.4em;
+    font-weight: 400;
+    color: var(--lc-primary);
+    line-height: 1;
+    margin-bottom: 0.1em;
+}
+
+.stat-label {
+    font-family: var(--lc-font-ui);
+    font-size: 0.7em;
+    font-weight: 500;
+    color: var(--lc-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+}
+
+/* -- Card / Panel ----------------------------------------------------------- */
+.card {
+    background: var(--lc-surface-lowest);
+    border: none;
+    border-radius: 0.25rem;
+    padding: 1em 1.2em;
+    box-shadow: var(--lc-shadow-ambient);
+}
+
+.card-glow {
+    background: var(--lc-surface-lowest);
+    border: none;
+    border-radius: 0.25rem;
+    padding: 1em 1.2em;
+    box-shadow: 0 24px 48px -12px rgba(78, 90, 112, 0.10);
+}
+
+/* -- Highlight box ---------------------------------------------------------- */
+.highlight-box {
+    background: rgba(78, 90, 112, 0.06);
+    border-left: 3px solid var(--lc-primary);
+    padding: 0.6em 1em;
+    border-radius: 0 0.25rem 0.25rem 0;
+}
+
+/* -- Gold separator --------------------------------------------------------- */
+.gold-sep {
+    display: block;
+    height: 3px;
+    width: 3em;
+    background: var(--lc-warm);
+    border-radius: 2px;
+    margin: 0.6em 0;
+}
+
+/* -- Pill / Tag ------------------------------------------------------------- */
+.pill {
+    display: inline-block;
+    font-family: var(--lc-font-ui);
+    font-size: 0.55em;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    padding: 0.2em 0.65em;
+    border-radius: 100px;
+    color: #ffffff;
+}
+
+.pill-primary   { background: var(--lc-primary);   }
+.pill-secondary { background: var(--lc-secondary); }
+.pill-accent    { background: var(--lc-accent);    }
+.pill-warm      { background: var(--lc-warm);      }
+.pill-highlight { background: var(--lc-highlight); }
+.pill-muted     { background: var(--lc-muted);     }
+
+/* -- CTA button ------------------------------------------------------------- */
+.cta {
+    display: inline-block;
+    font-family: var(--lc-font-heading);
+    font-size: 0.85em;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+    padding: 0.5em 1.4em;
+    border-radius: 0.25rem;
+    background: var(--lc-primary);
+    color: #ffffff;
+    text-decoration: none;
+    border: none;
+    cursor: pointer;
+    box-shadow: 0 4px 20px rgba(78, 90, 112, 0.15);
+}
+
+.cta-outline {
+    display: inline-block;
+    font-family: var(--lc-font-heading);
+    font-size: 0.85em;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+    padding: 0.5em 1.4em;
+    border-radius: 0.25rem;
+    background: transparent;
+    color: var(--lc-primary);
+    border: 1.5px solid var(--lc-primary);
+    cursor: pointer;
+}
+
+/* -- Column layouts --------------------------------------------------------- */
+.cols {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5em;
+    align-items: start;
+}
+
+.cols-3 {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 1.2em;
+    align-items: start;
+}
+
+.left-column  { width: 49%; float: left; }
+.right-column { width: 49%; float: right; }
+.reset-column { clear: both; }
+
+.flex-row {
+    display: flex;
+    gap: 1em;
+    align-items: flex-start;
+    justify-content: center;
+}
+
+.flex-col { flex: 1; min-width: 0; }
+
+/* -- Single centred image --------------------------------------------------- */
+.singleimg img {
+    display: block;
+    margin: 0 auto;
+    max-width: 90%;
+    max-height: 500px;
+}
+
+/* -- Full-width image ------------------------------------------------------- */
+.img-full img { width: 100%; border-radius: 0.25rem; }
+
+/* -- Footnote / credits ----------------------------------------------------- */
+.footnote {
+    position: absolute;
+    bottom: 1.2em;
+    right: 2em;
+    font-family: var(--lc-font-ui);
+    font-size: 0.6em;
+    color: var(--lc-muted);
+    font-weight: 300;
+}
+
+.credits {
+    font-style: italic;
+    font-size: 0.7em;
+    color: var(--lc-muted);
+    float: right;
+}
+
+/* -- Stamp ------------------------------------------------------------------ */
+.stamp {
+    display: inline-block;
+    font-family: var(--lc-font-ui);
+    font-size: 1.4em;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--lc-highlight);
+    border: 3px solid var(--lc-highlight);
+    padding: 0.2em 0.6em;
+    border-radius: 0.2rem;
+    transform: rotate(-18deg);
+    display: block;
+    text-align: center;
+    margin: 0 auto;
+    opacity: 0.85;
+}
+
+/* ============================================================================
+   SCROLLBARS
+   ============================================================================ */
+.remark-slide-content ::-webkit-scrollbar { width: 6px; height: 6px; }
+.remark-slide-content ::-webkit-scrollbar-track { background: transparent; }
+.remark-slide-content ::-webkit-scrollbar-thumb {
+    background: rgba(78, 90, 112, 0.12);
+    border-radius: 3px;
+}
+.remark-slide-content ::-webkit-scrollbar-thumb:hover {
+    background: rgba(78, 90, 112, 0.20);
+}
+
+/* ============================================================================
+   PRINT
+   ============================================================================ */
+@media print {
+    .remark-slide-content {
+        background: #ffffff;
+        color: var(--lc-text);
+    }
+    .remark-slide-content h1,
+    .remark-slide-content h2 { color: var(--lc-warm); }
+    .remark-slide-content h3 { color: var(--lc-secondary); }
+}
+
+/* ============================================================================
+   COMPONENT LIBRARY — ported from Berkeley2026.html
+   All classes below are additive; they do not affect base slide styling.
+   ============================================================================ */
+
+/* ---------------------------------------------------------------------------
+   Typography utilities
+   --------------------------------------------------------------------------- */
+
+/* Small-caps eyebrow label above headings */
+.eyebrow {
+    font-family: var(--lc-font-ui);
+    font-size: 0.55em;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--lc-text);
+    opacity: 0.62;
+    margin: 0;
+}
+
+/* Bold serif subheading (use instead of h3 when inside a component) */
+.headline {
+    font-family: var(--lc-font-heading);
+    font-weight: 700;
+    font-size: 0.85em;
+    line-height: 1.25;
+    letter-spacing: -0.01em;
+    color: var(--lc-primary);
+    margin: 0;
+}
+
+/* Editorial body copy inside components */
+.body-text {
+    font-family: var(--lc-font-body);
+    font-size: 0.9em;
+    line-height: 1.6;
+    color: var(--lc-text);
+    margin: 0;
+}
+
+/* Bottom callout — serif, wax-red, separated from above by a rule */
+.takeaway {
+    font-family: var(--lc-font-heading);
+    font-weight: 400;
+    font-size: 0.88em;
+    line-height: 1.35;
+    color: var(--lc-highlight);
+    margin: auto 0 0;
+    padding-top: 0.65em;
+    border-top: 1px solid var(--lc-rule);
+}
+
+/* ---------------------------------------------------------------------------
+   Step tabs — non-interactive tab strip showing current step
+   Usage:
+     .step-tabs
+       .step-tab.is-active  .step-tab__num[01]  Record
+       .step-tab            .step-tab__num[02]  Decide
+   --------------------------------------------------------------------------- */
+.step-tabs {
+    display: flex;
+    align-items: stretch;
+    justify-content: center;
+    gap: 0;
+    width: 100%;
+    border-bottom: 1px solid var(--lc-rule);
+    margin-bottom: 1.2em;
+}
+
+.step-tab {
+    font-family: var(--lc-font-ui);
+    font-size: 0.75em;
+    letter-spacing: 0.02em;
+    color: var(--lc-warm);
+    opacity: 0.5;
+    padding: 0.4em 1em 0.55em;
+    border-bottom: 2px solid transparent;
+    margin-bottom: -1px;
+    white-space: nowrap;
+}
+
+.step-tab__num {
+    font-family: var(--lc-font-mono);
+    font-size: 0.9em;
+    margin-right: 0.5em;
+    opacity: 0.85;
+}
+
+.step-tab.is-active {
+    opacity: 1;
+    font-weight: 600;
+    border-bottom-color: var(--lc-warm);
+}
+
+/* ---------------------------------------------------------------------------
+   Vis-card — macOS-style chrome card
+   Usage:
+     .vis-card
+       .vis-card__chrome
+         .vis-dot (×3)
+         .vis-card__title  or  .vis-card__filename
+         .vis-card__tag[.--accent]
+       .vis-card__body
+   --------------------------------------------------------------------------- */
+.vis-card {
+    border: 1px solid var(--lc-rule);
+    border-radius: var(--lc-radius);
+    background: var(--lc-bg);
+    overflow: hidden;
+    box-shadow: 0 10px 26px -18px rgba(78, 90, 112, 0.30);
+    font-family: var(--lc-font-ui);
+    width: 100%;
+}
+
+.vis-card__chrome {
+    display: flex;
+    align-items: center;
+    gap: 0.45rem;
+    padding: 0.45rem 0.8rem;
+    border-bottom: 1px solid var(--lc-rule);
+    background: var(--lc-surface-low);
+    font-size: 0.74rem;
+    min-height: 1.9rem;
+}
+
+.vis-card__title {
+    font-family: var(--lc-font-mono);
+    font-size: 0.74rem;
+    color: var(--lc-muted);
+    margin-left: 0.35rem;
+}
+
+.vis-card__filename {
+    font-family: var(--lc-font-mono);
+    font-size: 0.78rem;
+    color: var(--lc-text);
+    font-weight: 500;
+}
+
+.vis-card__tag {
+    font-family: var(--lc-font-ui);
+    font-size: 0.62rem;
+    font-weight: 600;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--lc-bg);
+    background: var(--lc-primary);
+    padding: 0.18rem 0.48rem;
+    border-radius: 0.2rem;
+    line-height: 1.2;
+}
+
+.vis-card__tag--accent  { background: var(--lc-accent); }
+.vis-card__tag--warm    { background: var(--lc-warm); }
+.vis-card__tag--highlight { background: var(--lc-highlight); }
+
+.vis-card__body { padding: 0.85rem 1rem 1rem; }
+
+/* Traffic-light dots for chrome bar */
+.vis-dot {
+    display: inline-block;
+    width: 0.55rem;
+    height: 0.55rem;
+    border-radius: 50%;
+    background: var(--lc-surface-high);
+}
+
+.vis-card__chrome .vis-dot:nth-child(1) { background: #d4715f; }
+.vis-card__chrome .vis-dot:nth-child(2) { background: #d6b25a; }
+.vis-card__chrome .vis-dot:nth-child(3) { background: #87a87a; }
+
+/* Green circular checkmark badge */
+.vis-check {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 1.05rem;
+    height: 1.05rem;
+    background: var(--lc-accent);
+    color: var(--lc-bg);
+    border-radius: 50%;
+    font-size: 0.72rem;
+    font-weight: 700;
+    flex-shrink: 0;
+}
+
+/* ---------------------------------------------------------------------------
+   Terminal visualization
+   Usage:
+     .vis-terminal (optionally inside .vis-card__body)
+       .vis-terminal__line
+         span.vis-terminal__prompt  $
+         "command"
+       .vis-terminal__line.--out  →  green output line
+   --------------------------------------------------------------------------- */
+.vis-terminal {
+    font-family: var(--lc-font-mono);
+    font-size: 0.78em;
+    line-height: 1.55;
+    color: var(--lc-text);
+    background: var(--lc-bg);
+    padding: 0.85rem 1rem 0.95rem;
+}
+
+.vis-terminal__line {
+    margin: 0.2rem 0;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.vis-terminal__prompt {
+    color: var(--lc-warm);
+    margin-right: 0.45rem;
+    font-weight: 600;
+}
+
+.vis-terminal__line--out { color: var(--lc-accent); }
+
+/* Vertical line + arrowhead connector between stacked vis-cards */
+.vis-connector {
+    width: 1px;
+    height: 1.2rem;
+    background: var(--lc-rule);
+    position: relative;
+    margin: 0 auto;
+}
+
+.vis-connector::after {
+    content: '';
+    position: absolute;
+    bottom: -1px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0; height: 0;
+    border-top: 5px solid var(--lc-rule);
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+}
+
+/* ---------------------------------------------------------------------------
+   YAML visualization — two flavors
+
+   Compact grid (key / value pairs):
+     .vis-yaml
+       .vis-yaml__row  .vis-yaml__key[key:]  value
+
+   Full document (mono-font YAML file):
+     .vis-yaml-doc (inside .vis-card__body)
+       .yaml-line[.--section|--empty|--anchor]
+         span.yaml-key  key:
+         span.yaml-val  value
+   --------------------------------------------------------------------------- */
+.vis-yaml {
+    font-family: var(--lc-font-mono);
+    font-size: 0.78em;
+    color: var(--lc-text);
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.35rem 1.5rem;
+}
+
+.vis-yaml__row { white-space: nowrap; }
+.vis-yaml__key { color: var(--lc-primary); font-weight: 500; }
+
+.vis-yaml-doc {
+    font-family: var(--lc-font-mono);
+    font-size: 0.72em;
+    line-height: 1.5;
+    padding: 0.8rem 0.95rem 0.9rem;
+}
+
+.yaml-line        { white-space: pre; color: var(--lc-text); }
+.yaml-line--section { color: var(--lc-primary); font-weight: 600; }
+.yaml-line--empty   { height: 0.4rem; }
+.yaml-line--anchor  { display: flex; align-items: center; }
+.yaml-line__content { white-space: pre; }
+.yaml-line__dot {
+    width: 0.4rem; height: 0.4rem;
+    border-radius: 50%;
+    background: var(--lc-muted);
+    margin-left: auto;
+    margin-right: 0.3rem;
+    flex-shrink: 0;
+}
+
+.yaml-key { color: var(--lc-text); opacity: 0.85; }
+.yaml-val { color: var(--lc-accent); }
+
+/* ---------------------------------------------------------------------------
+   Script pipeline — stacked named scripts with arrow connectors
+   Usage:
+     .vis-scripts
+       span.vis-scripts__cli  $ lc run
+       .vis-script  .vis-script__name[step1]
+       .vis-script.--anchor  .vis-script__name[step2]  .vis-script__dot
+   --------------------------------------------------------------------------- */
+.vis-scripts {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    gap: 0.4rem;
+    border: 1px solid var(--lc-rule);
+    border-radius: var(--lc-radius);
+    background: color-mix(in srgb, var(--lc-bg) 60%, transparent);
+    padding: 1.65rem 0.5rem 0.75rem;
+    position: relative;
+}
+
+.vis-scripts__cli {
+    position: absolute;
+    top: 0.5rem; left: 0.65rem;
+    font-family: var(--lc-font-mono);
+    font-size: 0.62rem;
+    letter-spacing: 0.02em;
+    color: var(--lc-muted);
+    pointer-events: none;
+}
+
+.vis-scripts__prompt { color: var(--lc-highlight); margin-right: 0.25rem; }
+
+.vis-script {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.28rem 0.75rem;
+    border: 1px solid var(--lc-rule);
+    background: var(--lc-bg);
+    border-radius: 0.22rem;
+    font-family: var(--lc-font-mono);
+    font-size: 0.74rem;
+    position: relative;
+    min-width: 7rem;
+    text-align: center;
+    box-shadow: 0 1px 0 rgba(27, 55, 80, 0.04);
+}
+
+/* Vertical line connector between sequential scripts */
+.vis-script + .vis-script::before {
+    content: '';
+    position: absolute;
+    top: -0.4rem; left: 50%;
+    width: 1.4px; height: 0.4rem;
+    background: var(--lc-rule);
+    transform: translateX(-50%);
+}
+
+/* Arrowhead on connector */
+.vis-script + .vis-script::after {
+    content: '';
+    position: absolute;
+    top: -0.18rem; left: 50%;
+    width: 0.32rem; height: 0.32rem;
+    border-right: 1.4px solid var(--lc-rule);
+    border-bottom: 1.4px solid var(--lc-rule);
+    transform: translate(-50%, -50%) rotate(45deg);
+}
+
+.vis-script__name { color: var(--lc-primary); font-weight: 500; }
+
+.vis-script--anchor { position: relative; }
+
+/* Input anchor dot on left edge of script box */
+.vis-script__dot {
+    position: absolute;
+    left: 0; top: 50%;
+    width: 0.42rem; height: 0.42rem;
+    border-radius: 50%;
+    background: var(--lc-muted);
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+}
+
+/* ---------------------------------------------------------------------------
+   Decision card — vertical decision + evidence pair with bridge
+   Usage:
+     .vis-decision
+       .vis-decision__card.vis-card  (+ chrome + body)
+         .vis-decision__title
+         .vis-decision__options > ul
+           li.vis-decision__option[.is-selected]
+             .vis-radio
+             "Option text"
+       .vis-decision__bridge
+         .vis-decision__bridge-line
+         .vis-decision__bridge-label  supported by
+         .vis-decision__bridge-line.--arrow
+       .vis-decision__evidence.vis-card  (+ chrome + body)
+         p.vis-decision__quote
+         p.vis-decision__cite
+         p.vis-decision__doi
+         .vis-decision__check > .vis-check  ✓
+   --------------------------------------------------------------------------- */
+.vis-decision {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0;
+    width: 100%;
+}
+
+.vis-decision__title {
+    font-family: var(--lc-font-heading);
+    font-size: 0.9em;
+    color: var(--lc-primary);
+    margin: 0 0 0.5em;
+    font-weight: 600;
+}
+
+.vis-decision__options {
+    list-style: none; margin: 0; padding: 0;
+    display: flex; flex-direction: column; gap: 0.28rem;
+}
+
+.vis-decision__option {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    font-size: 0.82em;
+    color: var(--lc-text);
+    opacity: 0.55;
+}
+
+.vis-decision__option.is-selected {
+    opacity: 1;
+    color: var(--lc-primary);
+    font-weight: 500;
+}
+
+/* Radio button circle */
+.vis-radio {
+    display: inline-block;
+    width: 0.85rem; height: 0.85rem;
+    border: 1.5px solid var(--lc-rule);
+    border-radius: 50%;
+    flex-shrink: 0;
+    position: relative;
+}
+
+.vis-decision__option.is-selected .vis-radio {
+    border-color: var(--lc-primary);
+}
+
+.vis-decision__option.is-selected .vis-radio::after {
+    content: '';
+    position: absolute;
+    inset: 2px;
+    background: var(--lc-primary);
+    border-radius: 50%;
+}
+
+/* Bridge connector between decision and evidence */
+.vis-decision__bridge {
+    display: flex; flex-direction: column;
+    align-items: center; gap: 0.3rem;
+    padding: 0.4rem 0;
+}
+
+.vis-decision__bridge-line {
+    display: block;
+    width: 1.5px;
+    height: 0.75rem;
+    background: var(--lc-warm);
+    opacity: 0.7;
+    transform-origin: top;
+}
+
+.vis-decision__bridge-label {
+    font-family: var(--lc-font-ui);
+    font-size: 0.55em;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--lc-warm);
+    font-weight: 600;
+    padding: 0.15rem 0.5rem;
+    background: rgba(166, 124, 60, 0.10);
+    border-radius: var(--lc-radius-pill);
+}
+
+.vis-decision__bridge-line--arrow {
+    position: relative;
+    transform-origin: top;
+}
+
+.vis-decision__bridge-line--arrow::after {
+    content: '';
+    position: absolute;
+    bottom: -1px; left: 50%;
+    transform: translateX(-50%);
+    width: 0; height: 0;
+    border-top: 5px solid var(--lc-warm);
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    opacity: 0.85;
+}
+
+/* Evidence card text */
+.vis-decision__quote {
+    font-family: var(--lc-font-body);
+    font-style: italic;
+    font-size: 0.82em;
+    color: var(--lc-text);
+    margin: 0 0 0.4em;
+    line-height: 1.5;
+}
+
+.vis-decision__cite {
+    font-size: 0.72em;
+    color: var(--lc-muted);
+    margin: 0;
+}
+
+.vis-decision__doi {
+    font-family: var(--lc-font-mono);
+    font-size: 0.66em;
+}
+
+.vis-decision__check {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    font-size: 0.7em;
+    color: var(--lc-accent);
+    margin: 0.3em 0 0 auto;
+    font-weight: 500;
+}
+
+/* ---------------------------------------------------------------------------
+   Inspector rows — key / value metadata panel
+   Usage:
+     .vis-inspect__rows
+       .vis-inspect__row
+         span.vis-inspect__label  FIELD
+         span or code             value
+   --------------------------------------------------------------------------- */
+.vis-inspect__rows { font-family: var(--lc-font-ui); }
+
+.vis-inspect__row {
+    display: grid;
+    grid-template-columns: 8rem 1fr;
+    gap: 0.55rem;
+    align-items: baseline;
+    font-size: 0.75em;
+    padding: 0.32rem 0;
+    border-bottom: 1px solid rgba(78, 90, 112, 0.08);
+}
+
+.vis-inspect__row:last-child { border-bottom: none; }
+
+.vis-inspect__row code {
+    font-family: var(--lc-font-mono);
+    font-size: 0.95em;
+    color: var(--lc-primary);
+    background: var(--lc-surface-low);
+    padding: 0.05em 0.35em;
+    border-radius: 0.15rem;
+}
+
+.vis-inspect__label {
+    font-size: 0.85em;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--lc-muted);
+}
+
+/* ---------------------------------------------------------------------------
+   Process step row — horizontal flow with circular icons and arrows
+   Usage:
+     .step-row
+       .step  .step__icon[emoji/icon]  p.step__label[text]
+       span.step__arrow  →
+       .step  …
+   --------------------------------------------------------------------------- */
+.step-row {
+    display: flex;
+    gap: 0.8em;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.step {
+    display: flex; flex-direction: column;
+    align-items: center; gap: 0.3em;
+    min-width: 5.5em;
+}
+
+.step__icon {
+    width: 2.2em; height: 2.2em;
+    border-radius: 50%;
+    display: flex;
+    align-items: center; justify-content: center;
+    font-size: 0.95em;
+    background: rgba(78, 90, 112, 0.08);
+}
+
+.step__label {
+    font-family: var(--lc-font-ui);
+    font-size: 0.6em;
+    color: var(--lc-text);
+    margin: 0;
+    text-align: center;
+    line-height: 1.3;
+}
+
+.step__arrow {
+    font-size: 0.7em;
+    color: var(--lc-muted);
+    opacity: 0.6;
+    flex-shrink: 0;
+}
+
+/* ---------------------------------------------------------------------------
+   Walkthrough panel — 2-column explainer layout
+   Usage:
+     .walkthrough-panel
+       .walkthrough-copy
+         p.eyebrow
+         p.headline
+         p.body-text
+         p.takeaway
+       .walkthrough-visual
+         .vis-card or .vis-terminal …
+   --------------------------------------------------------------------------- */
+.walkthrough-panel {
+    display: grid;
+    grid-template-columns: minmax(0, 0.82fr) minmax(0, 1.18fr);
+    gap: 1.5em;
+    align-items: center;
+    padding: 1.4em 1.6em;
+    border: 1px solid var(--lc-rule);
+    border-radius: var(--lc-radius);
+    width: 100%;
+}
+
+.walkthrough-copy {
+    display: flex;
+    flex-direction: column;
+    gap: 0.65em;
+    align-self: stretch;
+    align-items: flex-start;
+    text-align: left;
+}
+
+.walkthrough-visual {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 12em;
+}
+
+/* ============================================================================
+   ENTRANCE ANIMATIONS — ported verbatim from Berkeley2026.html
+   Apply to elements that should animate in when the slide is shown.
+
+   Basic helpers:
+     .anim-rise   — slide up + fade in
+     .anim-fade   — fade in
+     .anim-pop    — bounce scale
+   Delay modifiers (stack with .anim-*):
+     .anim-delay-1 … .anim-delay-5  (0.2s steps)
+   ============================================================================ */
+
+@keyframes vis-rise {
+    from { opacity: 0; transform: translateY(12px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes vis-fade {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+@keyframes vis-grow-v {
+    from { transform: scaleY(0); opacity: 0; }
+    to   { transform: scaleY(1); opacity: 1; }
+}
+
+@keyframes vis-pop-in {
+    from { opacity: 0; transform: scale(0.5); }
+    60%  { opacity: 1; transform: scale(1.12); }
+    to   { opacity: 1; transform: scale(1); }
+}
+
+@keyframes vis-light-step {
+    from { opacity: 0.45; }
+    to   { opacity: 1; color: var(--lc-primary); }
+}
+
+@keyframes vis-light-step-dot {
+    from { background: var(--lc-surface-high); border-color: var(--lc-rule); }
+    to   { background: var(--lc-warm); border-color: var(--lc-warm); }
+}
+
+@keyframes vis-radio-fill {
+    from { transform: scale(0); opacity: 0; }
+    to   { transform: scale(1); opacity: 1; }
+}
+
+@keyframes vis-radio-border {
+    from { border-color: var(--lc-rule); }
+    to   { border-color: var(--lc-primary); }
+}
+
+@keyframes vis-select-row {
+    from { opacity: 0.55; color: var(--lc-text); font-weight: 400; }
+    to   { opacity: 1;    color: var(--lc-primary); font-weight: 500; }
+}
+
+@keyframes vis-draw-in {
+    from { opacity: 0; }
+    to   { opacity: 0.85; }
+}
+
+@keyframes vis-script-row {
+    from { color: var(--lc-muted); opacity: 0.55; }
+    to   { color: var(--lc-text);  opacity: 1; }
+}
+
+/* -- Helper classes --------------------------------------------------------- */
+
+.anim-rise {
+    animation: vis-rise 0.7s cubic-bezier(.2,.7,.2,1) both;
+}
+
+.anim-fade {
+    animation: vis-fade 0.5s ease both;
+}
+
+.anim-pop {
+    animation: vis-pop-in 0.5s cubic-bezier(.5,1.6,.4,1) both;
+}
+
+.anim-grow-v {
+    animation: vis-grow-v 0.5s ease both;
+    transform-origin: top;
+}
+
+/* Delay modifiers — combine with .anim-* */
+.anim-delay-1 { animation-delay: 0.2s; }
+.anim-delay-2 { animation-delay: 0.4s; }
+.anim-delay-3 { animation-delay: 0.6s; }
+.anim-delay-4 { animation-delay: 0.8s; }
+.anim-delay-5 { animation-delay: 1.0s; }

@@ -250,3 +250,99 @@ background-size: cover
 | `.large` | 1.25em |
 | `.center` / `.right` | Alignment |
 | `.bold` | font-weight 700 |
+
+---
+
+## lightcone-theme.css — LightCone Research theme
+
+Self-contained theme (does **not** require `slides.css`). Load it alone:
+
+```html
+<link rel="stylesheet" href="../../css/lightcone-theme.css">
+```
+
+Logo assets: `img/lightcone/primary-logo.svg` (repo root).
+Canonical component HTML reference: `~/dev/lightcone/talks/Berkeley2026.html`.
+**Component showcase** (every class demonstrated): `docs/lightcone-theme-components.md`.
+
+### Colour palette (`--lc-*` variables)
+
+| Variable | Value | Name |
+|----------|-------|------|
+| `--lc-bg` | `#f8f7f3` | Parchment — slide background |
+| `--lc-primary` | `#4e5a70` | Blue Ink — headings, UI |
+| `--lc-secondary` | `#426b78` | Slate Blue — h3/h4, links |
+| `--lc-warm` | `#a67c3c` | Antique Gold — h1/h2, brand |
+| `--lc-accent` | `#18401c` | Pine Green — success |
+| `--lc-highlight` | `#8e3a1c` | Wax Red — alerts |
+| `--lc-muted` | `#6b7585` | Graphite — captions |
+| `--lc-rule` | `rgba(78,90,112,0.18)` | Thin borders/connectors |
+
+### Slide types
+
+#### (default) — Content slide
+
+Parchment background. LightCone wordmark auto-injected top-left via CSS `::after`.
+
+---
+
+#### `class: cover`
+
+```markdown
+---
+class: cover
+
+.masthead-rule[]
+# Title
+## Subtitle
+### Author · Institution · Date
+
+.lc-logo[]
+```
+
+---
+
+#### `class: section`
+
+```markdown
+---
+class: section
+
+.section-label[Part label]
+# Section title
+```
+
+---
+
+#### `class: outline` / `class: blanc` / `class: fullbleed`
+
+Same syntax as APC theme. Outline uses gold `decimal-leading-zero` counters.
+
+### Component library
+
+| Class / pattern | Purpose |
+|-----------------|---------|
+| `.eyebrow` / `.headline` / `.body-text` / `.takeaway` | Typography hierarchy inside components |
+| `.step-tabs` > `.step-tab[.is-active]` > `.step-tab__num` | Tab strip — shows active step |
+| `.step-row` > `.step` > `.step__icon` + `.step__label` | Horizontal process flow with arrows |
+| `.vis-card` + `.vis-card__chrome` + `.vis-card__body` | macOS-style chrome card |
+| `.vis-dot` (×3 in chrome) | Traffic-light dots (red/yellow/green) |
+| `.vis-card__tag[.--accent]` | Small-caps badge in card header |
+| `.vis-check` | Green circular checkmark |
+| `.vis-terminal` > `.vis-terminal__line` + `.vis-terminal__prompt` + `.--out` | CLI terminal block |
+| `.vis-connector` | Vertical line + arrowhead between stacked cards |
+| `.vis-yaml` > `.vis-yaml__row` + `.vis-yaml__key` | Compact key/value grid |
+| `.vis-yaml-doc` > `.yaml-line[--section/--empty/--anchor]` + `.yaml-key` + `.yaml-val` | Full YAML document viewer |
+| `.vis-scripts` > `.vis-script[.--anchor]` + `.vis-script__name` + `.vis-script__dot` | Stacked pipeline (auto arrow connectors) |
+| `.vis-decision` > `.vis-decision__options` + `.vis-radio[.is-selected]` | Decision card with radio options |
+| `.vis-decision__bridge` > `__bridge-line` + `__bridge-label` + `__bridge-line--arrow` | "supported by" connector |
+| `.vis-decision__quote` / `__cite` / `__doi` / `__check` | Evidence card content |
+| `.vis-inspect__rows` > `.vis-inspect__row` + `.vis-inspect__label` | Key/value metadata panel (8rem label col) |
+| `.walkthrough-panel` > `.walkthrough-copy` + `.walkthrough-visual` | 2-col explainer layout (0.82fr / 1.18fr, bordered) |
+| `.stat` > `.stat-number` + `.stat-label` | KPI block |
+| `.anim-rise` / `.anim-fade` / `.anim-pop` + `.anim-delay-1…5` | Entrance animation helpers (0.2 s steps) |
+| `.stamp` | Rotated watermark label |
+| `.cta` / `.cta-outline` | Button styles |
+| `.card` / `.card-glow` / `.highlight-box` | Panel variants |
+| `.pill-primary/secondary/accent/warm/highlight/muted` | Coloured pill tags |
+| `.cols` / `.cols-3` / `.flex-row` | Grid/flex layouts |
