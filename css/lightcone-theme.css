@@ -100,11 +100,12 @@
    --------------------------------------------------------------------------- */
 .remark-slide-content h1 {
     font-family: var(--lc-font-heading);
-    font-size: 2.1em;
+    font-size: 1.55em;
     font-weight: 400;
     color: var(--lc-warm);
     letter-spacing: -0.01em;
     line-height: 1.15;
+    text-align: center;
     margin-bottom: 0.5em;
 }
 
@@ -245,6 +246,11 @@
     background-color: rgba(166, 124, 60, 0.15);
 }
 
+/* Force hljs to use the theme surface color, not the highlight.js theme background */
+.remark-slide-content .hljs {
+    background: var(--lc-surface) !important;
+}
+
 /* ---------------------------------------------------------------------------
    Blockquote
    --------------------------------------------------------------------------- */
@@ -323,10 +329,15 @@
     background: transparent;
 }
 
+.remark-slide-content.cover ~ .remark-slide-number,
+.remark-slide-content.interlude ~ .remark-slide-number {
+    display: none;
+}
+
 /* ---------------------------------------------------------------------------
    Brand mark — top-left on all content slides except cover/section/outline/fullbleed
    --------------------------------------------------------------------------- */
-.remark-slide-content:not(.cover):not(.section):not(.outline):not(.fullbleed)::after {
+.remark-slide-content:not(.cover):not(.section):not(.outline):not(.fullbleed):not(.interlude)::after {
     content: '';
     position: absolute;
     top: 20px;
@@ -356,6 +367,8 @@
     justify-content: center;
     text-align: center;
     padding: 2em 5em;
+    height: 100%;
+    box-sizing: border-box;
 }
 
 /* Subtle radial gold glow */
@@ -398,6 +411,68 @@
     color: var(--lc-muted);
     letter-spacing: 0.04em;
     margin-top: 0.5em;
+}
+
+/* ---------------------------------------------------------------------------
+   Interlude slide — mid-presentation section break, same layout as cover
+   --------------------------------------------------------------------------- */
+.remark-slide-content.interlude {
+    background: var(--lc-bg);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 2em 5em;
+    height: 100%;
+    box-sizing: border-box;
+}
+
+.remark-slide-content.interlude::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(
+        ellipse 60% 50% at 50% 45%,
+        rgba(166, 124, 60, 0.07) 0%,
+        transparent 70%
+    );
+    pointer-events: none;
+    z-index: 0;
+}
+
+.remark-slide-content.interlude > * { position: relative; z-index: 1; }
+
+.remark-slide-content.interlude h1 {
+    font-size: 2.8em;
+    letter-spacing: -0.015em;
+    line-height: 1.08;
+    margin-bottom: 0.25em;
+}
+
+.remark-slide-content.interlude h2 {
+    font-family: var(--lc-font-body);
+    font-size: 1.05em;
+    font-weight: 300;
+    color: var(--lc-muted);
+    margin-top: 0;
+    margin-bottom: 0.3em;
+}
+
+.remark-slide-content.interlude h4 {
+    font-family: var(--lc-font-ui);
+    font-size: 0.82em;
+    font-weight: 400;
+    color: var(--lc-muted);
+    letter-spacing: 0.03em;
+    margin-top: 0.4em;
+}
+
+.remark-slide-content.interlude p {
+    color: var(--lc-text-mid);
+    font-size: 0.95em;
+    max-width: 42em;
+    line-height: 1.6;
 }
 
 /* ---------------------------------------------------------------------------
@@ -476,7 +551,8 @@
    Section label — small caps chip, used on section/content slides
    --------------------------------------------------------------------------- */
 .section-label {
-    display: inline-block;
+    display: table;
+    margin: 0 auto;
     font-family: var(--lc-font-ui);
     font-size: 0.6em;
     font-weight: 600;
@@ -749,6 +825,11 @@
 .left-column  { width: 49%; float: left; }
 .right-column { width: 49%; float: right; }
 .reset-column { clear: both; }
+
+/* Code + annotations two-column layout */
+.lc-col-code { float: left;  width: 57%; }
+.lc-col-note { float: right; width: 40%; }
+.lc-col-clear { clear: both; display: block; }
 
 .flex-row {
     display: flex;

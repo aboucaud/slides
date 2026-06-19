@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>LightCone Research</title>
+  <meta name="author" content="Alexandre Boucaud">
+  <meta name="description" content="LightCone Research – JDev 2026">
+  <link rel="stylesheet" type="text/css" href="../../css/lightcone-theme.css">
+</head>
+<body>
+  <style TYPE="text/css">
+    code.has-jax {font: inherit; font-size: 100%; background: inherit; border: inherit;}
+  </style>
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [['$','$'], ['\\(','\\)']],
+      skipTags: ['script', 'noscript', 'style', 'textarea', 'pre']
+    }
+    });
+    MathJax.Hub.Queue(function() {
+      var all = MathJax.Hub.getAllJax(), i;
+      for(i = 0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';
+      }
+    });
+  </script>
+  <script type="text/javascript" async
+    src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+  </script>
+  <script type="text/javascript" src="../../js/remark-latest.min.js"></script>
+  <script type="text/javascript">
+    var slideshow = remark.create({
+      sourceUrl: 'slides.md',
+      ratio: '16:9',
+      navigation: {
+        scroll: false,
+        touch: true,
+        click: false,
+      },
+      slideNumberFormat: '%current%/%total%',
+      countIncrementalSlides: false,
+      highlightStyle: 'github',
+      highlightLines: true,
+      highlightSpans: true,
+    });
+
+    // Hide slide number on cover and interlude slides
+    (function () {
+      function updateSlideNumbers() {
+        document.querySelectorAll('.remark-slide-container').forEach(function (container) {
+          var content = container.querySelector('.remark-slide-content');
+          var numEl = container.querySelector('.remark-slide-number');
+          if (!numEl || !content) return;
+          var hide = content.classList.contains('cover') || content.classList.contains('interlude');
+          numEl.style.display = hide ? 'none' : '';
+        });
+      }
+      slideshow.on('afterShowSlide', updateSlideNumbers);
+      setTimeout(updateSlideNumbers, 300);
+    })();
+  </script>
+</body>
+</html>
