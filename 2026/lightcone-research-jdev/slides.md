@@ -65,26 +65,31 @@ class: cover
 
 # Fully autonomous AI science produces… noise (for now)
 
-<div style="display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-top:0.5rem;">
-  <div style="display:flex;flex-direction:column;gap:6pt;">
-    <div style="border-radius:8px;overflow:hidden;border:1px solid rgba(107,117,133,0.25);">
-      <img src="./img/edison_kosmos_quote.png" style="width:100%;display:block;">
-    </div>
-    <p style="font-size:9pt;color:var(--lc-muted);margin:0;text-align:center;">Edison Scientific, "Announcing Kosmos" (Nov 2025)</p>
-    <div class="card" style="padding:14pt 18pt;">
-      <p style="font-size:12pt;line-height:1.6;margin:0;color:var(--lc-muted);">⚠ Tens of thousands of lines of generated code. <strong style="color:var(--lc-text);">No one reads it. No one audits it.</strong> How do you trust the results?</p>
-    </div>
-  </div>
-  <div style="display:flex;flex-direction:column;gap:6pt;">
-    <div style="border-radius:8px;overflow:hidden;border:1px solid rgba(107,117,133,0.25);">
-      <img src="./img/denario.png" style="width:100%;display:block;">
-    </div>
-    <p style="font-size:9pt;color:var(--lc-muted);margin:0;text-align:center;">Denario — AI-generated papers across six disciplines</p>
-    <div class="card" style="padding:14pt 18pt;">
-      <p style="font-size:12pt;line-height:1.6;margin:0;color:var(--lc-muted);">⚠ The outputs are <strong style="color:var(--lc-highlight);">hard to trust</strong>. Too much material, impossible to audit, no way to tell what's real.</p>
-    </div>
-  </div>
+.left-column[
+<div style="border-radius:8px;overflow:hidden;border:1px solid rgba(107,117,133,0.25);">
+  <img src="./img/edison_kosmos_quote.png" style="width:100%;display:block;">
 </div>
+
+.muted[.small[Edison Scientific, "Announcing Kosmos" (Nov 2025)]]
+
+<div class="card" style="padding:14pt 18pt;">
+  <p style="font-size:12pt;line-height:1.6;margin:0;color:var(--lc-muted);">⚠ Tens of thousands of lines of generated code. <strong style="color:var(--lc-text);">No one reads it. No one audits it.</strong> How do you trust the results?</p>
+</div>
+]
+
+.right-column[
+<div style="border-radius:8px;overflow:hidden;border:1px solid rgba(107,117,133,0.25);">
+  <img src="./img/denario.png" style="width:100%;display:block;">
+</div>
+
+.muted[.small[Denario — AI-generated papers across six disciplines]]
+
+<div class="card" style="padding:14pt 18pt;">
+  <p style="font-size:12pt;line-height:1.6;margin:0;color:var(--lc-muted);">⚠ The outputs are <strong style="color:var(--lc-highlight);">hard to trust</strong>. Too much material, impossible to audit, no way to tell what's real.</p>
+</div>
+]
+
+.reset-column[]
 
 ---
 
@@ -92,20 +97,23 @@ class: cover
 
 # …but with a human in the loop, the hints are already striking
 
-<div style="display:grid;grid-template-columns:1fr 1fr;gap:24pt;align-items:center;margin-top:0.5rem;">
-  <div style="border-radius:8px;overflow:hidden;border:1px solid rgba(107,117,133,0.25);background:#fff;">
-    <img src="./img/schwartz.png" style="width:100%;display:block;">
-  </div>
-  <div style="display:flex;flex-direction:column;gap:14pt;">
-    <div class="card" style="padding:14pt 18pt;border-left:3px solid var(--lc-warm);">
-      <p style="font-size:13pt;line-height:1.55;margin:0;color:var(--lc-text);font-style:italic;">"Claude proved fast, indefatigable, and eager to please. It also, on occasion, faked results — hoping I wouldn't notice."</p>
-      <p style="font-size:10pt;color:var(--lc-muted);margin:8pt 0 0;text-align:right;">— Matthew Schwartz, <em>Vibe Physics</em> (Anthropic, 2026)</p>
-    </div>
-    <div class="card" style="padding:10pt 14pt;text-align:center;">
-      <p style="font-size:11pt;line-height:1.4;margin:0;color:var(--lc-muted);"><a href="https://anthropic.com/research/vibe-physics" style="color:var(--lc-muted);text-decoration:none;">anthropic.com/research/vibe-physics</a></p>
-    </div>
-  </div>
+.left-column[
+<div style="border-radius:8px;overflow:hidden;border:1px solid rgba(107,117,133,0.25);background:#fff;">
+  <img src="./img/schwartz.png" style="width:100%;display:block;">
 </div>
+]
+
+.right-column[
+<div class="card" style="padding:14pt 18pt;border-left:3px solid var(--lc-warm);">
+  <p style="font-size:13pt;line-height:1.55;margin:0;color:var(--lc-text);font-style:italic;">"Claude proved fast, indefatigable, and eager to please. It also, on occasion, faked results — hoping I wouldn't notice."</p>
+  <p style="font-size:10pt;color:var(--lc-muted);margin:8pt 0 0;text-align:right;">— Matthew Schwartz, <em>Vibe Physics</em> (Anthropic, 2026)</p>
+</div>
+<div class="card" style="padding:10pt 14pt;text-align:center;margin-top:14pt;">
+  <p style="font-size:11pt;line-height:1.4;margin:0;color:var(--lc-muted);"><a href="https://anthropic.com/research/vibe-physics" style="color:var(--lc-muted);text-decoration:none;">anthropic.com/research/vibe-physics</a></p>
+</div>
+]
+
+.reset-column[]
 
 ---
 
@@ -141,24 +149,26 @@ class: cover
 
 # AI is changing fast — don't bet on "now"
 
-<div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;align-items:center;margin-top:0.5rem;">
-  <div>
-    <div style="border-radius:8px;overflow:hidden;border:1px solid rgba(107,117,133,0.25);background:#fff;">
-      <img src="./img/metr_th11_hybrid.png" style="width:100%;display:block;">
-    </div>
-    <p style="font-size:9pt;color:var(--lc-muted);margin-top:3pt;text-align:center;">METR, <em>Task-Completion Time Horizons</em> (May 2026 snapshot, CC-BY) — <strong style="color:var(--lc-text);">Claude Mythos Preview at ≥16 h</strong>.</p>
-  </div>
-  <div style="display:flex;flex-direction:column;gap:12px;">
-    <div class="card-glow" style="padding:14pt 16pt;border-left:3px solid var(--lc-highlight);">
-      <h4 style="margin:0 0 6pt;font-size:13pt;color:var(--lc-highlight);">Exponential improvement</h4>
-      <p style="font-size:11pt;line-height:1.5;margin:0;color:var(--lc-muted);">AI task horizons are <strong style="color:var(--lc-text);">doubling every ~89 days</strong> (~17×/year). Today's "noisy" outputs won't stay that way. <strong style="color:var(--lc-text);">Build for where models will be in a year</strong>, not where they are today.</p>
-    </div>
-    <div class="card-glow" style="padding:14pt 16pt;border-left:3px solid var(--lc-warm);">
-      <h4 style="margin:0 0 6pt;font-size:13pt;color:var(--lc-warm);">AI co-scientist systems become obsolete really fast</h4>
-      <p style="font-size:11pt;line-height:1.5;margin:0;color:var(--lc-muted);">Denario, Kosmos, Sakana — all <strong style="color:var(--lc-text);">tightly coupled to yesterday's models</strong>. As models improve, these systems are replaced wholesale. <strong style="color:var(--lc-text);">Build the layer that outlasts the models.</strong></p>
-    </div>
-  </div>
+.left-column[
+<div style="border-radius:8px;overflow:hidden;border:1px solid rgba(107,117,133,0.25);background:#fff;">
+  <img src="./img/metr_th11_hybrid.png" style="width:100%;display:block;">
 </div>
+
+.muted[.small[METR, _Task-Completion Time Horizons_ (May 2026 snapshot, CC-BY) — **Claude Mythos Preview at ≥16 h**.]]
+]
+
+.right-column[
+<div class="card-glow" style="padding:14pt 16pt;border-left:3px solid var(--lc-highlight);">
+  <h4 style="margin:0 0 6pt;font-size:13pt;color:var(--lc-highlight);">Exponential improvement</h4>
+  <p style="font-size:11pt;line-height:1.5;margin:0;color:var(--lc-muted);">AI task horizons are <strong style="color:var(--lc-text);">doubling every ~89 days</strong> (~17×/year). Today's "noisy" outputs won't stay that way. <strong style="color:var(--lc-text);">Build for where models will be in a year</strong>, not where they are today.</p>
+</div>
+<div class="card-glow" style="padding:14pt 16pt;border-left:3px solid var(--lc-warm);margin-top:12px;">
+  <h4 style="margin:0 0 6pt;font-size:13pt;color:var(--lc-warm);">AI co-scientist systems become obsolete really fast</h4>
+  <p style="font-size:11pt;line-height:1.5;margin:0;color:var(--lc-muted);">Denario, Kosmos, Sakana — all <strong style="color:var(--lc-text);">tightly coupled to yesterday's models</strong>. As models improve, these systems are replaced wholesale. <strong style="color:var(--lc-text);">Build the layer that outlasts the models.</strong></p>
+</div>
+]
+
+.reset-column[]
 
 ---
 class: interlude
@@ -232,7 +242,7 @@ class: interlude
 ---
 class: interlude
 
-<p class="eyebrow" style="letter-spacing:0.22em;text-transform:uppercase;margin:0 0 28pt;">Introducing</p>
+<p class="eyebrow" style="margin-bottom:28pt;">Introducing</p>
 
 <img src="../../img/lightcone/primary-logo.svg" style="height:92pt;display:block;margin:0 auto;">
 
@@ -599,7 +609,7 @@ class: interlude
 ---
 class: interlude
 
-<p class="eyebrow" style="letter-spacing:0.22em;text-transform:uppercase;margin:0 0 1rem;">Technical deep dive</p>
+<p class="eyebrow" style="margin-bottom:1rem;">Technical deep dive</p>
 
 # ASTRA
 
@@ -850,7 +860,7 @@ outputs:
 ---
 class: interlude
 
-<p class="eyebrow" style="letter-spacing:0.22em;text-transform:uppercase;margin:0 0 1rem;">Technical deep dive</p>
+<p class="eyebrow" style="margin-bottom:1rem;">Technical deep dive</p>
 
 # Lightcone-CLI
 
@@ -966,23 +976,23 @@ class: interlude
 </div>
 
 ---
+class: blanc
 
 # Hubble diagram
 
-<div style="display:grid;grid-template-columns:1fr 1fr;gap:36pt;height:75%;">
-  <div style="display:flex;flex-direction:column;min-height:0;">
-    <p style="font-family:var(--lc-font-ui);font-size:10pt;font-weight:500;letter-spacing:0.18em;text-transform:uppercase;color:var(--lc-text);margin:0 0 10pt;">Lightcone</p>
-    <div style="flex:1;min-height:0;display:flex;align-items:center;justify-content:center;overflow:hidden;">
-      <img src="./img/lc_hubble_diagram.png" style="max-width:85%;max-height:100%;width:auto;height:auto;object-fit:contain;">
-    </div>
-  </div>
-  <div style="display:flex;flex-direction:column;min-height:0;">
-    <p style="font-family:var(--lc-font-ui);font-size:10pt;font-weight:500;letter-spacing:0.18em;text-transform:uppercase;color:var(--lc-text);margin:0 0 10pt;">DESI 2024 III</p>
-    <div style="flex:1;min-height:0;display:flex;align-items:center;justify-content:center;overflow:hidden;">
-      <img src="./img/desi_hubble_diagram.png" style="max-width:100%;max-height:100%;width:auto;height:auto;object-fit:contain;">
-    </div>
-  </div>
-</div>
+.left-column[
+.eyebrow[Lightcone]
+
+.img-full[![](./img/lc_hubble_diagram.png)]
+]
+
+.right-column[
+.eyebrow[DESI 2024 III]
+
+.img-full[![](./img/desi_hubble_diagram.png)]
+]
+
+.reset-column[]
 
 ---
 
@@ -993,7 +1003,7 @@ class: interlude
 ---
 class: cover
 
-<p class="eyebrow" style="letter-spacing:0.22em;text-transform:uppercase;margin:0 0 1rem;">Get involved</p>
+<p class="eyebrow" style="margin-bottom:1rem;">Get involved</p>
 
 <img src="../../img/lightcone/primary-logo.svg" style="height:76pt;display:block;margin:0 auto 16pt;">
 
