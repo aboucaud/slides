@@ -55,15 +55,13 @@ and reproduces scientific work at any scale — from a single notebook to a mult
 .text-muted[.text-muted — Graphite]
 ]
 .right-column[
-**APC-compatible aliases**
+.primary[.primary]
 
-.navy[.navy]
+.warm[.warm]
 
-.gold[.gold]
+.highlight[.highlight]
 
-.terra[.terra]
-
-.rose[.rose]
+.secondary[.secondary]
 
 .muted[.muted — slightly smaller]
 

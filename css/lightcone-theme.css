@@ -83,6 +83,18 @@
 }
 
 /* ---------------------------------------------------------------------------
+   Container background — fills letterbox areas outside the slide frame
+   --------------------------------------------------------------------------- */
+body,
+.remark-container {
+    background: var(--lc-bg);
+}
+
+.remark-slide-scaler {
+    box-shadow: none;
+}
+
+/* ---------------------------------------------------------------------------
    Base slide
    --------------------------------------------------------------------------- */
 .remark-slide-content {
@@ -92,7 +104,7 @@
     font-weight: 400;
     color: var(--lc-text);
     letter-spacing: -0.01em;
-    padding: 3em 4em;
+    padding: 2.2em 4em 3em;
 }
 
 /* ---------------------------------------------------------------------------
@@ -223,7 +235,7 @@
 }
 
 .remark-slide-content pre {
-    font-size: 0.72em;
+    font-size: 0.82em;
     box-shadow: none;
     text-align: left;
     margin: 0.8em 0;
@@ -239,6 +251,7 @@
     color: var(--lc-text);
     white-space: pre;
     overflow: auto;
+    max-height: 32em;
     word-wrap: normal;
 }
 
@@ -444,7 +457,7 @@
 .remark-slide-content.interlude > * { position: relative; z-index: 1; }
 
 .remark-slide-content.interlude h1 {
-    font-size: 2.8em;
+    font-size: 56pt;
     letter-spacing: -0.015em;
     line-height: 1.08;
     margin-bottom: 0.25em;
@@ -551,8 +564,11 @@
    Section label — small caps chip, used on section/content slides
    --------------------------------------------------------------------------- */
 .section-label {
-    display: table;
-    margin: 0 auto;
+    position: absolute;
+    top: 18px;
+    left: 50%;
+    transform: translateX(-50%);
+    white-space: nowrap;
     font-family: var(--lc-font-ui);
     font-size: 0.6em;
     font-weight: 600;
@@ -562,7 +578,6 @@
     padding: 0.25em 0.75em;
     border-radius: 0.25rem;
     background: rgba(78, 90, 112, 0.08);
-    margin-bottom: 0.6em;
 }
 
 /* ---------------------------------------------------------------------------
@@ -656,11 +671,10 @@
 .text-highlight { color: var(--lc-highlight) !important; }
 .text-muted     { color: var(--lc-muted)     !important; }
 
-/* APC-compatible aliases */
-.navy  { color: var(--lc-primary)   !important; }
-.gold  { color: var(--lc-warm)      !important; }
-.terra { color: var(--lc-highlight) !important; }
-.rose  { color: var(--lc-secondary) !important; }
+.primary   { color: var(--lc-primary)   !important; }
+.warm      { color: var(--lc-warm)      !important; }
+.highlight { color: var(--lc-highlight) !important; }
+.secondary { color: var(--lc-secondary) !important; }
 
 /* -- Size helpers ----------------------------------------------------------- */
 .small  { font-size: 0.82em; }
@@ -850,6 +864,9 @@
 
 /* -- Full-width image ------------------------------------------------------- */
 .img-full img { width: 100%; border-radius: 0.25rem; }
+
+/* -- Column image (80% width, centred) -------------------------------------- */
+.img-col img { display: block; margin: 0 auto; max-width: 80%; }
 
 /* -- Footnote / credits ----------------------------------------------------- */
 .footnote {
