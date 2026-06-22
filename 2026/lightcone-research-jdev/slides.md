@@ -1,26 +1,30 @@
 class: cover
 
-.masthead-rule[]
-# Infrastructure for Science that Compounds<br>in the Age of AI Agents
+<hr style="width: 500px; margin: 24pt auto;">
 
-<div class="cols" style="gap:1.5rem;margin-top:1.8rem;">
-  <div class="card" style="display:flex;gap:0.75rem;align-items:center;padding:0.75rem 1rem;">
-    <img src="./img/team/francois.jpg" style="width:52px;height:52px;border-radius:50%;object-fit:cover;border:2px solid var(--lc-primary);">
-    <div>
-      <p class="eyebrow" style="margin:0;">François Lanusse</p>
-      <p style="margin:0;font-size:0.78em;color:var(--lc-muted);">CNRS · flanusse.net</p>
-    </div>
-  </div>
-  <div class="card" style="display:flex;gap:0.75rem;align-items:center;padding:0.75rem 1rem;">
-    <img src="./img/team/liam.jpg" style="width:52px;height:52px;border-radius:50%;object-fit:cover;border:2px solid var(--lc-primary);">
-    <div>
-      <p class="eyebrow" style="margin:0;">Liam Parker</p>
-      <p style="margin:0;font-size:0.78em;color:var(--lc-muted);">UC Berkeley</p>
+# Towards an Open Ecosystem for Reproducible and Composable Science in the Age of Agentic AI
+
+<hr style="width: 80px; margin: 18pt auto;">
+
+## JDEV 2026 - Montpellier, France
+
+<hr style="width: 80px; margin: 18pt auto;">
+
+<div style="display: flex; align-items: center; gap: 28pt; margin-bottom: 16pt;">
+  <div style="display: flex; align-items: center; gap: 8pt;">
+    <img src="./img/team/alex.png" alt="Alex"
+          style="width: 56pt; height: 56pt; border-radius: 50%; object-fit: cover; box-shadow: 0 0 0 2pt var(--lc-bg), 0 0 0 3pt var(--lc-warm), 0 2pt 6pt rgba(0,0,0,0.12);">
+    <div style="text-align: left;">
+      <p style="font-size: 12pt; color: var(--lc-text); margin: 0; font-weight: 500; line-height: 1.2;">Alexandre Boucaud</p>
+      <p style="font-size: 9pt; color: var(--lc-muted); margin: 2pt 0 0 0; line-height: 1.2;">
+        APC - CNRS / IN2P3 &middot;
+        <a href="https://aboucaud.github.io" target="_blank" style="color: var(--lc-secondary); text-decoration: none; border: none;"><i class="fa-solid fa-globe"></i></a>
+      </p>
     </div>
   </div>
 </div>
 
-.lc-logo[]
+[lightconeresearch.org](lightconeresearch.org)
 
 ---
 
@@ -173,15 +177,17 @@ class: cover
 ---
 class: interlude
 
-# What's the right thing to build<br><span style="color:var(--lc-warm);font-style:italic;">right now?</span>
+.eyebrow[The question]
+
+# What's the right thing to build <span style="color:var(--lc-warm);font-style:italic;">right now?</span>
 
 ---
 
 .section-label[Our position]
 
-# Science that Compounds: the Need for A New Substrate for Research in the Age of AI
+# Need for A New Substrate for Research in the Age of AI
 
-.text-muted[Lanusse & Parker · May 2026]
+.center.text-muted[Lanusse & Parker · May 2026]
 
 <div style="display:grid;grid-template-columns:7fr 5fr;gap:22pt;align-items:start;margin-top:0.8rem;">
   <div style="display:flex;flex-direction:column;gap:12pt;">
@@ -191,7 +197,7 @@ class: interlude
     <img src="./img/image_claw.png" style="width:100%;border-radius:6px;">
     <div class="card-glow" style="padding:16pt 20pt;border-top:3px solid var(--lc-primary);">
       <p style="font-family:var(--lc-font-ui);font-size:9.5pt;font-weight:500;letter-spacing:0.18em;text-transform:uppercase;color:var(--lc-primary);margin:0 0 6pt;">So the question we focus on</p>
-      <p style="font-family:var(--lc-font-heading);font-size:17pt;line-height:1.35;margin:0;color:var(--lc-text);">How can we establish that a result <span style="color:var(--lc-highlight);font-style:italic;">can be trusted</span> — <span style="color:var(--lc-primary);">far more efficiently than today</span>, to keep up with the growth of the literature?</p>
+      <p style="font-family:var(--lc-font-heading);font-size:16pt;line-height:1.35;margin:0;color:var(--lc-text);">How can we establish that a result <span style="color:var(--lc-highlight);font-style:italic;">can be trusted</span> — <span style="color:var(--lc-primary);">far more efficiently than today</span>, to keep up with the growth of the literature?</p>
     </div>
   </div>
   <div style="display:flex;flex-direction:column;gap:6pt;align-items:center;">
@@ -242,17 +248,19 @@ class: interlude
 ---
 class: interlude
 
-<p class="eyebrow" style="margin-bottom:28pt;">Introducing</p>
+.eyebrow[Introducing]
 
 <img src="../../img/lightcone/primary-logo.svg" style="height:92pt;display:block;margin:0 auto;">
 
-<hr style="width:80px;margin:32pt auto 22pt auto;opacity:0.3;">
+<hr style="width: 80px; margin: 32pt auto 22pt auto;">
 
-<p style="font-family:var(--lc-font-heading);font-size:24pt;font-style:italic;color:var(--lc-warm);text-align:center;max-width:880px;margin:0 auto;line-height:1.3;">An open-source initiative to build tooling<br>for robust scientific research in the age of AI.</p>
+<p style="font-family:var(--lc-font-heading);font-size:24pt;font-style:italic;color:var(--lc-warm);text-align:center;max-width:880px;margin:0 auto;line-height:1.3;">An open-source initiative to build tooling</br>for robust scientific research in the age of AI.</p>
 
-<div style="position:absolute;bottom:24pt;left:32pt;display:flex;align-items:center;gap:16pt;">
-  <img src="./img/berkeley.svg" style="height:44pt;">
-  <img src="./img/cnrs-blue.png" style="height:44pt;">
+<!-- <div style="position:absolute;bottom:24pt;left:32pt;display:flex;align-items:center;gap:16pt;"> -->
+<div style="position:absolute;bottom:24pt;left:380pt;display:flex;align-items:center;gap:16pt">
+  <img src="./img/cnrs-blue.png" style="height:60pt;">
+  <span style="display: inline-block; width: 1px; height: 60pt; background: rgba(var(--lc-primary-rgb), 0.25);"></span>
+  <img src="./img/berkeley.svg" style="height:50pt;">
 </div>
 
 ---
@@ -609,11 +617,11 @@ class: interlude
 ---
 class: interlude
 
-<p class="eyebrow" style="margin-bottom:1rem;">Technical deep dive</p>
+.eyebrow[Technical deep dive]
 
 # ASTRA
 
-#### <span style="color:var(--lc-warm);">A</span>gentic <span style="color:var(--lc-warm);">S</span>chema for <span style="color:var(--lc-warm);">T</span>ransparent <span style="color:var(--lc-warm);">R</span>esearch <span style="color:var(--lc-warm);">A</span>nalysis
+### <span style="color:var(--lc-warm);">A</span>gentic <span style="color:var(--lc-warm);">S</span>chema for <span style="color:var(--lc-warm);">T</span>ransparent <span style="color:var(--lc-warm);">R</span>esearch <span style="color:var(--lc-warm);">A</span>nalysis
 
 <span class="pill pill-accent" style="font-size:0.85em;">v0.0.10 · early alpha</span>
 
@@ -627,7 +635,7 @@ Our open specification for structuring computational research — making analyse
 
 # Inputs · Outputs · Decisions
 
-.text-muted[Every spec declares **what it needs**, **what it produces**, and **what choices it makes**.]
+.center.text-muted[Every spec declares **what it needs**, **what it produces**, and **what choices it makes**.]
 
 .lc-col-code[
 ```yaml
@@ -694,7 +702,7 @@ decisions:
 
 # Prior insights & findings
 
-.text-muted[Every claim **backed by evidence** — either a quote from the literature, or an artifact produced by the analysis itself.]
+.center.text-muted[Every claim **backed by evidence** — either a quote from the literature, or an artifact produced by the analysis itself.]
 
 .lc-col-code[
 ```yaml
@@ -758,7 +766,7 @@ decisions:
 
 # Decisions, universes, multiverse
 
-.text-muted[How ASTRA turns methodological choices into an **explorable analysis space**.]
+.center.text-muted[How ASTRA turns methodological choices into an **explorable analysis space**.]
 
 <div style="display:grid;grid-template-columns:1fr auto 1fr auto 1fr;gap:0;align-items:center;max-width:920px;margin:0.8rem auto 1rem auto;">
   <div class="card-glow" style="text-align:center;padding:18pt 14pt;">
@@ -812,9 +820,9 @@ decisions:
 
 # Compute & containers
 
-.text-muted[Recipes carry the **environment** and the **resource budget** — so the same spec runs on a laptop, a cluster, or NERSC.]
+.center.text-muted[Recipes carry the **environment** and the **resource budget** — so the same spec runs on a laptop, a cluster, or NERSC.]
 
-.lc-col-code[
+<!-- .lc-col-code[
 ```yaml
 # Container + resources travel with the recipe
 
@@ -834,10 +842,32 @@ outputs:
     type: metric
     recipe:
       command: python src/evaluate.py
-      inputs:
-        - trained_model
+      inputs: [trained_model]
       container: ghcr.io/lightcone/astro-ml:v2.3
 ```
+] -->
+
+.lc-col-code[
+<pre style="margin: 0;"><code><span style="color: var(--lc-muted); font-style: italic;"># Container + resources travel with the recipe</span>
+
+<span style="color: var(--lc-primary); font-weight: 700;">outputs:</span>
+  - <span style="color: var(--lc-muted);">id:</span> <span style="color: var(--lc-warm);">trained_model</span>
+    <span style="color: var(--lc-muted);">type:</span> data
+    <span style="color: var(--lc-muted);">recipe:</span>
+      <span style="color: var(--lc-muted);">command:</span> <span style="color: var(--lc-accent);">python src/train.py</span>
+      <span style="color: var(--lc-secondary);">container:</span> <span style="color: var(--lc-accent);">ghcr.io/lightcone/astro-ml:v2.3</span>
+      <span style="color: var(--lc-secondary);">resources:</span>
+        <span style="color: var(--lc-muted);">cpus:</span> 16
+        <span style="color: var(--lc-muted);">memory:</span> <span style="color: var(--lc-accent);">"128GB"</span>
+        <span style="color: var(--lc-muted);">gpus:</span> 2
+        <span style="color: var(--lc-muted);">time_limit:</span> <span style="color: var(--lc-accent);">"4h"</span>
+
+  - <span style="color: var(--lc-muted);">id:</span> <span style="color: var(--lc-warm);">accuracy</span>
+    <span style="color: var(--lc-muted);">type:</span> metric
+    <span style="color: var(--lc-muted);">recipe:</span>
+      <span style="color: var(--lc-muted);">command:</span> <span style="color: var(--lc-accent);">python src/evaluate.py</span>
+      <span style="color: var(--lc-muted);">inputs:</span> [<span style="color: var(--lc-warm);">trained_model</span>]
+      <span style="color: var(--lc-secondary);">container:</span> <span style="color: var(--lc-accent);">ghcr.io/lightcone/astro-ml:v2.3</span></code></pre>
 ]
 
 .lc-col-note[
@@ -860,16 +890,16 @@ outputs:
 ---
 class: interlude
 
-<p class="eyebrow" style="margin-bottom:1rem;">Technical deep dive</p>
+.eyebrow[Technical deep dive]
 
 # Lightcone-CLI
 
-#### The execution layer &amp; agent skills around ASTRA
+### The execution layer &amp; agent skills around ASTRA
 
 <!-- <span class="pill pill-accent" style="font-size:0.85em;">`lc init` · `lc run` · `lc status` · `lc verify`</span> -->
 `lc init` · `lc run` · `lc status` · `lc verify`
 
-<hr style="width:80px;margin:1.5rem auto;opacity:0.3;">
+<hr style="width:80px;margin:1.5rem auto;">
 
 Turns an `astra.yaml` into **enforced, reproducible execution** — and gives Claude Code a substrate where it **cannot fabricate results**.
 
@@ -983,13 +1013,13 @@ class: blanc
 .left-column[
 .eyebrow[Lightcone]
 
-.img-full[![](./img/lc_hubble_diagram.png)]
+.img-col[![](./img/lc_hubble_diagram.png)]
 ]
 
 .right-column[
 .eyebrow[DESI 2024 III]
 
-.img-full[![](./img/desi_hubble_diagram.png)]
+.img-col[![](./img/desi_hubble_diagram.png)]
 ]
 
 .reset-column[]
