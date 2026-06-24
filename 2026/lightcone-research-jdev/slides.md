@@ -22,6 +22,7 @@ class: cover
       </p>
     </div>
   </div>
+  <img src="../../img/logo-apc.svg" style="height:50pt;width:auto;object-fit:contain;opacity:0.85;">
 </div>
 
 <!-- <div style="display:flex;align-items:center;gap:28pt;padding-left:4pt;">
@@ -214,18 +215,14 @@ class: interlude
 
 .center.text-muted[Lanusse & Parker · May 2026]
 
-<div style="display:grid;grid-template-columns:7fr 5fr;gap:22pt;align-items:start;margin-top:0.8rem;">
-  <div style="display:flex;flex-direction:column;gap:12pt;">
-    <div class="card" style="padding:14pt 18pt;border-left:3px solid var(--lc-accent);">
-      <p style="font-size:13pt;line-height:1.55;margin:0;color:var(--lc-text);">AI will <strong style="color:var(--lc-accent);">empower scientists to pursue more complex and ambitious research questions</strong> — and, multiplied across a field, drive a <strong style="color:var(--lc-accent);">step change in the rate at which results enter circulation</strong>.</p>
-    </div>
-  </div>
+<div style="display:grid;grid-template-columns:5fr 7fr;gap:22pt;align-items:start;margin-top:0.8rem;">
   <div style="display:flex;flex-direction:column;gap:6pt;align-items:center;">
     <div style="border-radius:6px;overflow:hidden;border:1px solid rgba(78,90,112,0.18);box-shadow:0 4px 18px rgba(20,30,50,0.08);background:#fff;">
       <img src="./img/astra_paper_p1.png" style="display:block;width:100%;max-height:480px;object-fit:contain;">
     </div>
     <p style="font-family:var(--lc-font-ui);font-size:10pt;margin:4pt 0 0;text-align:center;color:var(--lc-secondary);"><a href="https://doi.org/10.5281/zenodo.20181269" style="color:var(--lc-secondary);text-decoration:none;">doi.org/10.5281/zenodo.20181269</a></p>
   </div>
+  
 </div>
 
 ---
@@ -237,21 +234,18 @@ count:false
 
 .center.text-muted[Lanusse & Parker · May 2026]
 
-<div style="display:grid;grid-template-columns:7fr 5fr;gap:22pt;align-items:start;margin-top:0.8rem;">
-  <div style="display:flex;flex-direction:column;gap:12pt;">
-    <div class="card" style="padding:14pt 18pt;border-left:3px solid var(--lc-accent);">
-      <p style="font-size:13pt;line-height:1.55;margin:0;color:var(--lc-text);">AI will <strong style="color:var(--lc-accent);">empower scientists to pursue more complex and ambitious research questions</strong> — and, multiplied across a field, drive a <strong style="color:var(--lc-accent);">step change in the rate at which results enter circulation</strong>.</p>
-    </div>
-    <div class="card-glow" style="padding:16pt 20pt;border-top:3px solid var(--lc-primary);">
-      <p style="font-family:var(--lc-font-ui);font-size:9.5pt;font-weight:500;letter-spacing:0.18em;text-transform:uppercase;color:var(--lc-primary);margin:0 0 6pt;">So the question we focus on</p>
-      <p style="font-family:var(--lc-font-heading);font-size:16pt;line-height:1.35;margin:0;color:var(--lc-text);">How can we establish that a result <span style="color:var(--lc-highlight);font-style:italic;">can be trusted</span> — <span style="color:var(--lc-primary);">far more efficiently than today</span>, to keep up with the growth of the literature?</p>
-    </div>
-  </div>
+<div style="display:grid;grid-template-columns:5fr 7fr;gap:22pt;align-items:center;margin-top:0.8rem;">
   <div style="display:flex;flex-direction:column;gap:6pt;align-items:center;">
     <div style="border-radius:6px;overflow:hidden;border:1px solid rgba(78,90,112,0.18);box-shadow:0 4px 18px rgba(20,30,50,0.08);background:#fff;">
       <img src="./img/astra_paper_p1.png" style="display:block;width:100%;max-height:480px;object-fit:contain;">
     </div>
     <p style="font-family:var(--lc-font-ui);font-size:10pt;margin:4pt 0 0;text-align:center;color:var(--lc-secondary);"><a href="https://doi.org/10.5281/zenodo.20181269" style="color:var(--lc-secondary);text-decoration:none;">doi.org/10.5281/zenodo.20181269</a></p>
+  </div>
+  <div style="display:flex;flex-direction:column;gap:12pt;">
+    <div class="card-glow" style="padding:16pt 20pt;border-top:3px solid var(--lc-primary);">
+      <p style="font-family:var(--lc-font-ui);font-size:9.5pt;font-weight:500;letter-spacing:0.18em;text-transform:uppercase;color:var(--lc-primary);margin:0 0 6pt;">The question we focus on</p>
+      <p style="font-family:var(--lc-font-heading);font-size:16pt;line-height:1.35;margin:0;color:var(--lc-text);">How can we establish that a result <span style="color:var(--lc-highlight);font-style:italic;">can be trusted</span> <span style="color:var(--lc-primary);">more efficiently than today</span>, to keep up with the growth of the literature?</p>
+    </div>
   </div>
 </div>
 
@@ -259,7 +253,7 @@ count:false
 
 .section-label[Our position]
 
-# Three properties make a result vettable — and AI finally makes them cheap
+# Three properties make a result vettable
 
 .center.muted[What form a result must take so that its soundness can be re-established by a human or a machine, efficiently, at every step of its lifecycle?]
 
@@ -275,7 +269,7 @@ count: false
 
 .section-label[Our position]
 
-# Three properties make a result vettable — and AI finally makes them cheap
+# Three properties make a result vettable
 
 .center.muted[What form a result must take so that its soundness can be re-established by a human or a machine, efficiently, at every step of its lifecycle?]
 
@@ -295,7 +289,7 @@ count: false
 
 .section-label[Our position]
 
-# Three properties make a result vettable — and AI finally makes them cheap
+# Three properties make a result vettable
 
 .center.muted[What form a result must take so that its soundness can be re-established by a human or a machine, efficiently, at every step of its lifecycle?]
 
@@ -317,19 +311,19 @@ count: false
 --
 
 <div class="card" style="margin-top:14pt;padding:12pt 18pt;">
-  <p style="font-size:11pt;line-height:1.55;margin:0;color:var(--lc-muted);"><strong style="color:var(--lc-text);">None of this is new.</strong> The community has been pushing in this direction for a decade.</br>The reason these principles haven't become ubiquitous is simple: <strong style="color:var(--lc-warm);">they have been too costly to follow for a typical research team.</strong></p>
+  <p style="font-size:13pt;line-height:1.55;margin:0;color:var(--lc-muted);"><strong style="color:var(--lc-text);">None of this is new.</strong> The community has been pushing in this direction for a decade.</br>The reason these principles haven't become ubiquitous is simple: <strong style="color:var(--lc-warm);">they have been too costly to follow for a typical research team.</strong></p>
 </div>
 
 --
 
 <div class="card-glow" style="margin-top:12pt;padding:14pt 20pt;border-left:3px solid var(--lc-primary);">
-  <p style="font-family:var(--lc-font-ui);font-size:9.5pt;font-weight:500;letter-spacing:0.18em;text-transform:uppercase;color:var(--lc-primary);margin:0 0 4pt;">AI can fix the problem it creates</p>
-  <p style="font-size:13pt;line-height:1.55;margin:0 0 10pt;color:var(--lc-text);"><strong style="color:var(--lc-primary);">Agentic AI flips that calculus on its head.</strong> When the work itself is AI-assisted, the provenance trace, the decision log, and the scientific-level summary come along for free — built in <em>by construction</em>, not negotiated against the scientist's time.</p>
+  <p style="font-family:var(--lc-font-ui);font-size:9.5pt;font-weight:500;letter-spacing:0.18em;text-transform:uppercase;color:var(--lc-primary);margin:0 0 4pt;">Agentic AI can fix the problem it creates</p>
+  <p style="font-size:13pt;line-height:1.55;margin:0 0 10pt;color:var(--lc-text);">When the work itself is AI-assisted, <em>the provenance trace, the decision log, and the scientific-level summary</em> come along for free — <strong style="color:var(--lc-warm);">built in by construction, not negotiated against the scientist's time.</strong></p>
 </div>
 
 --
 
-## And so we started Lightcone Research
+## And so we started Lightcone Research to address this goal
 
 ---
 class: interlude
@@ -355,7 +349,7 @@ class: interlude
 
 # Team & roadmap
 
-.text-muted[An **international, open-source initiative** — based at **UC Berkeley** and **CNRS**, philanthropically backed.]
+.text-muted[An **international, open-source initiative** — based at **CNRS** and **UC Berkeley**, philanthropically backed.]
 
 <div style="display:grid;grid-template-columns:3fr 2fr;gap:32pt;align-items:start;margin-top:0.8rem;">
 
