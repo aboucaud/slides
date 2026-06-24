@@ -1568,43 +1568,6 @@ class: blanc
 ---
 class: cover
 
-.eyebrow[Get involved]
-
-<img src="../../img/lightcone/primary-logo.svg" style="height:76pt;display:block;margin:0 auto 16pt;">
-
-<p style="font-family:var(--lc-font-heading);font-size:18pt;font-style:italic;color:var(--lc-warm);text-align:center;max-width:880px;margin:0 auto 22pt;line-height:1.35;">Help us build the open substrate for scientific research<br>in the age of AI.</p>
-
-<hr style="width:80px;margin:0 auto 22pt;">
-
-.anim-rise[
-<div style="display:grid;grid-template-columns:1fr 1fr;gap:22pt;width:100%;max-width:980px;margin:0 auto;">
-  <div class="card-glow" style="padding:18pt 22pt;border-left:4px solid var(--lc-secondary);display:flex;flex-direction:column;">
-    <p style="font-family:var(--lc-font-ui);font-size:9pt;font-weight:600;letter-spacing:0.22em;text-transform:uppercase;color:var(--lc-secondary);margin:0 0 8pt;">Applications open</p>
-    <h3 style="font-size:20pt;margin:0 0 8pt;color:var(--lc-text);">Developer Summit</h3>
-    <p style="font-size:12pt;line-height:1.55;margin:0 0 12pt;color:var(--lc-text);">Open to researchers, engineers, and contributors from any institution. <strong>July 28–31, 2026</strong> · Berkeley.</p>
-    <p style="font-size:12pt;margin:0;"><a href="https://lightconeresearch.org/developer-summit" style="color:var(--lc-secondary);text-decoration:none;">lightconeresearch.org/developer-summit</a></p>
-  </div>
-  <div class="card-glow" style="padding:18pt 22pt;border-left:4px solid var(--lc-warm);display:flex;flex-direction:column;">
-    <p style="font-family:var(--lc-font-ui);font-size:9pt;font-weight:600;letter-spacing:0.22em;text-transform:uppercase;color:var(--lc-warm);margin:0 0 8pt;">Hiring</p>
-    <h3 style="font-size:20pt;margin:0 0 8pt;color:var(--lc-text);">Full-time positions</h3>
-    <p style="font-size:12pt;line-height:1.55;margin:0 0 12pt;color:var(--lc-text);">If you know anyone who would be a fit, please send them our way.</p>
-    <p style="font-size:12pt;margin:0;"><a href="https://lightconeresearch.org" style="color:var(--lc-warm);text-decoration:none;">lightconeresearch.org</a></p>
-  </div>
-</div>
-]
-<div style="flex: 1;"></div>
-
-<p style="font-family: var(--lc-font-ui); font-size: 11pt; color: var(--lc-muted); margin: 18pt 0 0 0; letter-spacing: 0.06em;">
-  <i class="fa-solid fa-globe" style="color: var(--lc-primary); margin-right: 6pt;"></i>
-  <a href="https://lightconeresearch.org" style="color: var(--lc-text); text-decoration: none;">lightconeresearch.org</a>
-  &nbsp;&middot;&nbsp;
-  <i class="fa-brands fa-github" style="color: var(--lc-primary); margin-right: 4pt;"></i>
-  <a href="https://github.com/LightconeResearch" style="color: var(--lc-text); text-decoration: none;">github.com/LightconeResearch</a>
-</p>
-
----
-class: cover
-
 <div style="display:flex;flex-direction:column;align-items:center;justify-content:center;height:100%;gap:0;">
 
   <p style="font-family:var(--lc-font-ui);font-size:9pt;font-weight:600;letter-spacing:0.22em;text-transform:uppercase;color:var(--lc-secondary);margin:0 0 10pt;">Stay informed</p>
@@ -1619,8 +1582,13 @@ class: cover
     <img src="./img/interest_form_qrcode.svg" style="width:180pt;height:180pt;display:block;">
   </div>
 
-  <p style="font-family:var(--lc-font-ui);font-size:10pt;color:var(--lc-muted);letter-spacing:0.06em;margin:0;text-align:center;">
-    Scan to register your interest &nbsp;·&nbsp; share your expertise &nbsp;·&nbsp; shape what we build next
-  </p>
+<p style="font-family: var(--lc-font-ui); font-size: 11pt; color: var(--lc-muted); margin: 18pt 0 0 0; letter-spacing: 0.06em;">
+  <i class="fa-solid fa-globe" style="color: var(--lc-primary); margin-right: 6pt;"></i>
+  <a href="https://lightconeresearch.org" style="color: var(--lc-text); text-decoration: none;">lightconeresearch.org</a>
+  &nbsp;&middot;&nbsp;
+  <i class="fa-brands fa-github" style="color: var(--lc-primary); margin-right: 4pt;"></i>
+  <a href="https://github.com/LightconeResearch" style="color: var(--lc-text); text-decoration: none;">github.com/LightconeResearch</a>
+</p>
+
 
 </div>
