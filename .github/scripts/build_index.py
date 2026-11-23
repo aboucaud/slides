@@ -7,6 +7,7 @@ On first run also seeds topics.yml with keyword-inferred topics.
 
 import html
 import re
+import subprocess
 from pathlib import Path
 
 REPO_ROOT = Path(__file__).parent.parent.parent
@@ -102,6 +103,20 @@ def _seed_topics(path: Path, presentations: list[dict]) -> None:
     path.write_text('\n'.join(lines) + '\n', encoding='utf-8')
 
 
+# ── Presentation dates ────────────────────────────────────────────
+
+def _git_added_date(path: Path) -> str:
+    """ISO date (YYYY-MM-DD) of the commit that first added *path*, or ''."""
+    try:
+        out = subprocess.run(
+            ['git', 'log', '--diff-filter=A', '--format=%as', '--', str(path)],
+            cwd=REPO_ROOT, capture_output=True, text=True, check=True,
+        ).stdout.split()
+    except (OSError, subprocess.CalledProcessError):
+        return ''
+    return out[-1] if out else ''
+
+
 # ── Presentation discovery ────────────────────────────────────────
 
 _YEAR_RE = re.compile(r'^\d{4}$')
@@ -123,8 +138,8 @@ def _discover(root: Path) -> list[dict]:
             if not title:
                 title = pres_dir.name.replace('-', ' ').replace('_', ' ').title()
 
-            # meta.yml overrides (title, venue, topic)
-            meta_topic = ''
+            # meta.yml overrides (title, venue, topic, date)
+            meta_topic = date = ''
             meta_yml = pres_dir / 'meta.yml'
             if meta_yml.exists():
                 for line in meta_yml.read_text(encoding='utf-8').splitlines():
@@ -133,6 +148,7 @@ def _discover(root: Path) -> list[dict]:
                     if   k.strip() == 'title' and v: title = v
                     elif k.strip() == 'venue' and v: venue = v
                     elif k.strip() == 'topic' and v: meta_topic = v
+                    elif k.strip() == 'date'  and v: date = v
 
             presentations.append({
                 'year': year_dir.name,
@@ -141,7 +157,11 @@ def _discover(root: Path) -> list[dict]:
                 'venue': venue,
                 'path': f'{year_dir.name}/{pres_dir.name}/',
                 'meta_topic': meta_topic,
+                'date': date or _git_added_date(pres_dir),
             })
+    # Most recent first: by year, then by date (meta.yml `date`, else the
+    # date the folder was first committed), then by folder name.
+    presentations.sort(key=lambda p: (p['year'], p['date'], p['folder']), reverse=True)
     return presentations
 
 
