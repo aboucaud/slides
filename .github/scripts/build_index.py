@@ -138,8 +138,9 @@ def _discover(root: Path) -> list[dict]:
             if not title:
                 title = pres_dir.name.replace('-', ' ').replace('_', ' ').title()
 
-            # meta.yml overrides (title, venue, topic, date)
+            # meta.yml overrides (title, venue, topic, date, hidden)
             meta_topic = date = ''
+            hidden = False
             meta_yml = pres_dir / 'meta.yml'
             if meta_yml.exists():
                 for line in meta_yml.read_text(encoding='utf-8').splitlines():
@@ -149,6 +150,9 @@ def _discover(root: Path) -> list[dict]:
                     elif k.strip() == 'venue' and v: venue = v
                     elif k.strip() == 'topic' and v: meta_topic = v
                     elif k.strip() == 'date'  and v: date = v
+                    elif k.strip() == 'hidden': hidden = v.lower() in ('true', 'yes', '1')
+            if hidden:
+                continue  # published under its URL but not listed in the index
 
             presentations.append({
                 'year': year_dir.name,
