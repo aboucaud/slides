@@ -65,8 +65,6 @@ Non retenus à l'écran (non vérifiés) :
 ]
 ]
 
-.note[**[PyBot (Hugging Face)](https://github.com/huggingface/pybot)** : un chatbot en Python pur, sans poids ni entraînement, écrit par un essaim de plus de 1 000 agents. L'agentique au service d'un logiciel déterministe, auditable et frugal.]
-
 ???
 Source : document de préparation, partie 1 (puces « modèle de langage », « IA agentique », exemple PyBot).
 PyBot : https://github.com/huggingface/pybot, annoncé vers le 16 nov. 2026. Plus de 1 000 agents DeepSeek-V4.1-Flash en une semaine, environ 640 000 lignes de Python, 8 000 PR fusionnées.
@@ -87,12 +85,14 @@ Exemples de nos domaines : voir les slides « Cette semaine aux JI » (Chamont, 
 ]
 ]
 .col[
-#### Les dérives du *vibe coding*
+#### Attention aux dérives type *vibe coding*
 
 - Code non maîtrisé
 - Dette technique
 - Sécurité
 - Résultats scientifiques fragiles
+
+.note[Illustration inverse : **[PyBot (Hugging Face)](https://github.com/huggingface/pybot)** un chatbot en Python pur, sans poids ni entraînement, écrit par un essaim de plus de 1 000 agents. L'agentique au service d'un logiciel déterministe, auditable et frugal.]
 ]
 ]
 
