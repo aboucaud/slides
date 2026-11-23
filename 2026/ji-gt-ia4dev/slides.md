@@ -1,10 +1,10 @@
 class: cover
 
-# Travaux du GT IA agentique à l'IN2P3
+# Travaux du GT IA agentique<br>à l'IN2P3
 
 .grade[16es Journées Informatiques IN2P3/IRFU, 23 novembre 2026]
 
-.meta[**Alexandre Boucaud**<br>
+.meta[**Alexandre Boucaud** <a class="ico" href="https://aboucaud.github.io" target="_blank"><i class="fa-solid fa-globe"></i></a><a class="ico" href="https://github.com/aboucaud" target="_blank"><i class="fa-brands fa-github"></i></a><br>
 AstroParticule et Cosmologie<br>
 préparé avec Sylvain Caillou (L2IT) et Thomas Vuillaume (LAPP)]
 

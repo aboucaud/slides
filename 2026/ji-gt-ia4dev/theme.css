@@ -866,3 +866,6 @@ body.sobre .cols.has-illus { grid-template-columns: 1fr; }
 .lien { display: block; margin-top: 0.8em; font-family: var(--font-ui); font-size: 0.8em; line-height: 1.5; }
 .piliers p.lien { font-size: 0.72em; }
 .lien a { white-space: nowrap; }
+
+/* Cover: small link icons next to the author's name */
+.cover .meta .ico { margin-left: 0.5em; color: var(--secondary); text-decoration: none; border: none; }
