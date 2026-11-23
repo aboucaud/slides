@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+  <meta charset="utf-8">
+  <title>Travaux du GT IA Agentique pour le développement à l'IN2P3</title>
+  <meta name="author" content="Alexandre Boucaud">
+  <link rel="stylesheet" type="text/css" href="theme.css">
+</head>
+<body>
+  <script type="text/javascript" src="js/remark-latest.min.js"></script>
+  <script type="text/javascript">
+    // Footer shown on every slide except the cover. Empty string = no footer.
+    var FOOTER = 'A. Boucaud, 16es Journées Informatiques IN2P3/IRFU, novembre 2026';
+
+    var slideshow = remark.create({
+      sourceUrl: 'slides.md',
+      ratio: '16:9',
+      navigation: { scroll: false, touch: true, click: false },
+      slideNumberFormat: '%current%/%total%',
+      countIncrementalSlides: false,
+    });
+
+    // "?sobre" hides every .illus block (text-only variant of the same deck).
+    if (/[?&]sobre\b/.test(window.location.search)) {
+      document.body.classList.add('sobre');
+    }
+    if (FOOTER) {
+      document.querySelectorAll('.remark-slide-content:not(.cover)').forEach(function (slide) {
+        var el = document.createElement('div');
+        el.className = 'pied';
+        el.textContent = FOOTER;
+        slide.appendChild(el);
+      });
+    }
+  </script>
+</body>
+</html>
