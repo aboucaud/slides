@@ -1,0 +1,881 @@
+/*
+ * Sober Remark.js theme: parchment background, ink blue, antique gold.
+ * Three typefaces: Quattrocento (headings), Newsreader (body), Alegreya Sans (UI, captions).
+ * No decoration: hierarchy comes from thin rules, small caps and one accent colour.
+ */
+
+@import url('https://fonts.googleapis.com/css2?family=Quattrocento:wght@400;700&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400&family=Alegreya+Sans:wght@400;500;700&display=swap');
+
+:root {
+    --bg:        #f8f7f3;
+    --surface:   #f0eee8;
+    --primary:   #4e5a70;
+    --secondary: #426b78;
+    --warm:      #a67c3c;
+    --text:      #221f20;
+    --muted:     #6b7585;
+    --rule:      rgba(78, 90, 112, 0.18);
+
+    --font-heading: 'Quattrocento', Georgia, serif;
+    --font-body:    'Newsreader', Georgia, serif;
+    --font-ui:      'Alegreya Sans', system-ui, sans-serif;
+}
+
+body,
+.remark-container,
+.remark-slide-content {
+    background: var(--bg);
+}
+
+.remark-slide-scaler { box-shadow: none; }
+
+/* ---------------------------------------------------------------------------
+   Base slide
+   --------------------------------------------------------------------------- */
+.remark-slide-content {
+    font-family: var(--font-body);
+    font-size: 26px;
+    color: var(--text);
+    padding: 1.2em 2.4em 2.2em;
+}
+
+.remark-slide-content h1 {
+    font-family: var(--font-heading);
+    font-size: 1.45em;
+    font-weight: 700;
+    color: var(--primary);
+    margin: 0 0 0.15em;
+    padding-bottom: 0.25em;
+    border-bottom: 1px solid rgba(166, 124, 60, 0.45);
+}
+
+.remark-slide-content h4 {
+    font-family: var(--font-heading);
+    font-size: 0.95em;
+    font-weight: 700;
+    color: var(--primary);
+    margin: 0 0 0.3em;
+}
+
+.remark-slide-content ul + h4 { margin-top: 0.9em; }
+
+.remark-slide-content p {
+    font-size: 0.9em;
+    line-height: 1.45;
+    margin: 0 0 0.4em;
+}
+
+.remark-slide-content ul {
+    font-size: 0.86em;
+    line-height: 1.42;
+    margin: 0 0 0.4em;
+    padding-left: 1.1em;
+}
+
+.remark-slide-content li { margin-bottom: 0.3em; }
+.remark-slide-content li > p { font-size: 1em; margin: 0; }
+.remark-slide-content ul li::marker { color: var(--warm); }
+.remark-slide-content ul ul { font-size: 0.95em; margin-top: 0.2em; }
+
+.remark-slide-content strong { font-weight: 600; color: var(--primary); }
+
+/* One-line message under the title */
+.kicker {
+    display: block;
+    font-family: var(--font-ui);
+    font-size: 0.82em;
+    color: var(--warm);
+    letter-spacing: 0.02em;
+    margin-bottom: 0.9em;
+}
+
+.muted { color: var(--muted); }
+
+/* ---------------------------------------------------------------------------
+   Layouts
+   --------------------------------------------------------------------------- */
+.cols {
+    display: grid;
+    grid-template-columns: 1.65fr 1fr;
+    gap: 2.2em;
+    align-items: start;
+}
+
+.cols-even {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2em;
+    align-items: start;
+}
+
+/* Key figures column */
+.kf {
+    display: block;
+    border-left: 2px solid var(--warm);
+    padding: 0.15em 0 0.15em 0.8em;
+    margin-bottom: 0.85em;
+}
+
+.kf .n {
+    display: block;
+    font-family: var(--font-heading);
+    font-size: 1.15em;
+    font-weight: 600;
+    color: var(--primary);
+    line-height: 1.15;
+}
+
+.kf .l {
+    display: block;
+    font-family: var(--font-ui);
+    font-size: 0.72em;
+    color: var(--muted);
+    line-height: 1.3;
+}
+
+/* Before / contribution / today column */
+.bilan {
+    display: block;
+    border-left: 2px solid var(--rule, rgba(78, 90, 112, 0.18));
+    margin-left: 0.3em;
+}
+
+.bilan .etape,
+.bilan .apres {
+    display: block;
+    position: relative;
+    padding: 0 0 0.75em 1em;
+    font-family: var(--font-ui);
+    font-size: 0.78em;
+    line-height: 1.35;
+    color: var(--primary);
+}
+
+.bilan .etape::before,
+.bilan .apres::before {
+    content: "";
+    position: absolute;
+    left: -0.42em;
+    top: 0.3em;
+    width: 0.6em;
+    height: 0.6em;
+    border-radius: 50%;
+    background: var(--bg);
+    border: 2px solid var(--muted);
+}
+
+.bilan .apres::before {
+    background: var(--warm);
+    border-color: var(--warm);
+}
+
+.bilan .t {
+    display: block;
+    font-variant: small-caps;
+    letter-spacing: 0.06em;
+    font-size: 0.92em;
+    color: var(--muted);
+}
+
+.bilan .apres .t {
+    color: var(--warm);
+}
+
+.mots {
+    display: block;
+    margin-top: 0.6em;
+    padding-top: 0.5em;
+    border-top: 1px solid var(--rule, rgba(78, 90, 112, 0.18));
+    font-family: var(--font-ui);
+    font-variant: small-caps;
+    letter-spacing: 0.06em;
+    font-size: 0.74em;
+    color: var(--secondary);
+    line-height: 1.5;
+}
+
+.mots .m {
+    display: inline-block;
+    margin-right: 1.4em;
+}
+
+/* Boxed takeaway */
+.note {
+    display: block;
+    margin-top: 0.6em;
+    padding: 0.5em 0.9em;
+    background: var(--surface);
+    border-left: 2px solid var(--secondary);
+    font-size: 0.82em;
+    line-height: 1.4;
+}
+
+/* Illustrations: hidden in the "sobre" variant (index.html?sobre) */
+body.sobre .illus { display: none; }
+body.sobre .cols.has-illus { grid-template-columns: 1fr; }
+
+/* Draft marker for facts still to confirm */
+.a-verifier {
+    outline: 1.5px dashed #8e3a1c;
+    outline-offset: 2px;
+}
+
+/* ---------------------------------------------------------------------------
+   Footer and slide number
+   --------------------------------------------------------------------------- */
+.pied {
+    position: absolute;
+    left: 4em;
+    bottom: 1.6em;
+    font-family: var(--font-ui);
+    font-size: 0.6em;
+    color: var(--muted);
+}
+
+.remark-slide-number {
+    font-family: var(--font-ui);
+    font-size: 0.6em;
+    color: var(--muted);
+    right: 2.6em;
+    bottom: 1em;
+}
+
+.remark-slide-content.cover ~ .remark-slide-number { display: none; }
+
+/* ---------------------------------------------------------------------------
+   Cover
+   --------------------------------------------------------------------------- */
+.remark-slide-content.cover {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 2em 4.5em;
+    height: 100%;
+    box-sizing: border-box;
+}
+
+.remark-slide-content.cover h1 {
+    font-size: 2.3em;
+    border: none;
+    padding: 0;
+    margin-bottom: 0.2em;
+}
+
+.cover .grade {
+    display: block;
+    font-family: var(--font-heading);
+    font-size: 1.15em;
+    color: var(--warm);
+    margin-bottom: 1.6em;
+    padding-bottom: 0.6em;
+    border-bottom: 1px solid rgba(166, 124, 60, 0.45);
+    max-width: 30em;
+}
+
+.cover .meta {
+    display: block;
+    font-family: var(--font-ui);
+    font-size: 0.85em;
+    color: var(--muted);
+    line-height: 1.6;
+}
+
+/* ---------------------------------------------------------------------------
+   Timeline
+   Bars and points use --s / --e / --x in decimal years.
+   The axis runs from --y0 to --y0 + --span: override both on .tl for each deck.
+   --------------------------------------------------------------------------- */
+.tl {
+    --lab: 8.2em;
+    --y0: 2018.9;
+    --span: 9.1;
+    position: relative;
+    margin-top: 3.2em;
+    font-family: var(--font-ui);
+    font-size: 0.74em;
+}
+
+.tl-row {
+    display: grid;
+    grid-template-columns: var(--lab) 1fr;
+    height: 4.1em;
+    border-bottom: 1px solid var(--rule);
+}
+
+.tl-row.single { height: 3.8em; }
+
+.tl-label {
+    align-self: center;
+    font-weight: 700;
+    color: var(--primary);
+    line-height: 1.15;
+}
+
+.tl-track { position: relative; }
+
+.tl-bar {
+    position: absolute;
+    top: 8%;
+    height: 40%;
+    left: calc((var(--s) - var(--y0)) * 100% / var(--span));
+    width: calc((var(--e) - var(--s)) * 100% / var(--span));
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    padding: 0 0.45em;
+    background: rgba(78, 90, 112, 0.13);
+    border-left: 2px solid var(--primary);
+    color: var(--text);
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.tl-bar.l2 { top: 52%; }
+.tl-row.single .tl-bar { top: 22%; height: 56%; }
+
+.tl-bar.pre    { background: rgba(107, 117, 133, 0.10); border-color: var(--muted); color: var(--muted); }
+.tl-bar.key    { background: rgba(166, 124, 60, 0.20); border-color: var(--warm); }
+.tl-bar.future { background: transparent; border: 1px dashed var(--warm); }
+
+.tl-pt {
+    position: absolute;
+    top: 52%;
+    height: 40%;
+    left: calc((var(--x) - var(--y0)) * 100% / var(--span));
+    display: flex;
+    align-items: center;
+    white-space: nowrap;
+    color: var(--warm);
+    font-weight: 700;
+}
+
+.tl-pt::before {
+    content: '';
+    width: 0.55em;
+    height: 0.55em;
+    margin: 0 0.35em 0 -0.3em;
+    background: var(--warm);
+    transform: rotate(45deg);
+}
+
+.tl-axis {
+    display: grid;
+    grid-template-columns: var(--lab) 1fr;
+    height: 1.6em;
+    color: var(--muted);
+}
+
+.tl-tick {
+    position: absolute;
+    top: 0.35em;
+    left: calc((var(--x) - var(--y0)) * 100% / var(--span));
+    transform: translateX(-50%);
+}
+
+.tl-tick::before {
+    content: '';
+    position: absolute;
+    left: 50%;
+    top: -0.4em;
+    height: 0.35em;
+    border-left: 1px solid var(--muted);
+}
+
+.tl-bar.spill { overflow: visible; }
+.tl-bar.spill-left {
+    overflow: visible;
+    justify-content: flex-end;
+    border-left: none;
+    border-right: 2px solid var(--warm);
+}
+
+.tl-now {
+    position: absolute;
+    top: 0;
+    bottom: 1.6em;
+    left: calc(var(--lab) + (100% - var(--lab)) * (var(--x) - var(--y0)) / var(--span));
+    border-left: 1.5px dashed var(--muted);
+}
+
+.tl-now span {
+    position: absolute;
+    bottom: 100%;
+    left: 0;
+    transform: translateX(-50%);
+    color: var(--muted);
+    font-style: italic;
+}
+
+/* Compact dated list above the timeline (earlier career) and a highlighted marker line */
+.avant {
+    font-family: var(--font-ui);
+    font-size: 0.72em;
+    color: var(--muted);
+    line-height: 1.5;
+}
+
+.avant div { display: grid; grid-template-columns: 6em 1fr; }
+.avant b { font-weight: 700; color: var(--primary); }
+
+.recrut {
+    margin: 0.6em 0 0;
+    padding-top: 0.3em;
+    border-top: 1.5px solid var(--warm);
+    font-family: var(--font-ui);
+    font-size: 0.78em;
+    font-weight: 700;
+    color: var(--warm);
+}
+
+/* ---------------------------------------------------------------------------
+   Context map: cards side by side
+   --------------------------------------------------------------------------- */
+.hub {
+    display: block;
+    width: fit-content;
+    margin: 0 auto 0.8em;
+    padding: 0.3em 1.2em;
+    font-family: var(--font-heading);
+    font-weight: 700;
+    color: var(--bg);
+    background: var(--primary);
+}
+
+.map {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0.8em;
+}
+
+.card {
+    background: #fff;
+    border: 1px solid var(--rule);
+    border-top: 3px solid var(--warm);
+    padding: 0.6em 0.75em;
+}
+
+.card h4 { font-size: 0.82em; margin-bottom: 0.4em; text-align: center; }
+
+.card ul {
+    font-size: 0.68em;
+    line-height: 1.35;
+    padding-left: 1em;
+    margin-bottom: 0.5em;
+}
+
+.card ul li { margin-bottom: 0.15em; }
+
+.card .itf {
+    border-top: 1px solid var(--rule);
+    padding-top: 0.4em;
+    font-family: var(--font-ui);
+    font-size: 0.62em;
+    color: var(--muted);
+    line-height: 1.35;
+}
+
+.card .itf b { color: var(--secondary); font-weight: 700; }
+
+/* ---------------------------------------------------------------------------
+   Timeline additions: three-lane row, bridge row, milestone mark
+   --------------------------------------------------------------------------- */
+.tl-row.triple { height: 8em; }
+.tl-row.triple .tl-bar { top: 6%; height: 27%; }
+.tl-row.triple .tl-bar.l2 { top: 37%; }
+.tl-row.triple .tl-bar.l3 { top: 68%; }
+
+/* Row sitting between two others, without label or rule */
+.tl-row.bridge { height: 2.8em; }
+.tl-row.bridge .tl-bar { top: 22%; height: 56%; }
+
+/* Text-only label placed beside a short bar */
+.tl-bar.txt { background: none; border: none; justify-content: flex-end; }
+
+/* Vertical milestone line with its label ending on the line */
+.tl-mark {
+    position: absolute;
+    top: 0;
+    bottom: 1.6em;
+    left: calc(var(--lab) + (100% - var(--lab)) * (var(--x) - var(--y0)) / var(--span));
+    border-left: 1.5px solid var(--warm);
+}
+
+.tl-mark span {
+    position: absolute;
+    bottom: 100%;
+    right: 0.4em;
+    white-space: nowrap;
+    color: var(--warm);
+    font-weight: 700;
+}
+
+/* Scale label above the title (local, national, international) */
+.echelle {
+    display: block;
+    font-family: var(--font-ui);
+    font-variant: small-caps;
+    letter-spacing: 0.08em;
+    font-size: 0.66em;
+    color: var(--secondary);
+    margin-bottom: 0.1em;
+}
+
+/* ---------------------------------------------------------------------------
+   Positioning cards: logo, size, transverse band
+   --------------------------------------------------------------------------- */
+.logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 3.2em;
+    margin-bottom: 0.5em;
+}
+
+.logo img { max-height: 100%; max-width: 100%; mix-blend-mode: multiply; }
+.logo.large { height: 7em; margin-top: 0.8em; }
+
+/* Technical figures, white background blended into the slide */
+.figure { margin-bottom: 0.6em; }
+.figure img { display: block; max-width: 100%; max-height: var(--h, 11em); margin: 0 auto; mix-blend-mode: multiply; }
+.figure span {
+    display: block;
+    margin-top: 0.3em;
+    font-family: var(--font-ui);
+    font-size: 0.62em;
+    color: var(--muted);
+    line-height: 1.35;
+}
+
+/* Figure with its caption on the side */
+.figure.side {
+    display: grid;
+    grid-template-columns: 1fr 8em;
+    gap: 0.8em;
+    align-items: end;
+}
+.figure.side span { margin-top: 0; }
+
+/* Photos, cropped to a common frame */
+.photo { margin-bottom: 0.7em; }
+.photo img {
+    display: block;
+    width: 100%;
+    height: 9.2em;
+    object-fit: cover;
+}
+
+.card .taille {
+    font-family: var(--font-ui);
+    font-size: 0.66em;
+    line-height: 1.4;
+    color: var(--secondary);
+    padding-bottom: 0.4em;
+    margin-bottom: 0.4em;
+    border-bottom: 1px solid var(--rule);
+}
+
+/* Thin rules rising from the transverse card to each card above */
+.filets {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0.8em;
+    height: 1.1em;
+}
+
+.filets span {
+    justify-self: center;
+    border-left: 1px solid var(--warm);
+}
+
+.transverse {
+    background: #fff;
+    border: 1px solid var(--rule);
+    border-top: 3px solid var(--warm);
+    padding: 0.5em 0.75em 0.6em;
+    text-align: center;
+}
+
+.transverse h4 { font-size: 0.82em; margin-bottom: 0.3em; }
+
+.transverse div {
+    display: flex;
+    justify-content: center;
+    gap: 3em;
+    font-family: var(--font-ui);
+    font-size: 0.78em;
+    color: var(--secondary);
+}
+
+/* ---------------------------------------------------------------------------
+   Three pillars (one figure or keyword, a heading, a sentence each)
+   --------------------------------------------------------------------------- */
+.piliers {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.6em;
+    margin-top: 0.4em;
+}
+
+.piliers > div {
+    border-top: 2px solid var(--warm);
+    padding-top: 0.6em;
+}
+
+.piliers .n {
+    display: block;
+    font-family: var(--font-heading);
+    font-size: 1.15em;
+    font-weight: 700;
+    color: var(--primary);
+    margin-bottom: 0.3em;
+}
+
+.piliers h4 { font-size: 0.8em; color: var(--secondary); }
+.piliers p { font-size: 0.84em; }
+
+/* ---------------------------------------------------------------------------
+   Photo and figure placeholders, to replace with img/ files
+   --------------------------------------------------------------------------- */
+.ph {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 6.5em;
+    margin-bottom: 0.7em;
+    padding: 0 1em;
+    border: 1px dashed var(--muted);
+    background: var(--surface);
+    font-family: var(--font-ui);
+    font-size: 0.7em;
+    color: var(--muted);
+    text-align: center;
+}
+
+.ph.tall { height: 9em; }
+
+/* ---------------------------------------------------------------------------
+   Synthesis table: three scales, today and tomorrow
+   --------------------------------------------------------------------------- */
+.synthese {
+    display: grid;
+    grid-template-columns: 9em 1fr 1fr;
+    font-family: var(--font-ui);
+    font-size: 0.78em;
+    line-height: 1.35;
+}
+
+.synthese > div {
+    padding: 0.55em 0.8em;
+    border-bottom: 1px solid var(--rule);
+}
+
+.synthese .h {
+    font-variant: small-caps;
+    letter-spacing: 0.06em;
+    color: var(--warm);
+    border-bottom: 1.5px solid var(--warm);
+}
+
+.synthese .e {
+    font-family: var(--font-heading);
+    font-weight: 700;
+    color: var(--primary);
+}
+
+.synthese .e span {
+    display: block;
+    font-family: var(--font-ui);
+    font-weight: 400;
+    font-size: 0.85em;
+    color: var(--muted);
+}
+
+/* ---------------------------------------------------------------------------
+   Organisation charts: one level per .lvl, boxes .n, the author's box .moi,
+   external interfaces .ext (dashed). Connectors are drawn with borders.
+   --------------------------------------------------------------------------- */
+.org {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    font-family: var(--font-ui);
+    font-size: 0.7em;
+    line-height: 1.25;
+}
+
+.org .lvl {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 0.7em;
+    padding-top: 1em;
+}
+
+.org .lvl:first-child { padding-top: 0; }
+
+/* Vertical stub from the parent box down to the level */
+.org .lvl:not(:first-child)::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 50%;
+    height: 0.5em;
+    border-left: 1px solid var(--muted);
+}
+
+/* Horizontal rail: each child draws its share, from its centre on the ends */
+.org .lvl.multi > * { position: relative; }
+.org .lvl.multi > *::before {
+    content: "";
+    position: absolute;
+    top: -0.5em;
+    left: 50%;
+    height: 0.5em;
+    border-left: 1px solid var(--muted);
+}
+.org .lvl.multi > *::after {
+    content: "";
+    position: absolute;
+    top: -0.5em;
+    left: -0.36em;
+    right: -0.36em;
+    border-top: 1px solid var(--muted);
+}
+.org .lvl.multi > :first-child::after { left: 50%; }
+.org .lvl.multi > :last-child::after { right: 50%; }
+
+/* Branch: a box with its own sub-levels */
+.org .br {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.org .n {
+    flex: 0 1 auto;
+    min-width: 6em;
+    max-width: 15em;
+    padding: 0.3em 0.6em;
+    background: #fff;
+    border: 1px solid var(--rule);
+    color: var(--text);
+    text-align: center;
+}
+
+.org .n b {
+    display: block;
+    font-weight: 700;
+    color: var(--primary);
+}
+
+.org .n i { display: block; font-style: normal; color: var(--muted); }
+
+.org .n.moi {
+    border: 2px solid var(--warm);
+    background: rgba(166, 124, 60, 0.14);
+}
+
+.org .n.ext {
+    background: transparent;
+    border: 1px dashed var(--muted);
+    color: var(--muted);
+}
+
+.org .n.dim { color: var(--muted); }
+.org .n.dim b { color: var(--muted); }
+
+/* Caption under a chart */
+.org-src {
+    margin-top: 0.5em;
+    font-family: var(--font-ui);
+    font-size: 0.55em;
+    color: var(--muted);
+    text-align: center;
+}
+
+/* Row of compact key figures under a two-column layout */
+.kfrow {
+    display: grid;
+    grid-template-columns: repeat(var(--k, 3), 1fr);
+    gap: 1.2em;
+    margin-top: 1.6em;
+}
+
+.kfrow .kf { margin-bottom: 0; }
+
+/* ---------------------------------------------------------------------------
+   Deck-specific: survey figures regenerated without title keep an empty top
+   band; .crop trims it (object-position: bottom keeps the footer source line).
+   --------------------------------------------------------------------------- */
+.figure.crop img {
+    width: 100%;
+    max-height: none;
+    aspect-ratio: 2000 / 960;
+    object-fit: cover;
+    object-position: bottom;
+}
+.figure.crop { max-width: var(--w, 100%); margin: 0 auto; }
+
+/* Five-row levels table: level number column */
+.synthese.niveaux { grid-template-columns: 5em 1fr 1fr; }
+.synthese.niveaux .e { text-align: center; }
+.synthese.semaine { grid-template-columns: 8em 1fr 14em; }
+
+/* News list with a muted source after each line */
+.avant.actu { font-size: 0.78em; line-height: 1.45; }
+.avant.actu div { grid-template-columns: 6.5em 1fr; margin-bottom: 0.45em; }
+.avant.actu span { color: var(--text); }
+.avant.actu i { color: var(--muted); font-style: normal; font-size: 0.85em; }
+
+/* ---------------------------------------------------------------------------
+   Deck-specific: fill the slide height. Content slides are a flex column:
+   the title stays on top, the blocks below share the remaining height.
+   --------------------------------------------------------------------------- */
+.remark-slide-content:not(.cover) {
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+    height: 100%;
+    padding-bottom: 3em;
+}
+.remark-slide-content:not(.cover) > h1 { margin-bottom: 0.9em; }
+.remark-slide-content:not(.cover) > :not(h1) { margin-top: auto; margin-bottom: auto; }
+.remark-slide-content:not(.cover) > :not(h1) + :not(h1) { margin-top: 0; }
+
+/* Tables stretch to the available height, rows evenly spaced */
+.remark-slide-content > .synthese { flex: 1 1 auto; grid-auto-rows: auto; align-content: space-evenly; font-size: 0.8em; }
+.synthese > div { padding: 0.5em 0.8em; }
+.synthese .qui { display: block; margin-top: 0.2em; font-size: 0.85em; color: var(--muted); }
+
+/* News list spread over the height */
+.remark-slide-content > .avant.actu { flex: 1 1 auto; display: flex; flex-direction: column; justify-content: space-evenly; font-size: 0.86em; }
+.avant.actu div { margin-bottom: 0; }
+.avant.actu i { display: block; margin-top: 0.15em; }
+.avant.actu a { color: var(--secondary); text-decoration: none; border-bottom: 1px solid var(--rule); }
+
+/* Two-column and pillar blocks get more air */
+.remark-slide-content > .cols-even { gap: 3em; }
+.bilan .etape, .bilan .apres { font-size: 0.9em; padding-bottom: 1.3em; }
+.piliers p { font-size: 1.02em; line-height: 1.6; }
+.remark-slide-content > .note { font-size: 0.88em; padding: 0.8em 1.1em; }
+
+/* Links inherit the deck palette */
+.remark-slide-content a { color: inherit; text-decoration: none; border-bottom: 1px solid var(--rule); }
+.piliers p.lien { font-family: var(--font-ui); font-size: 0.8em; }
+.lien { display: block; margin-top: 0.8em; font-family: var(--font-ui); font-size: 0.8em; line-height: 1.5; }
+.piliers p.lien { font-size: 0.72em; }
+.lien a { white-space: nowrap; }
+
+/* Cover: small link icons next to the author's name */
+.cover .meta .ico { margin-left: 0.5em; color: var(--secondary); text-decoration: none; border: none; }
+
+/* Kicker stays glued under the title instead of floating in the free space;
+   the blocks after it are still centred in the remaining height. */
+.remark-slide-content:not(.cover) > h1 + p:has(> .kicker) { margin-top: -0.4em; margin-bottom: 0; }
+.remark-slide-content:not(.cover) > h1 + p:has(> .kicker) + * { margin-top: auto; }
+
+/* Cover: keep the one-line subtitle on a single line */
+.cover .grade { max-width: 38em; }
+
+.small { font-size: 0.85em; }
